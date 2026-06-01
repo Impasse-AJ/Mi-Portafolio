@@ -1,7 +1,7 @@
 import { Terminal } from 'lucide-react';
 import { PERSONAL_INFO } from '../data.ts';
 
-export default function Footer() {
+export default function PiePagina() {
   const currentYear = new Date().getFullYear();
 
   return (

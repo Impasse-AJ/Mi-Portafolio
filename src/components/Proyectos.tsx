@@ -1,8 +1,8 @@
-import { ExternalLink, Github, Server, Terminal, Network } from 'lucide-react';
+import { ExternalLink, Github, Server, Terminal, Network, CheckCircle2 } from 'lucide-react';
 import { PROJECTS } from '../data.ts';
 import { motion } from 'motion/react';
 
-export default function Projects() {
+export default function Proyectos() {
   const mainProject = PROJECTS.find(p => p.id === 'pokemon-world')!;
 
   return (
@@ -14,8 +14,8 @@ export default function Projects() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">proyectos reales</span>
-        <h3 className="text-3xl font-display font-semibold text-slate-100">Proyectos Destacados</h3>
+        <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">proyecto principal</span>
+        <h3 className="text-3xl font-display font-semibold text-slate-100">Pokémon World Map</h3>
         <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
           Proyecto real desarrollado, desplegado y mantenido en una VPS propia, con frontend, backend, base de datos y correo transaccional.
         </p>
@@ -52,7 +52,7 @@ export default function Projects() {
 
             <div className="absolute bottom-4 left-4 z-10">
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-slate-950/80 border border-slate-800 text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider">
-                Proyecto Final de DAW
+                Proyecto Final de DAW · Full Stack
               </span>
             </div>
 
@@ -82,16 +82,38 @@ export default function Projects() {
                 </p>
               </div>
 
-              {/* Technologies chip array */}
-              <div className="flex flex-wrap gap-1.5 pt-2">
-                {mainProject.tags.map((tag, idx) => (
-                  <span 
-                    key={idx} 
-                    className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-mono text-slate-400"
-                  >
-                    {tag}
-                  </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-xs">
+                {[
+                  ['Frontend', mainProject.architecture.frontend],
+                  ['Backend', mainProject.architecture.backend],
+                  ['Base de datos', mainProject.architecture.database],
+                  ['Infraestructura', mainProject.architecture.infrastructure],
+                  ['Proxy/SSL/DNS', mainProject.architecture.proxy],
+                  ['Email', mainProject.architecture.email],
+                ].map(([label, value]) => (
+                  <div key={label} className="rounded-lg bg-slate-900/50 border border-slate-800 p-2">
+                    <div className="text-[10px] uppercase tracking-wider font-mono text-blue-400 font-bold">{label}</div>
+                    <div className="text-slate-300 mt-0.5">{value}</div>
+                  </div>
                 ))}
+              </div>
+
+              <div className="space-y-2 rounded-xl bg-slate-950/70 border border-slate-900 p-4">
+                <h5 className="text-[11px] font-mono uppercase tracking-widest text-slate-500 font-bold">Qué demuestra</h5>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-400">
+                  {[
+                    'Desarrollo frontend y backend.',
+                    'Integración con APIs externas.',
+                    'Persistencia en MySQL.',
+                    'Autenticación y confirmación por email.',
+                    'Despliegue real con Docker, Caddy, Cloudflare y VPS.',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <CheckCircle2 size={13} className="text-green-400 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Actions */}
@@ -104,7 +126,7 @@ export default function Projects() {
                   aria-label="Visitar Pokémon World Map"
                 >
                   <ExternalLink size={13} />
-                  Visitar pokemon-world.es
+                  Ver demo
                 </a>
                 
                 <a 
@@ -130,14 +152,14 @@ export default function Projects() {
               <div className="space-y-3">
                 <div className="space-y-1">
                   <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> FRONTEND CLIENT
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> FRONTEND
                   </span>
                   <p className="text-[11px] text-slate-300 pl-2.5 leading-snug">{mainProject.architecture.frontend}</p>
                 </div>
 
                 <div className="space-y-1">
                   <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> BACKEND APPLICATION
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> BACKEND
                   </span>
                   <p className="text-[11px] text-slate-300 pl-2.5 leading-snug">{mainProject.architecture.backend}</p>
                 </div>

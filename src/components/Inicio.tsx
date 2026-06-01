@@ -15,11 +15,11 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data.ts';
 
-interface HeroProps {
+interface InicioProps {
   onOpenCV: () => void;
 }
 
-export default function Hero({ onOpenCV }: HeroProps) {
+export default function Inicio({ onOpenCV }: InicioProps) {
   const [activeTab, setActiveTab] = useState<'architecture' | 'terminal'>('architecture');
   const [probeStatus, setProbeStatus] = useState<'idle' | 'running' | 'success'>('idle');
   const [probeLogs, setProbeLogs] = useState<string[]>([]);
@@ -64,13 +64,13 @@ export default function Hero({ onOpenCV }: HeroProps) {
   };
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex flex-col justify-center pt-24 pb-8 md:py-16 overflow-hidden">
+    <section id="home" className="relative min-h-[76vh] flex flex-col justify-center pt-20 pb-6 md:py-12 overflow-hidden">
       {/* Dynamic Background Grid Pattern & Ambient Gradients */}
       <div className="absolute inset-x-0 top-0 h-[500px] bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-blue-900/15 via-transparent to-transparent pointer-events-none z-0" />
       
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10 w-full">
         {/* Profile Info Columns */}
-        <div className="col-span-1 lg:col-span-7 space-y-6 text-left">
+        <div className="col-span-1 lg:col-span-7 space-y-5 text-left">
           {/* Availability Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/25 rounded-full text-[11px] font-mono font-semibold text-green-400 tracking-wide">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
@@ -78,7 +78,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
           </div>
 
           <div className="space-y-3">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl font-display font-bold text-white tracking-tight">
               Hola, soy <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">{PERSONAL_INFO.name}</span>
             </h1>
             <h2 className="text-lg sm:text-xl md:text-2xl font-mono text-blue-400 font-semibold tracking-wide">
@@ -88,6 +88,10 @@ export default function Hero({ onOpenCV }: HeroProps) {
 
           <p className="text-slate-300 text-base md:text-lg max-w-2xl leading-relaxed">
             {PERSONAL_INFO.headline}
+          </p>
+
+          <p className="text-slate-400 text-sm max-w-2xl leading-relaxed">
+            Actualmente realizo practicas en EXA Formacion y mantengo Pokémon World Map, una aplicacion full stack desplegada en produccion.
           </p>
 
           {/* Quick Stats Grid */}
@@ -116,7 +120,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
               onClick={() => handleNavClick('projects')}
               className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 shadow-lg shadow-blue-500/25 transform hover:-translate-y-0.5 cursor-pointer"
             >
-              Proyectos Desplegados
+              Ver proyecto
               <ArrowRight size={14} />
             </button>
             
@@ -125,7 +129,15 @@ export default function Hero({ onOpenCV }: HeroProps) {
               className="flex items-center gap-2 px-5 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 rounded-xl text-xs font-mono font-bold tracking-wider transition-all cursor-pointer hover:border-slate-600"
             >
               <FileText size={14} />
-              Imprimir / Ver CV
+              Descargar CV
+            </button>
+
+            <button
+              onClick={() => handleNavClick('contact')}
+              className="flex items-center gap-2 px-5 py-3 bg-slate-950/60 hover:bg-slate-900 border border-slate-800 text-slate-300 rounded-xl text-xs font-mono font-bold tracking-wider transition-all cursor-pointer hover:border-slate-700"
+            >
+              <Mail size={14} />
+              Contactar
             </button>
 
             {/* Icon Links */}
@@ -206,7 +218,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
             </div>
 
             {/* Inner Panels */}
-            <div className="p-5 h-[280px] overflow-y-auto text-xs leading-relaxed font-mono">
+            <div className="p-5 h-[240px] overflow-y-auto text-xs leading-relaxed font-mono">
               
               {activeTab === 'architecture' && (
                 <div className="space-y-4">

@@ -1,12 +1,12 @@
 import { GraduationCap, Landmark, Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { ACADEMIC_BACKGROUND } from '../data.ts';
 
-export default function Formation() {
+export default function Formacion() {
   return (
     <section id="formation" className="space-y-12 scroll-mt-24">
       <div className="space-y-2 text-left">
         <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">formación reglada</span>
-        <h3 className="text-3xl font-display font-semibold text-slate-100">Educación & Formación</h3>
+        <h3 className="text-3xl font-display font-semibold text-slate-100">Formación</h3>
         <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
           Formacion academica reglada en desarrollo web, programacion, bases de datos y despliegue de aplicaciones.
         </p>

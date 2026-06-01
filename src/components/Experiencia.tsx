@@ -1,10 +1,23 @@
-import { Calendar, MapPin, Building, ChevronDown, ChevronUp } from 'lucide-react';
-import { EXPERIENCE } from '../data.ts';
+import { Calendar, MapPin, Building, ChevronDown, ChevronUp, Code, Database, Server, ClipboardCheck } from 'lucide-react';
+import { EXPERIENCE, WHAT_I_BRING } from '../data.ts';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
-export default function Experience() {
+export default function Experiencia() {
   const [expanded, setExpanded] = useState<Record<number, boolean>>({ 0: true });
+
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'code':
+        return <Code className="text-blue-400" size={20} />;
+      case 'database':
+        return <Database className="text-teal-400" size={20} />;
+      case 'server':
+        return <Server className="text-indigo-400" size={20} />;
+      default:
+        return <ClipboardCheck className="text-purple-400" size={20} />;
+    }
+  };
 
   const toggleExpand = (idx: number) => {
     setExpanded(prev => ({
@@ -23,7 +36,7 @@ export default function Experience() {
         transition={{ duration: 0.5 }}
       >
         <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">trayectoria</span>
-        <h3 className="text-3xl font-display font-semibold text-slate-100">Experiencia Laboral</h3>
+        <h3 className="text-3xl font-display font-semibold text-slate-100">Experiencia y aportación</h3>
         <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
           Experiencia practica reciente en desarrollo web, tratamiento de datos y herramientas de trabajo profesional.
         </p>
@@ -125,6 +138,42 @@ export default function Experience() {
             </motion.div>
           );
         })}
+      </div>
+
+      <div className="space-y-6">
+        <div className="space-y-2">
+          <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">qué puedo aportar</span>
+          <h3 className="text-2xl font-display font-semibold text-slate-100">Base práctica para integrarme en un equipo</h3>
+          <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
+            Cuatro áreas donde puedo aportar desde un rol junior, con margen para seguir aprendiendo y asumir más responsabilidad.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {WHAT_I_BRING.map((item) => (
+            <div
+              key={item.title}
+              className="p-5 rounded-2xl bg-slate-950/40 border border-slate-900 hover:border-slate-800/80 transition-all"
+            >
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0">
+                  {getIcon(item.icon)}
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-slate-100 font-semibold text-sm">{item.title}</h4>
+                  <p className="text-slate-400 text-xs leading-relaxed">{item.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.techs.map((tech) => (
+                      <span key={tech} className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-mono text-slate-400">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

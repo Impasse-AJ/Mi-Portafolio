@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import { Mail, Github, Linkedin, Copy, Check, MapPin, ExternalLink, Sparkles } from 'lucide-react';
+import { Mail, Github, Linkedin, Copy, Check, MapPin, ExternalLink, Sparkles, FileText } from 'lucide-react';
 import { PERSONAL_INFO } from '../data.ts';
 
-export default function Contact() {
+interface ContactoProps {
+  onOpenCV: () => void;
+}
+
+export default function Contacto({ onOpenCV }: ContactoProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -37,7 +41,7 @@ export default function Contact() {
           </div>
 
           {/* Interactive Call-To-Action channel grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 relative z-10 font-mono text-xs max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 relative z-10 font-mono text-xs max-w-3xl mx-auto">
             {/* EMAIL COPY CARD */}
             <button
               onClick={handleCopyEmail}
@@ -103,6 +107,23 @@ export default function Contact() {
                 Explorar <ExternalLink size={10} />
               </span>
             </a>
+
+            <button
+              onClick={onOpenCV}
+              className="group p-4 rounded-xl bg-slate-900/50 hover:bg-slate-900 border border-slate-800 hover:border-blue-500/30 transition-all flex flex-col items-center gap-2.5 cursor-pointer text-center"
+              aria-label="Ver o imprimir CV"
+            >
+              <div className="p-2.5 rounded-lg bg-blue-900/10 text-blue-400 border border-blue-500/10 transition-colors group-hover:bg-blue-600/10">
+                <FileText size={16} />
+              </div>
+              <div className="space-y-0.5 mt-auto">
+                <span className="font-bold text-slate-200">CV</span>
+                <p className="text-[10px] text-slate-500">PDF / imprimir</p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-blue-400 opacity-60 group-hover:opacity-100 tracking-wider mt-auto">
+                Abrir <ExternalLink size={10} />
+              </span>
+            </button>
           </div>
 
           <div className="p-4 rounded-xl bg-blue-950/10 border border-blue-500/10 flex items-start gap-2.5 text-left max-w-xl mx-auto relative z-10 text-xs text-slate-400 leading-relaxed font-mono">

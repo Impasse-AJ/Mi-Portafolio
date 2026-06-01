@@ -2,22 +2,19 @@ import { useState, useEffect } from 'react';
 import { Menu, X, FileText, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-interface HeaderProps {
+interface NavegacionProps {
   onOpenCV: () => void;
 }
 
-export default function Header({ onOpenCV }: HeaderProps) {
+export default function Navegacion({ onOpenCV }: NavegacionProps) {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
     { id: 'home', label: 'Inicio' },
-    { id: 'about', label: 'Sobre mí' },
     { id: 'experience', label: 'Experiencia' },
-    { id: 'tech', label: 'Stack Técnico' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'formation', label: 'Formación' },
+    { id: 'projects', label: 'Proyecto' },
     { id: 'contact', label: 'Contacto' },
   ];
 

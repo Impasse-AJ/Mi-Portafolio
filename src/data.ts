@@ -3,39 +3,39 @@ import { ExperienceItem, ProjectItem, TechCategory, AcademicItem } from './types
 export const PERSONAL_INFO = {
   name: 'Abraham Pauta',
   title: 'Desarrollador Web Full Stack Junior',
-  headline: 'Construyo aplicaciones web con React, TypeScript, Java, Spring Boot y MySQL, y tengo experiencia practica con scraping, datos y despliegues en VPS Linux.',
+  headline: 'Desarrollo aplicaciones web completas, trabajo con datos y scraping, y despliego proyectos reales en VPS con Docker, Caddy y Cloudflare.',
   email: 'abraham.pauta81@gmail.com',
   github: 'https://github.com/Impasse-AJ',
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
   location: 'Madrid, España',
   domain: 'https://abrahampauta.com',
-  bio: 'Soy desarrollador web full stack junior, formado en Desarrollo de Aplicaciones Web. Me interesa trabajar en productos web mantenibles, con una base tecnica clara: interfaces cuidadas, APIs sencillas, datos bien estructurados y despliegues reproducibles. Actualmente hago practicas en EXA Formacion, donde participo en tareas de scraping, estructuracion JSON, Python, TypeScript, React, cPanel y herramientas Microsoft 365.',
+  bio: 'Desarrollador junior formado en Desarrollo de Aplicaciones Web. Actualmente realizo practicas en EXA Formacion y tengo un proyecto full stack desplegado en produccion.',
 };
 
 export const WHAT_I_BRING = [
   {
     title: 'Desarrollo web full stack',
     icon: 'code',
-    description: 'Puedo colaborar en interfaces con React y TypeScript, y en servicios backend con Java, Spring Boot, PHP o Symfony, manteniendo una comunicacion clara entre frontend, API y base de datos.',
-    techs: ['React', 'TypeScript', 'Spring Boot', 'PHP', 'Symfony', 'APIs REST']
+    description: 'Apoyo en interfaces React/TypeScript y servicios backend con Java, Spring Boot, PHP o Symfony.',
+    techs: ['React', 'TypeScript', 'Spring Boot', 'Symfony']
   },
   {
     title: 'Datos y scraping',
     icon: 'database',
-    description: 'Tengo experiencia practica analizando datos para scraping, preparando estructuras JSON y usando Python para automatizar procesos de extraccion, limpieza y organizacion de informacion.',
-    techs: ['Python', 'Scraping', 'Analisis de datos', 'JSON']
+    description: 'Analisis de fuentes, diseño de estructuras JSON y preparacion de datos con Python.',
+    techs: ['Python', 'Scraping', 'JSON']
   },
   {
-    title: 'Despliegue y sistemas',
+    title: 'Despliegue y mantenimiento',
     icon: 'server',
-    description: 'He desplegado proyectos propios en VPS Linux con Docker Compose, Caddy y Cloudflare, cuidando la separacion de servicios y la administracion basica de entornos.',
-    techs: ['Docker', 'VPS Linux', 'Caddy', 'Cloudflare', 'cPanel']
+    description: 'Despliegues propios en VPS Linux con Docker Compose, Caddy y Cloudflare, y revision de aplicaciones con cPanel.',
+    techs: ['Docker Compose', 'VPS', 'Caddy', 'Cloudflare', 'cPanel']
   },
   {
     title: 'Trabajo organizado',
     icon: 'users',
-    description: 'Uso herramientas profesionales para documentar, coordinar tareas y mantener seguimiento: Git, GitHub, OneDrive, Planner, Outlook, Excel y Teams.',
-    techs: ['Git', 'GitHub', 'OneDrive', 'Planner', 'Outlook', 'Excel', 'Teams']
+    description: 'Seguimiento de tareas, documentacion y comunicacion con Git, GitHub y Microsoft 365.',
+    techs: ['Git', 'GitHub', 'Planner', 'OneDrive', 'Teams']
   }
 ];
 
@@ -46,14 +46,14 @@ export const EXPERIENCE: ExperienceItem[] = [
     location: 'Madrid, España',
     period: '2025 - Presente',
     isCurrent: true,
-    description: 'Practicas centradas en apoyo al desarrollo web, tratamiento de datos para scraping y seguimiento de aplicaciones en entornos reales.',
+    description: 'En EXA Formacion participo en tareas de apoyo al desarrollo y tratamiento de datos: analizo fuentes para scraping, diseño estructuras JSON para organizar informacion, utilizo Python para preparar datos, colaboro en interfaces con TypeScript y React, reviso aplicaciones desde cPanel y coordino tareas/documentacion con Microsoft 365.',
     bullets: [
-      'Analisis de fuentes y estructuras de datos para preparar procesos de scraping.',
-      'Diseño de estructuras JSON claras para organizar datos extraidos y facilitar su reutilizacion.',
-      'Uso de Python para apoyo en tareas de extraccion, limpieza y preparacion de informacion.',
-      'Apoyo en desarrollo frontend con TypeScript y React dentro de flujos de trabajo existentes.',
-      'Monitorizacion y revision de aplicaciones mediante cPanel.',
-      'Gestion diaria de documentacion, tareas y comunicacion con Microsoft 365: OneDrive, Planner, Outlook, Excel y Teams.'
+      'Analisis de fuentes y datos para scraping.',
+      'Diseño de estructuras JSON reutilizables.',
+      'Automatizacion y preparacion de datos con Python.',
+      'Apoyo frontend con TypeScript y React.',
+      'Monitorizacion mediante cPanel.',
+      'Organizacion con OneDrive, Planner, Outlook, Excel y Teams.'
     ],
     skills: ['Python', 'Scraping', 'JSON', 'TypeScript', 'React', 'cPanel', 'Microsoft 365', 'OneDrive', 'Planner', 'Outlook', 'Excel', 'Teams']
   }
@@ -63,37 +63,37 @@ export const TECH_CATEGORIES: TechCategory[] = [
   {
     id: 'frontend',
     title: 'Frontend',
-    description: 'Interfaces web con componentes reutilizables, estado claro y maquetacion responsive.',
+    description: 'Interfaces web, componentes reutilizables y maquetacion responsive.',
     iconName: 'layout',
-    skills: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Vite', 'Tailwind CSS']
+    skills: ['React', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind']
   },
   {
     id: 'backend',
     title: 'Backend y APIs',
-    description: 'Servicios web, APIs REST y persistencia en bases de datos relacionales.',
+    description: 'APIs, logica de servidor y servicios conectados a base de datos.',
     iconName: 'database',
-    skills: ['Java', 'Spring Boot', 'PHP', 'Symfony', 'APIs REST', 'MySQL']
+    skills: ['Java', 'Spring Boot', 'PHP', 'Symfony', 'APIs REST']
   },
   {
     id: 'scraping',
-    title: 'Datos y scraping',
-    description: 'Analisis de datos, automatizacion con Python y diseño de estructuras JSON.',
+    title: 'Datos',
+    description: 'Preparacion, organizacion y persistencia de datos.',
     iconName: 'binary',
-    skills: ['Python', 'Web Scraping', 'Analisis de datos', 'Diseño JSON']
+    skills: ['Python', 'Scraping', 'JSON', 'MySQL']
   },
   {
     id: 'devops',
-    title: 'Sistemas y despliegue',
-    description: 'Despliegues propios y administracion basica de servicios web en Linux.',
+    title: 'Despliegue',
+    description: 'Publicacion y seguimiento de aplicaciones en servidores propios.',
     iconName: 'server',
-    skills: ['Docker', 'Docker Compose', 'Linux', 'VPS', 'Caddy', 'Cloudflare', 'cPanel', 'SSH']
+    skills: ['Docker', 'Docker Compose', 'Linux', 'VPS', 'Caddy', 'Cloudflare', 'cPanel']
   },
   {
     id: 'tools',
     title: 'Herramientas',
-    description: 'Control de versiones, productividad profesional y herramientas de desarrollo.',
+    description: 'Control de versiones, productividad y herramientas profesionales.',
     iconName: 'settings',
-    skills: ['Git', 'GitHub', 'VS Code', 'Microsoft 365', 'OneDrive', 'Planner', 'Outlook', 'Excel', 'Teams', 'Android Studio', 'Odoo básico']
+    skills: ['Git', 'GitHub', 'Microsoft 365', 'Android Studio', 'Odoo básico']
   }
 ];
 
@@ -101,9 +101,9 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'pokemon-world',
     title: 'Pokémon World Map',
-    tagline: 'Aplicación web full stack desplegada como Proyecto Final de DAW',
-    description: 'Aplicacion web full stack desarrollada como proyecto final de Desarrollo de Aplicaciones Web. Permite explorar un mapa interactivo, consultar informacion relacionada con paises y clima, y trabajar con recomendaciones dentro de la experiencia de usuario.',
-    extendedDescription: 'El proyecto esta desplegado en produccion con una arquitectura contenerizada. Incluye frontend React + Vite, backend Java + Spring Boot, MySQL, registro, login, sesiones, confirmacion de cuenta por email mediante Brevo SMTP y administracion interna de base de datos mediante phpMyAdmin accesible por tunel SSH.',
+    tagline: 'En producción · Proyecto Final de DAW · Full Stack',
+    description: 'Aplicación web full stack desplegada en producción que combina mapa mundial interactivo, datos reales de países, clima actual y recomendaciones Pokémon según la temperatura.',
+    extendedDescription: 'Incluye frontend, backend, base de datos, autenticación con registro, login, sesiones, confirmación de cuenta por email mediante Brevo SMTP y despliegue real en VPS Linux con Docker Compose, Caddy y Cloudflare.',
     status: 'In Production',
     tags: ['React', 'Vite', 'Java', 'Spring Boot', 'MySQL', 'Docker Compose', 'Caddy', 'Cloudflare', 'VPS Linux', 'Brevo SMTP'],
     liveUrl: 'https://pokemon-world.es',
@@ -111,11 +111,11 @@ export const PROJECTS: ProjectItem[] = [
     category: 'Full Stack',
     architecture: {
       frontend: 'React + Vite',
-      backend: 'Java + Spring Boot con autenticacion, sesiones y confirmacion por email',
-      database: 'MySQL en contenedor, con phpMyAdmin interno mediante tunel SSH',
-      infrastructure: 'VPS Linux con Docker Compose',
-      proxy: 'Caddy como reverse proxy y Cloudflare para DNS, SSL/proxy y proteccion basica',
-      email: 'Brevo SMTP para confirmacion de cuenta por correo'
+      backend: 'Java + Spring Boot',
+      database: 'MySQL',
+      infrastructure: 'Docker Compose + VPS Linux',
+      proxy: 'Caddy + Cloudflare',
+      email: 'Brevo SMTP'
     }
   }
 ];

@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import Header from './components/Header.tsx';
-import Hero from './components/Hero.tsx';
-import About from './components/About.tsx';
-import Experience from './components/Experience.tsx';
-import TechStack from './components/TechStack.tsx';
-import Projects from './components/Projects.tsx';
-import Formation from './components/Formation.tsx';
-import Contact from './components/Contact.tsx';
-import Footer from './components/Footer.tsx';
-import ResumeModal from './components/ResumeModal.tsx';
+import Navegacion from './components/Navegacion.tsx';
+import Inicio from './components/Inicio.tsx';
+import Experiencia from './components/Experiencia.tsx';
+import Tecnologias from './components/Tecnologias.tsx';
+import Proyectos from './components/Proyectos.tsx';
+import Formacion from './components/Formacion.tsx';
+import Contacto from './components/Contacto.tsx';
+import PiePagina from './components/PiePagina.tsx';
+import ModalCurriculum from './components/ModalCurriculum.tsx';
 
 export default function App() {
   const [isCVOpen, setIsCVOpen] = useState(false);
@@ -23,57 +22,38 @@ export default function App() {
       </div>
 
       {/* Floating navigation header */}
-      <Header onOpenCV={() => setIsCVOpen(true)} />
+      <Navegacion onOpenCV={() => setIsCVOpen(true)} />
 
-      {/* Main Single-Screen Grid Stack */}
-      <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 pt-24 pb-20 space-y-28 relative z-10 print:p-0 print:m-0 print:max-w-none">
-        
-        {/* Hero Section */}
-        <Hero onOpenCV={() => setIsCVOpen(true)} />
+      <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 pt-24 pb-20 space-y-24 relative z-10 print:p-0 print:m-0 print:max-w-none">
+        <Inicio onOpenCV={() => setIsCVOpen(true)} />
 
-        {/* Divider line */}
         <div className="h-px bg-gradient-to-r from-transparent via-slate-800/60 to-transparent print:hidden" />
 
-        {/* Sobre mí & Contribución Section */}
-        <About />
+        <Experiencia />
 
-        {/* Divider line */}
         <div className="h-px bg-gradient-to-r from-transparent via-slate-800/60 to-transparent print:hidden" />
 
-        {/* Experiencia Section (Practices) */}
-        <Experience />
+        <Proyectos />
 
-        {/* Divider line */}
         <div className="h-px bg-gradient-to-r from-transparent via-slate-800/60 to-transparent print:hidden" />
 
-        {/* Tech Stack Category Hub */}
-        <TechStack />
+        <Tecnologias />
 
-        {/* Divider line */}
         <div className="h-px bg-gradient-to-r from-transparent via-slate-800/60 to-transparent print:hidden" />
 
-        {/* Core Projects (Pokémon World Map emphasis) */}
-        <Projects />
+        <Formacion />
 
-        {/* Divider line */}
         <div className="h-px bg-gradient-to-r from-transparent via-slate-800/60 to-transparent print:hidden" />
 
-        {/* Academics Formation (DAW emphasis) */}
-        <Formation />
-
-        {/* Divider line */}
-        <div className="h-px bg-gradient-to-r from-transparent via-slate-800/60 to-transparent print:hidden" />
-
-        {/* Quick Contact & Calls */}
-        <Contact />
+        <Contacto onOpenCV={() => setIsCVOpen(true)} />
 
       </main>
 
       {/* Web Footer */}
-      <Footer />
+      <PiePagina />
 
       {/* Professional print-ready CV creator Modal overlay */}
-      <ResumeModal isOpen={isCVOpen} onClose={() => setIsCVOpen(false)} />
+      <ModalCurriculum isOpen={isCVOpen} onClose={() => setIsCVOpen(false)} />
 
     </div>
   );
