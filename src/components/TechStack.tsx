@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState } from 'react';
 import { 
   Layout, 
@@ -75,7 +70,7 @@ export default function TechStack() {
           <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">ecosistema de trabajo</span>
           <h3 className="text-3xl font-display font-semibold text-slate-100">Stack Técnico & Herramientas</h3>
           <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
-            Herramientas y tecnologías que domino y utilizo activamente para dar vida a proyectos estables, escalables y monitorizados.
+            Tecnologias y herramientas que uso en proyectos academicos, practicas y despliegues propios.
           </p>
         </div>
 
@@ -176,7 +171,7 @@ export default function TechStack() {
       <div className="p-4 rounded-xl bg-indigo-950/10 border border-indigo-500/10 flex items-start gap-3">
         <Sparkles size={16} className="text-indigo-400 flex-shrink-0 mt-0.5" />
         <div className="text-xs leading-normal text-slate-400 font-mono">
-          <span className="text-slate-200 font-semibold">Nota de Producción:</span> Toda esta infraestructura, incluidos mis dominios DNS de Cloudflare, proxies inversos HTTPS con renovación periódica y redes contenerizadas Docker, está configurada manualmente en mi propia VPS Linux para replicar entornos de producción empresariales de forma real.
+          <span className="text-slate-200 font-semibold">Nota de despliegue:</span> Mantengo proyectos propios en una VPS Linux con Docker Compose, Caddy y Cloudflare, una base practica para entender entornos de produccion reales.
         </div>
       </div>
 

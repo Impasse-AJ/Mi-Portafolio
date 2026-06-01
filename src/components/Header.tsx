@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState, useEffect } from 'react';
 import { Menu, X, FileText, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -55,9 +50,10 @@ export default function Header({ onOpenCV }: HeaderProps) {
       const topOffset = 80; // height of floating navbar
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
     }
   };
@@ -120,13 +116,13 @@ export default function Header({ onOpenCV }: HeaderProps) {
             className="hidden sm:flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-mono tracking-wide font-semibold transition-all duration-200 shadow-md shadow-blue-500/15 cursor-pointer active:scale-95"
           >
             <FileText size={14} />
-            CV Impresora/PDF
+            Ver CV
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-1.5 text-slate-400 hover:text-slate-200 cursor-pointer rounded-lg hover:bg-slate-800/50"
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -169,7 +165,7 @@ export default function Header({ onOpenCV }: HeaderProps) {
                   className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-mono font-bold transition-all"
                 >
                   <FileText size={14} />
-                  Descargar / Imprimir CV
+                  Ver / Imprimir CV
                 </button>
               </div>
             </div>

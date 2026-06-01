@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState } from 'react';
 import { Mail, Github, Linkedin, Copy, Check, MapPin, ExternalLink, Sparkles } from 'lucide-react';
 import { PERSONAL_INFO } from '../data.ts';
@@ -22,7 +17,7 @@ export default function Contact() {
         <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">conexión rápida</span>
         <h3 className="text-3xl font-display font-semibold text-slate-100">¿Trabajamos juntos?</h3>
         <p className="text-slate-400 text-xs md:text-sm max-w-xl mx-auto">
-          ¿Buscas un perfil proactivo con ganas de crecer, capacidad de autoaprendizaje continuo y autonomía resolutiva? Hablemos.
+          Si buscas un perfil junior con base full stack, experiencia practica y ganas de seguir creciendo, puedes contactarme por email, LinkedIn o GitHub.
         </p>
       </div>
 
@@ -33,7 +28,7 @@ export default function Contact() {
           
           <div className="space-y-4 relative z-10">
             <h4 className="text-lg md:text-xl text-slate-200 font-display font-medium max-w-xl mx-auto leading-relaxed">
-              Actualmente disponible para incorporar como <span className="text-blue-400 font-semibold">Desarrollador Web Junior</span> o realizar prácticas avanzadas.
+              Disponible para oportunidades como <span className="text-blue-400 font-semibold">Desarrollador Web Junior</span> o practicas profesionales.
             </h4>
             <div className="flex items-center justify-center gap-1.5 text-xs text-slate-400 font-mono">
               <MapPin size={14} className="text-blue-500" />
@@ -47,6 +42,7 @@ export default function Contact() {
             <button
               onClick={handleCopyEmail}
               className="group p-4 rounded-xl bg-slate-900/50 hover:bg-slate-900 border border-slate-800 hover:border-blue-500/30 transition-all flex flex-col items-center gap-2.5 cursor-pointer text-center"
+              aria-label="Copiar email de contacto"
             >
               <div className="p-2.5 rounded-lg bg-blue-900/10 text-blue-400 border border-blue-500/10 transition-colors group-hover:bg-blue-600/10">
                 <Mail size={16} />
@@ -74,7 +70,7 @@ export default function Contact() {
             <a
               href={PERSONAL_INFO.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="group p-4 rounded-xl bg-slate-900/50 hover:bg-slate-900 border border-slate-800 hover:border-blue-500/30 transition-all flex flex-col items-center gap-2.5 cursor-pointer text-center"
             >
               <div className="p-2.5 rounded-lg bg-blue-900/10 text-blue-400 border border-blue-500/10 transition-colors group-hover:bg-blue-600/10">
@@ -93,7 +89,7 @@ export default function Contact() {
             <a
               href={PERSONAL_INFO.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="group p-4 rounded-xl bg-slate-900/50 hover:bg-slate-900 border border-slate-800 hover:border-blue-500/30 transition-all flex flex-col items-center gap-2.5 cursor-pointer text-center"
             >
               <div className="p-2.5 rounded-lg bg-blue-900/10 text-blue-400 border border-blue-500/10 transition-colors group-hover:bg-blue-600/10">
@@ -101,7 +97,7 @@ export default function Contact() {
               </div>
               <div className="space-y-0.5 mt-auto">
                 <span className="font-bold text-slate-200">GitHub</span>
-                <p className="text-[10px] text-slate-500">abrahampauta</p>
+                <p className="text-[10px] text-slate-500">Impasse-AJ</p>
               </div>
               <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-blue-400 opacity-60 group-hover:opacity-100 tracking-wider mt-auto">
                 Explorar <ExternalLink size={10} />
@@ -112,7 +108,7 @@ export default function Contact() {
           <div className="p-4 rounded-xl bg-blue-950/10 border border-blue-500/10 flex items-start gap-2.5 text-left max-w-xl mx-auto relative z-10 text-xs text-slate-400 leading-relaxed font-mono">
             <Sparkles size={14} className="text-yellow-400 flex-shrink-0 mt-0.5" />
             <span>
-              <span className="text-slate-200 font-semibold">Nota de privacidad:</span> No expongo mi número de teléfono personal en internet para salvaguardar la privacidad contra rastreadores automatizados de Spam. Si me envías un correo o mensaje de LinkedIn, me pondré en contacto contigo de inmediato facilitándote mi número de teléfono. ¡Gracias!
+              <span className="text-slate-200 font-semibold">Nota de privacidad:</span> No publico mi numero de telefono en la web para evitar indexacion automatica. Si necesitas hablar conmigo, puedes escribirme por correo o LinkedIn.
             </span>
           </div>
 

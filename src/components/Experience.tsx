@@ -1,9 +1,4 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { Briefcase, Calendar, MapPin, Building, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, MapPin, Building, ChevronDown, ChevronUp } from 'lucide-react';
 import { EXPERIENCE } from '../data.ts';
 import { useState } from 'react';
 import { motion } from 'motion/react';
@@ -30,7 +25,7 @@ export default function Experience() {
         <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">trayectoria</span>
         <h3 className="text-3xl font-display font-semibold text-slate-100">Experiencia Laboral</h3>
         <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
-          Mi formación escolar complementada con experiencia en el mundo de la consultoría real, abordando proyectos empresariales con tecnologías modernas.
+          Experiencia practica reciente en desarrollo web, tratamiento de datos y herramientas de trabajo profesional.
         </p>
       </motion.div>
 
@@ -98,7 +93,7 @@ export default function Experience() {
                     </p>
 
                     <div className="space-y-3 pt-1">
-                      <h5 className="text-[11px] font-mono uppercase tracking-widest text-slate-500 font-bold">Actividades y Hitos Clave:</h5>
+                      <h5 className="text-[11px] font-mono uppercase tracking-widest text-slate-500 font-bold">Actividades principales:</h5>
                       <ul className="space-y-2.5">
                         {item.bullets.map((bullet, bIdx) => (
                           <li key={bIdx} className="flex items-start gap-2 text-xs md:text-sm text-slate-400 leading-normal">
@@ -111,7 +106,7 @@ export default function Experience() {
 
                     {/* Tech Chips Grid */}
                     <div className="space-y-2 pt-4 border-t border-slate-900/60">
-                      <h5 className="text-[10px] font-mono uppercase tracking-widest text-slate-500 font-bold">Herramientas en Producción:</h5>
+                      <h5 className="text-[10px] font-mono uppercase tracking-widest text-slate-500 font-bold">Herramientas utilizadas:</h5>
                       <div className="flex flex-wrap gap-1.5">
                         {item.skills.map((skill, sIdx) => (
                           <span 

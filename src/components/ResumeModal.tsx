@@ -1,9 +1,4 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { Printer, X, Mail, Globe, Linkedin, Github, MapPin } from 'lucide-react';
+import { Printer, X, Mail, Linkedin, Github, MapPin } from 'lucide-react';
 import { PERSONAL_INFO } from '../data.ts';
 
 interface ResumeModalProps {
@@ -19,7 +14,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto animate-fadeIn print:absolute print:inset-0 print:bg-white print:p-0">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto animate-fadeIn print:absolute print:inset-0 print:bg-white print:p-0" role="dialog" aria-modal="true" aria-label="Currículum vitae de Abraham Pauta">
       
       {/* Modal element */}
       <div 
@@ -45,7 +40,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <button
               onClick={onClose}
               className="p-1.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
-              title="Close modal"
+              title="Cerrar modal"
+              aria-label="Cerrar CV"
             >
               <X size={16} />
             </button>
@@ -65,7 +61,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 {PERSONAL_INFO.title}
               </p>
               <p className="text-xs text-slate-500 font-medium max-w-xl">
-                Titulado en Desarrollo de Aplicaciones Web (DAW) y especializado en desarrollo integrador fullstack, extracción de información dinámica y despliegue real en VPS.
+                Titulado en Desarrollo de Aplicaciones Web (DAW), con base full stack, experiencia practica en datos para scraping y despliegues propios en VPS.
               </p>
             </div>
 
@@ -80,7 +76,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <Linkedin size={12} className="text-blue-600" />
               </div>
               <div className="flex items-center md:justify-end gap-2 leading-none">
-                <span>github.com/abrahampauta</span>
+                <span>github.com/Impasse-AJ</span>
                 <Github size={12} className="text-blue-600" />
               </div>
               <div className="flex items-center md:justify-end gap-2 leading-none">
@@ -115,11 +111,11 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   </div>
 
                   <ul className="space-y-1.5 text-xs text-slate-600 list-disc list-inside">
-                    <li>Planificación y ejecución de procesos avanzados de <strong className="text-slate-800">web scraping</strong> con Python orientados a la recopilación masiva de datos estructurados.</li>
-                    <li>Modelado y estructuración de esquemas <strong className="text-slate-800">JSON modulares</strong> para el cruce e importación optimizada de datos dinámicos.</li>
-                    <li>Desarrollo de módulos e interfaces reactivas utilizando <strong className="text-slate-800">TypeScript and React</strong> compilados bajo entornos de Vite.</li>
+                    <li>Analisis de fuentes y preparacion de procesos de <strong className="text-slate-800">web scraping</strong> con Python.</li>
+                    <li>Modelado y estructuracion de esquemas <strong className="text-slate-800">JSON</strong> para organizar datos dinamicos.</li>
+                    <li>Apoyo en modulos e interfaces utilizando <strong className="text-slate-800">TypeScript y React</strong>.</li>
                     <li>Supervisión y control periódico de servidores de hosting a través de administradores <strong className="text-slate-800">cPanel</strong>.</li>
-                    <li>Coordinación metodológica de proyectos con herramientas colaborativas <strong className="text-slate-800">Microsoft Office 365</strong> (OneDrive, Planner, Teams, Planner, Outlook, Excel).</li>
+                    <li>Gestion de documentacion, tareas y comunicacion con <strong className="text-slate-800">Microsoft 365</strong> (OneDrive, Planner, Teams, Outlook, Excel).</li>
                   </ul>
                 </div>
               </div>
@@ -137,14 +133,14 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                       <span className="font-mono text-[10px] bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded border border-green-200">En Producción</span>
                     </div>
                     <p className="text-xs text-slate-600 leading-normal">
-                      Aplicación web full stack interactiva con datos reales del clima mundial y recomendaciones de Pokémon. Desplegado de forma real sobre <strong className="text-slate-800">VPS Linux</strong> (Debian).
+                      Aplicación web full stack desarrollada como Proyecto Final de DAW y desplegada sobre <strong className="text-slate-800">VPS Linux</strong>.
                     </p>
                     <div className="font-mono text-[11px] text-slate-500 leading-normal pl-2.5 border-l-2 border-blue-500 space-y-0.5">
                       <p>• <strong className="text-slate-700">Frontend:</strong> React, Vite, Tailwind CSS, Lucide Icons</p>
-                      <p>• <strong className="text-slate-700">Backend & API:</strong> Java, Spring Boot, Spring Security (SSH Tunnel)</p>
+                      <p>• <strong className="text-slate-700">Backend & API:</strong> Java, Spring Boot, registro, login, sesiones y confirmación por email</p>
                       <p>• <strong className="text-slate-700">Dockerización:</strong> Docker Compose (contenedores aislados para App, Backend, MySQL)</p>
                       <p>• <strong className="text-slate-700">Ruteo HTTPS:</strong> Caddy Proxy (Auto-SSL Let's Encrypt) + Cloudflare proxy DNS</p>
-                      <p>• <strong className="text-slate-700">Email SMTP:</strong> Integración Brevo SMTP para tokens seguros de registro</p>
+                      <p>• <strong className="text-slate-700">Email SMTP:</strong> Integración Brevo SMTP para confirmación de cuenta</p>
                     </div>
                   </div>
 
@@ -154,7 +150,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                       <span className="font-mono text-[10px] text-slate-500 uppercase font-semibold">En Desarrollo</span>
                     </div>
                     <p className="text-xs text-slate-600 leading-normal">
-                      Currículum reactivo online optimizado con diagramas de ruteo DevOps y un módulo integrado de impresión de CVs. Alojado de forma autónoma en Docker y Caddy.
+                      Portfolio personal estatico con React, TypeScript, Vite, Tailwind CSS y modal imprimible de CV. Preparado para desplegar en Docker detras de Caddy.
                     </p>
                   </div>
                 </div>
@@ -200,7 +196,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
                   <div className="space-y-1">
                     <span className="font-bold text-slate-900 uppercase text-[10px] tracking-wider text-blue-700">Backend & DB:</span>
-                    <p className="leading-snug">Java, Spring Boot, PHP, Symfony, JPA Hibernate, APIs RESTful, MySQL</p>
+                    <p className="leading-snug">Java, Spring Boot, PHP, Symfony, APIs REST, MySQL</p>
                   </div>
 
                   <div className="space-y-1">
@@ -210,12 +206,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
                   <div className="space-y-1">
                     <span className="font-bold text-slate-900 uppercase text-[10px] tracking-wider text-blue-700">Datos & Scraping:</span>
-                    <p className="leading-snug">Python, Web Scraping, Parser de Datos, Estructuración de JSONs</p>
+                    <p className="leading-snug">Python, Web Scraping, analisis de datos, estructuracion JSON</p>
                   </div>
 
                   <div className="space-y-1">
                     <span className="font-bold text-slate-900 uppercase text-[10px] tracking-wider text-blue-700">Herramientas:</span>
-                    <p className="leading-snug">Git/GitHub, MS Planner, OneDrive, Teams, VS Code, Android Studio, Odoo Básico</p>
+                    <p className="leading-snug">Git/GitHub, Microsoft 365, Planner, OneDrive, Outlook, Excel, Teams, VS Code, Android Studio, Odoo basico</p>
                   </div>
                 </div>
               </div>
@@ -226,7 +222,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Footer warning inside printable template */}
           <div className="border-t border-slate-200 mt-8 pt-4 text-center text-[10px] text-slate-400 font-mono">
-            Documento generado dinámicamente desde el portfolio técnico (abrahampauta.com) alojado en Debian VPS.
+            Documento generado desde abrahampauta.com. No incluye telefono publico por privacidad.
           </div>
 
         </div>
@@ -237,7 +233,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             onClick={onClose}
             className="px-4 py-2 border border-slate-800 hover:border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer"
           >
-            Cerrar Preview
+            Cerrar vista previa
           </button>
         </div>
 

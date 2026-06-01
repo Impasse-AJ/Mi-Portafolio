@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { Code, Database, Server, Compass, CheckCircle2, Cpu } from 'lucide-react';
 import { PERSONAL_INFO, WHAT_I_BRING } from '../data.ts';
 
@@ -43,7 +38,7 @@ export default function About() {
               <p className="pl-4"><span className="text-slate-400">coreFocus:</span> <span className="text-slate-100">[</span><span className="text-green-300">"FullStack-Web"</span>, <span className="text-green-300">"Scraping"</span>, <span className="text-green-300">"DevOps"</span><span className="text-slate-100">]</span>,</p>
               <p className="pl-4"><span className="text-slate-400">currentPractices:</span> <span className="text-green-300">"EXA Formacion"</span>,</p>
               <p className="pl-4"><span className="text-slate-400">autonomousDeployment:</span> <span className="text-blue-300">true</span>,</p>
-              <p className="pl-4"><span className="text-slate-400">interest:</span> <span className="text-green-300">"Robust system architectures & parsing raw data"</span></p>
+              <p className="pl-4"><span className="text-slate-400">interest:</span> <span className="text-green-300">"Web apps, data and practical deployments"</span></p>
               <p>&#125;;</p>
             </div>
 
@@ -78,7 +73,7 @@ export default function About() {
               <CheckCircle2 size={16} className="text-green-400 flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold text-xs text-slate-200 uppercase font-mono tracking-wider">Datos e Ingeniería JSON</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Scraping masivo, automatización en Python y estructuración de esquemas.</p>
+                <p className="text-xs text-slate-400 mt-0.5">Analisis para scraping, automatizacion con Python y estructuracion JSON.</p>
               </div>
             </div>
 
@@ -86,7 +81,7 @@ export default function About() {
               <CheckCircle2 size={16} className="text-green-400 flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold text-xs text-slate-200 uppercase font-mono tracking-wider">Despliegue e Infraestructura</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Autonomía total sobre servidores VPS, contenedores Docker y proxy inverso.</p>
+                <p className="text-xs text-slate-400 mt-0.5">Despliegues propios en VPS, contenedores Docker y proxy inverso.</p>
               </div>
             </div>
             
@@ -94,7 +89,7 @@ export default function About() {
               <CheckCircle2 size={16} className="text-green-400 flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold text-xs text-slate-200 uppercase font-mono tracking-wider">Metodologías Colaborativas</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Trabajo ágil con Microsoft Suite, Planner, Teams, Planner, OneDrive.</p>
+                <p className="text-xs text-slate-400 mt-0.5">Trabajo organizado con Microsoft 365, Planner, Teams, Outlook y OneDrive.</p>
               </div>
             </div>
           </div>
@@ -107,7 +102,7 @@ export default function About() {
           <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">valor diferencial</span>
           <h3 className="text-2xl md:text-3xl font-display font-semibold text-slate-100">¿Qué puedo aportar a tu equipo?</h3>
           <p className="text-slate-400 text-xs md:text-sm max-w-2xl mx-auto">
-            Habilidades prácticas con enfoque profesional listas para integrarse en proyectos multidisciplinares y aportar valor desde el primer día.
+            Habilidades practicas y realistas para integrarme en equipos de desarrollo y seguir creciendo con buenas bases tecnicas.
           </p>
         </div>
 

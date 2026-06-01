@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState } from 'react';
 import Header from './components/Header.tsx';
 import Hero from './components/Hero.tsx';
@@ -19,13 +14,12 @@ export default function App() {
   const [isCVOpen, setIsCVOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans select-none antialiased selection:bg-blue-600/30 selection:text-white print:bg-white print:text-slate-800">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans antialiased selection:bg-blue-600/30 selection:text-white print:bg-white print:text-slate-800">
       
       {/* Background visual glow accents */}
       <div className="absolute top-0 inset-x-0 h-[800px] pointer-events-none z-0 overflow-hidden print:hidden">
-        <div className="absolute top-[-100px] left-[50%] -translate-x-[50%] w-[1000px] h-[350px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute top-44 left-[15%] w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[100px]" />
-        <div className="absolute top-96 right-[15%] w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(30,64,175,0.12),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.08)_1px,transparent_0)] bg-[size:28px_28px] opacity-40" />
       </div>
 
       {/* Floating navigation header */}

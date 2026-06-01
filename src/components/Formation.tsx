@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { GraduationCap, Landmark, Calendar, MapPin, CheckCircle } from 'lucide-react';
 import { ACADEMIC_BACKGROUND } from '../data.ts';
 
@@ -13,7 +8,7 @@ export default function Formation() {
         <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">formación reglada</span>
         <h3 className="text-3xl font-display font-semibold text-slate-100">Educación & Formación</h3>
         <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
-          Estructura académica certificada oficialmente que avala mis fundamentos teóricos y prácticos en el diseño y despliegue de software.
+          Formacion academica reglada en desarrollo web, programacion, bases de datos y despliegue de aplicaciones.
         </p>
       </div>
 
@@ -42,7 +37,7 @@ export default function Formation() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-slate-400">
-                  <span className="flex items-center gap-1.5ClassName">
+                  <span className="flex items-center gap-1.5">
                     <Landmark size={13} className="text-slate-500" />
                     {item.institution}
                   </span>
@@ -57,7 +52,7 @@ export default function Formation() {
                 </div>
 
                 {item.description && (
-                  <p className="text-slate-350 text-xs md:text-sm leading-relaxed pt-1 text-slate-400">
+                  <p className="text-xs md:text-sm leading-relaxed pt-1 text-slate-400">
                     {item.description}
                   </p>
                 )}

@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState } from 'react';
 import { 
   Github, 
@@ -14,12 +9,10 @@ import {
   Terminal, 
   ShieldCheck, 
   Activity, 
-  Check, 
   RotateCw,
   Layers,
   Sparkles
 } from 'lucide-react';
-import { motion } from 'motion/react';
 import { PERSONAL_INFO } from '../data.ts';
 
 interface HeroProps {
@@ -37,13 +30,13 @@ export default function Hero({ onOpenCV }: HeroProps) {
     setProbeLogs([]);
 
     const steps = [
-      '⚡ [DNS] Resolving DNS proxy layers via Cloudflare...',
-      '🛡️ [SSL] Validating Let\'s Encrypt TLS certificate through Caddy...',
-      '🐧 [VPS] Connecting to virtual private server via SSH tunnel...',
-      '🐳 [Docker] Verifying containers status in Docker Compose network...',
-      '📦 [API] Pinging Spring Boot backend API health-check endpoint...',
-      '💾 [DB] Testing MySQL database master persistence state...',
-      '✨ [SUCCESS] All systems online. pokemon-world.es running beautifully.'
+      '[DNS] Resolviendo dominio y proxy de Cloudflare...',
+      '[SSL] Revisando ruta HTTPS gestionada por Caddy...',
+      '[VPS] Comprobando servicio en servidor Linux...',
+      '[Docker] Verificando red de Docker Compose...',
+      '[API] Revisando disponibilidad del backend Spring Boot...',
+      '[DB] Confirmando persistencia de MySQL...',
+      '[OK] pokemon-world.es disponible.'
     ];
 
     steps.forEach((step, index) => {
@@ -62,9 +55,10 @@ export default function Hero({ onOpenCV }: HeroProps) {
       const topOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
     }
   };
@@ -80,7 +74,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
           {/* Availability Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/25 rounded-full text-[11px] font-mono font-semibold text-green-400 tracking-wide">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
-            Disponible para Oportunidades Junior o Prácticas
+              Disponible para oportunidades junior
           </div>
 
           <div className="space-y-3">
@@ -139,25 +133,28 @@ export default function Hero({ onOpenCV }: HeroProps) {
               <a 
                 href={PERSONAL_INFO.github} 
                 target="_blank" 
-                rel="noreferrer" 
+                rel="noopener noreferrer" 
                 className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
-                title="GitHub Profile"
+                title="GitHub"
+                aria-label="Abrir GitHub de Abraham Pauta"
               >
                 <Github size={16} />
               </a>
               <a 
                 href={PERSONAL_INFO.linkedin} 
                 target="_blank" 
-                rel="noreferrer" 
+                rel="noopener noreferrer" 
                 className="p-2 text-slate-400 hover:text-blue-400 hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
-                title="LinkedIn Profile"
+                title="LinkedIn"
+                aria-label="Abrir LinkedIn de Abraham Pauta"
               >
                 <Linkedin size={16} />
               </a>
               <a 
                 href={`mailto:${PERSONAL_INFO.email}`} 
                 className="p-2 text-slate-400 hover:text-green-400 hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
-                title="Send Email"
+                title="Enviar email"
+                aria-label="Enviar email a Abraham Pauta"
               >
                 <Mail size={16} />
               </a>
@@ -215,7 +212,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
                 <div className="space-y-4">
                   <div className="text-[11px] text-slate-400 leading-normal mb-1 flex items-center gap-1 bg-slate-900/50 p-2 rounded border border-slate-800/30">
                     <Sparkles size={12} className="text-yellow-400 flex-shrink-0" />
-                    <span>Diseño de ruteo ssl inverso en mis servidores</span>
+                  <span>Ruta de despliegue usada en proyectos propios</span>
                   </div>
 
                   {/* Flow Map Visual */}
@@ -224,12 +221,12 @@ export default function Hero({ onOpenCV }: HeroProps) {
                     <div className="flex justify-between gap-2.5">
                       <div className="flex-1 p-2 rounded-lg bg-orange-950/20 border border-orange-500/20 text-center">
                         <div className="text-[10px] text-orange-400 font-bold uppercase tracking-wider">Cloudflare</div>
-                        <div className="text-slate-400 text-[10px] mt-0.5">DNS Shield & SSL</div>
+                        <div className="text-slate-400 text-[10px] mt-0.5">DNS y proxy</div>
                       </div>
                       <div className="flex items-center justify-center p-1 text-slate-600">→</div>
                       <div className="flex-1 p-2 rounded-lg bg-teal-950/20 border border-teal-500/20 text-center">
-                        <div className="text-[10px] text-teal-400 font-bold uppercase tracking-wider">Caddy Proxy</div>
-                        <div className="text-slate-400 text-[10px] mt-0.5">Auto-SSL TLS (reverse)</div>
+                        <div className="text-[10px] text-teal-400 font-bold uppercase tracking-wider">Caddy</div>
+                        <div className="text-slate-400 text-[10px] mt-0.5">Reverse proxy</div>
                       </div>
                     </div>
 
@@ -241,7 +238,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
                         <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest flex items-center gap-1">
                           <Server size={10} /> VPS Linux (Docker Compose)
                         </span>
-                        <span className="text-[9px] bg-green-500/10 text-green-400 px-1.5 py-0.2 rounded font-semibold border border-green-500/20">Active</span>
+                        <span className="text-[9px] bg-green-500/10 text-green-400 px-1.5 py-0.5 rounded font-semibold border border-green-500/20">Activo</span>
                       </div>
                       <div className="grid grid-cols-3 gap-2 text-[10px] font-semibold">
                         <div className="p-1 rounded bg-slate-900/80 border border-slate-800 text-center">
@@ -254,7 +251,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
                         </div>
                         <div className="p-1 rounded bg-slate-900/80 border border-slate-800 text-center text-green-400">
                           <div>MySQL DB</div>
-                          <div className="text-slate-500 text-[8px] font-normal leading-0">Isolated</div>
+                          <div className="text-slate-500 text-[8px] font-normal leading-none">Persistente</div>
                         </div>
                       </div>
                     </div>
@@ -269,7 +266,7 @@ export default function Hero({ onOpenCV }: HeroProps) {
                       <Terminal size={32} className="text-slate-700 animate-pulse" />
                       <div className="space-y-1">
                         <p className="text-slate-300 font-semibold text-xs">Simulador de Verificación de Producción</p>
-                        <p className="text-[10px] max-w-xs text-slate-500">¿Quieres ver cómo interactúan SSL, Caddy y Docker Compose? Haz clic para iniciar un escaneo de red.</p>
+                        <p className="text-[10px] max-w-xs text-slate-500">Pulsa para ver una simulación de comprobación de despliegue.</p>
                       </div>
                       <button
                         onClick={handleRunProbe}
@@ -324,9 +321,9 @@ export default function Hero({ onOpenCV }: HeroProps) {
             
             {/* Info footer bar for console */}
             <div className="px-4 py-2 bg-slate-950/90 border-t border-slate-900 flex justify-between items-center text-[10px] font-mono text-slate-500">
-              <span>HOST: VPS-AMD64-MADRID</span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-green-500"></span> docker-compose daemon running
+                <span>HOST: VPS-LINUX</span>
+                <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-green-500"></span> docker compose activo
               </span>
             </div>
             
