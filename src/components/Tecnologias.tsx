@@ -1,86 +1,88 @@
-import { 
-  Layout, 
-  Database, 
-  Binary, 
-  Server, 
-  Settings, 
-  Layers,
-  Sparkles 
+import {
+  Layout,
+  Database,
+  Binary,
+  Server,
+  Settings,
+  Sparkles
 } from 'lucide-react';
 import { TECH_CATEGORIES } from '../data.ts';
 
+const categoryStyles: Record<string, { icon: string; border: string; bg: string; dot: string }> = {
+  layout:   { icon: 'text-accent-cyan',   border: 'border-accent-cyan/15 hover:border-accent-cyan/30',   bg: 'bg-accent-cyan/4',   dot: 'bg-accent-cyan' },
+  binary:   { icon: 'text-accent-violet', border: 'border-accent-violet/15 hover:border-accent-violet/30', bg: 'bg-accent-violet/4', dot: 'bg-accent-violet' },
+  database: { icon: 'text-accent-mint',   border: 'border-accent-mint/15 hover:border-accent-mint/30',   bg: 'bg-accent-mint/4',   dot: 'bg-accent-mint' },
+  server:   { icon: 'text-blue-300',      border: 'border-blue-400/15 hover:border-blue-400/30',          bg: 'bg-blue-400/4',      dot: 'bg-blue-400' },
+  settings: { icon: 'text-slate-300',     border: 'border-slate-500/20 hover:border-slate-400/35',        bg: 'bg-slate-400/3',     dot: 'bg-slate-400' },
+};
+
 export default function Tecnologias() {
-  const getCategoryIcon = (iconName: string) => {
+  const getCategoryIcon = (iconName: string, styleClass: string) => {
+    const size = 18;
     switch (iconName) {
-      case 'layout':
-        return <Layout className="text-blue-400" size={20} />;
-      case 'database':
-        return <Database className="text-teal-400" size={20} />;
-      case 'binary':
-        return <Binary className="text-emerald-400" size={20} />;
-      case 'server':
-        return <Server className="text-indigo-400" size={20} />;
-      case 'settings':
-        return <Settings className="text-purple-400" size={20} />;
-      default:
-        return <Layers className="text-blue-400" size={20} />;
+      case 'layout':   return <Layout   className={styleClass} size={size} />;
+      case 'database': return <Database className={styleClass} size={size} />;
+      case 'binary':   return <Binary   className={styleClass} size={size} />;
+      case 'server':   return <Server   className={styleClass} size={size} />;
+      case 'settings': return <Settings className={styleClass} size={size} />;
+      default:         return <Layout   className={styleClass} size={size} />;
     }
   };
 
   return (
     <section id="tech" className="space-y-10 scroll-mt-24">
-      
-      {/* Title block */}
+
       <div className="space-y-2 text-left">
-        <span className="text-xs font-mono font-bold tracking-widest text-blue-500 uppercase">stack técnico</span>
-        <h3 className="text-3xl font-display font-semibold text-slate-100">Tecnologías y herramientas</h3>
+        <span className="text-xs font-mono font-bold tracking-widest text-accent-cyan uppercase">stack técnico</span>
+        <h3 className="text-3xl font-display font-semibold text-white">Tecnologías y herramientas</h3>
         <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
           Stack agrupado por áreas para mostrar lo que uso en prácticas, proyectos académicos y despliegues propios.
         </p>
       </div>
 
-      {/* Grid of categories */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        {TECH_CATEGORIES.map((category) => (
-          <div 
-            key={category.id}
-            className="p-5 rounded-2xl bg-slate-950/40 hover:bg-slate-950/60 border border-slate-900 hover:border-slate-800/80 transition-all duration-300"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center">
-                  {getCategoryIcon(category.iconName)}
+        {TECH_CATEGORIES.map((category) => {
+          const style = categoryStyles[category.iconName] ?? categoryStyles.settings;
+          return (
+            <div
+              key={category.id}
+              className={`p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5 ${style.border} ${style.bg}`}
+            >
+              <div className="space-y-3.5">
+                <div className="flex items-center gap-2.5">
+                  <div className={`w-9 h-9 rounded-xl border flex items-center justify-center flex-shrink-0 ${style.bg} ${style.border}`}>
+                    {getCategoryIcon(category.iconName, style.icon)}
+                  </div>
+                  <h4 className="text-white font-semibold text-sm tracking-tight leading-tight">{category.title}</h4>
                 </div>
-                <h4 className="text-slate-100 font-semibold text-sm tracking-tight">{category.title}</h4>
+
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  {category.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 pt-1 border-t border-white/6">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-2 py-1 rounded-lg font-mono text-[10px] tracking-wide bg-slate-900/80 text-slate-300 border border-white/7"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-
-              <p className="text-slate-400 text-xs leading-relaxed">
-                {category.description}
-              </p>
             </div>
-
-            <div className="flex flex-wrap gap-1.5 pt-4 mt-4 border-t border-slate-900/60">
-              {category.skills.map((skill) => (
-                <span 
-                  key={skill} 
-                  className="px-2 py-1 rounded font-mono text-[10px] tracking-wide bg-slate-900 text-slate-400 border border-slate-800/60"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* DevOps highlight note */}
-      <div className="p-4 rounded-xl bg-indigo-950/10 border border-indigo-500/10 flex items-start gap-3">
-        <Sparkles size={16} className="text-indigo-400 flex-shrink-0 mt-0.5" />
+      <div className="p-4 rounded-xl bg-accent-cyan/4 border border-accent-cyan/12 flex items-start gap-3">
+        <Sparkles size={15} className="text-accent-cyan flex-shrink-0 mt-0.5" />
         <div className="text-xs leading-normal text-slate-400 font-mono">
-          <span className="text-slate-200 font-semibold">Nota de despliegue:</span> Mantengo proyectos propios en una VPS Linux con Docker Compose, Caddy y Cloudflare, una base practica para entender entornos de produccion reales.
+          <span className="text-white font-semibold">Nota de despliegue:</span>{' '}
+          Mantengo proyectos propios en una VPS Linux con Docker Compose, Caddy y Cloudflare, una base práctica para entender entornos de producción reales.
         </div>
       </div>
-
     </section>
   );
 }
