@@ -19,8 +19,22 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Abraham Pauta | Desarrollador Web Full Stack Junior" />
     <meta name="twitter:description" content="Portfolio profesional de Abraham Pauta, desarrollador web full stack junior." />
-    <meta name="theme-color" content="#020617" />
+    <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Anti-flash: apply dark class before paint if needed -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (t === 'dark' || (t === null && d)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

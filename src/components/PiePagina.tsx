@@ -1,28 +1,26 @@
-import { Terminal } from 'lucide-react';
 import { PERSONAL_INFO } from '../data.ts';
 
 export default function PiePagina() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-slate-950 border-t border-white/6 py-10 px-6 print:hidden">
+    <footer className="w-full bg-white dark:bg-[#111111] border-t border-[#d2d2d7] dark:border-[#2c2c2e] py-10 px-6 print:hidden">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
 
         <div className="flex flex-col items-center md:items-start gap-1">
-          <span className="text-sm font-display font-bold text-white tracking-tight">
+          <span className="text-sm font-display font-semibold text-[#1d1d1f] dark:text-[#f5f5f7]">
             {PERSONAL_INFO.name}
           </span>
-          <p className="text-[11px] font-mono text-slate-500">
+          <p className="text-[11px] font-mono text-[#86868b] dark:text-[#6e6e73]">
             Desarrollador Web Full Stack Junior
           </p>
         </div>
 
-        <div className="text-center font-mono text-xs text-slate-500">
+        <div className="text-center text-xs text-[#86868b] dark:text-[#6e6e73] font-mono">
           <p>© {currentYear} {PERSONAL_INFO.name}. Reservados todos los derechos.</p>
-          <div className="flex items-center justify-center gap-1.5 text-[10px] text-slate-600 mt-1">
-            <Terminal size={10} className="text-accent-cyan/50" />
-            <span>Portfolio estático preparado para Docker, Caddy y Cloudflare.</span>
-          </div>
+          <p className="text-[10px] mt-1 text-[#d2d2d7] dark:text-[#3a3a3c]">
+            Portfolio estático · Docker · Caddy · Cloudflare
+          </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs font-mono">
@@ -30,8 +28,8 @@ export default function PiePagina() {
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-500 hover:text-white transition-colors"
             aria-label="GitHub de Abraham Pauta"
+            className="text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] transition-colors"
           >
             GitHub
           </a>
@@ -39,8 +37,8 @@ export default function PiePagina() {
             href={PERSONAL_INFO.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-500 hover:text-blue-300 transition-colors"
             aria-label="LinkedIn de Abraham Pauta"
+            className="text-[#86868b] hover:text-[#0066cc] dark:hover:text-[#2997ff] transition-colors"
           >
             LinkedIn
           </a>
@@ -48,12 +46,13 @@ export default function PiePagina() {
             href="https://pokemon-world.es"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-500 hover:text-accent-cyan transition-colors"
-            aria-label="Ver Pokémon World Map en producción"
+            aria-label="Ver Pokémon World Map"
+            className="text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] transition-colors"
           >
             Pokémon World Map
           </a>
         </div>
+
       </div>
     </footer>
   );

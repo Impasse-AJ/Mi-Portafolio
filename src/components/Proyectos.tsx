@@ -6,42 +6,41 @@ export default function Proyectos() {
   const mainProject = PROJECTS.find(p => p.id === 'pokemon-world')!;
 
   return (
-    <section id="projects" className="space-y-12 scroll-mt-24">
+    <section id="projects" className="scroll-mt-24">
+
       <motion.div
-        className="space-y-2 text-left"
-        initial={{ opacity: 0, y: 30 }}
+        className="space-y-3 mb-12"
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-xs font-mono font-bold tracking-widest text-accent-cyan uppercase">proyecto principal</span>
-        <h3 className="text-3xl font-display font-semibold text-white">Pokémon World Map</h3>
-        <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
+        <span className="text-xs font-mono font-bold tracking-widest text-[#0891b2] dark:text-accent-cyan uppercase">proyecto principal</span>
+        <h3 className="text-3xl font-display font-bold text-[#1d1d1f] dark:text-white">Pokémon World Map</h3>
+        <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm md:text-base max-w-2xl">
           Proyecto real desarrollado, desplegado y mantenido en una VPS propia, con frontend, backend, base de datos y correo transaccional.
         </p>
       </motion.div>
 
       <motion.div
-        className="relative group rounded-2xl bg-slate-900/40 border border-white/8 overflow-hidden shadow-2xl shadow-black/40 transition-all duration-500 hover:border-accent-cyan/20"
-        initial={{ opacity: 0, y: 40 }}
+        className="rounded-2xl border border-[#d2d2d7] dark:border-white/10 overflow-hidden shadow-sm dark:shadow-none"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6 }}
       >
         {/* Banner */}
-        <div className="h-52 md:h-64 bg-gradient-to-br from-slate-900 via-blue-950/30 to-slate-900 relative border-b border-white/6 flex items-center justify-center p-4 overflow-hidden">
-          {/* Ambient glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(39,245,238,0.06)_0%,transparent_65%)] pointer-events-none" />
-          {/* Grid pattern */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.06)_1px,transparent_0)] bg-[size:20px_20px] opacity-60" />
+        <div className="h-52 md:h-64 bg-[#f5f5f7] dark:bg-[#111111] relative border-b border-[#d2d2d7] dark:border-white/8 flex items-center justify-center p-4 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(8,145,178,0.06)_0%,transparent_65%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(39,245,238,0.07)_0%,transparent_65%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.04)_1px,transparent_0)] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.04)_1px,transparent_0)] bg-[size:20px_20px]" />
 
-          {/* Status badges */}
-          <div className="absolute top-4 right-4 flex flex-wrap gap-2 z-10">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono tracking-wider font-bold bg-green-500/10 border border-green-500/25 text-green-400">
+          {/* Badges */}
+          <div className="absolute top-4 right-4 flex gap-2 z-10">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono font-bold bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/25 text-green-700 dark:text-green-400">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
               EN PRODUCCIÓN
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono tracking-wider font-bold bg-accent-cyan/8 border border-accent-cyan/20 text-accent-cyan">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono font-bold bg-[#0891b2]/8 dark:bg-accent-cyan/10 border border-[#0891b2]/20 dark:border-accent-cyan/25 text-[#0891b2] dark:text-accent-cyan">
               <Server size={10} />
               VPS PROPIA
             </span>
@@ -49,40 +48,35 @@ export default function Proyectos() {
 
           {/* Bottom label */}
           <div className="absolute bottom-4 left-4 z-10">
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-950/80 border border-white/8 text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-white/80 dark:bg-black/60 border border-[#d2d2d7] dark:border-white/10 text-[10px] font-mono text-[#6e6e73] dark:text-[#a1a1a6] font-medium uppercase tracking-wider">
               Proyecto Final de DAW · Full Stack
             </span>
           </div>
 
-          {/* Domain showcase */}
+          {/* Domain */}
           <div className="text-center space-y-2 z-10">
-            <div className="text-accent-cyan text-2xl sm:text-4xl font-mono tracking-tight select-none font-bold drop-shadow-sm">
+            <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#0891b2] via-[#7c3aed] to-[#1d1d1f] dark:from-accent-cyan dark:via-accent-violet dark:to-white text-3xl sm:text-4xl font-mono font-bold tracking-tight select-none">
               pokemon-world.es
             </div>
-            <p className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+            <p className="text-[11px] font-mono text-[#86868b] dark:text-[#6e6e73] uppercase tracking-widest">
               React · Spring Boot · MySQL · Docker Compose
             </p>
           </div>
         </div>
 
-        <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Content */}
+        <div className="p-6 md:p-10 bg-white dark:bg-[#111111] grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-          {/* Description column */}
+          {/* Description */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="space-y-1.5">
-              <h4 className="text-white font-display font-bold text-2xl tracking-tight">
-                {mainProject.title}
-              </h4>
-              <p className="text-accent-cyan/80 text-xs font-mono font-semibold">
-                {mainProject.tagline}
-              </p>
+            <div>
+              <h4 className="text-[#1d1d1f] dark:text-white font-display font-bold text-2xl tracking-tight">{mainProject.title}</h4>
+              <p className="text-[#0891b2] dark:text-accent-cyan text-xs font-mono font-medium mt-1">{mainProject.tagline}</p>
             </div>
 
             <div className="space-y-3 text-sm leading-relaxed">
-              <p className="text-slate-300">{mainProject.description}</p>
-              <p className="text-slate-400 text-xs md:text-sm">
-                {mainProject.extendedDescription}
-              </p>
+              <p className="text-[#1d1d1f] dark:text-[#d1d1d6]">{mainProject.description}</p>
+              <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-xs md:text-sm">{mainProject.extendedDescription}</p>
             </div>
 
             {/* Architecture grid */}
@@ -95,17 +89,17 @@ export default function Proyectos() {
                 ['Proxy/SSL/DNS', mainProject.architecture.proxy],
                 ['Email', mainProject.architecture.email],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-xl bg-white/3 border border-white/7 p-3 hover:border-accent-cyan/20 transition-colors">
-                  <div className="text-[10px] uppercase tracking-wider font-mono text-accent-cyan/70 font-bold mb-0.5">{label}</div>
-                  <div className="text-slate-300 text-xs">{value}</div>
+                <div key={label} className="rounded-xl bg-[#f5f5f7] dark:bg-white/4 border border-[#d2d2d7] dark:border-white/8 p-3 hover:border-[#0891b2]/30 dark:hover:border-white/15 transition-colors">
+                  <div className="text-[10px] uppercase tracking-wider font-mono text-[#0891b2] dark:text-accent-cyan font-bold mb-0.5">{label}</div>
+                  <div className="text-[#1d1d1f] dark:text-[#d1d1d6] text-xs">{value}</div>
                 </div>
               ))}
             </div>
 
             {/* What it shows */}
-            <div className="rounded-xl bg-accent-cyan/3 border border-accent-cyan/12 p-4 space-y-3">
-              <h5 className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold">Qué demuestra</h5>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-400">
+            <div className="rounded-xl bg-[#f5f5f7] dark:bg-white/3 border border-[#d2d2d7] dark:border-white/8 p-5 space-y-3">
+              <h5 className="text-[10px] font-mono uppercase tracking-widest text-[#86868b] dark:text-[#6e6e73] font-bold">Qué demuestra</h5>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#6e6e73] dark:text-[#a1a1a6]">
                 {[
                   'Desarrollo frontend y backend.',
                   'Integración con APIs externas.',
@@ -114,67 +108,66 @@ export default function Proyectos() {
                   'Despliegue real con Docker, Caddy, Cloudflare y VPS.',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <CheckCircle2 size={13} className="text-accent-cyan/70 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={13} className="text-green-500 dark:text-green-400 flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Action buttons */}
-            <div className="flex flex-wrap gap-3 pt-2 border-t border-white/6">
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-3 pt-2 border-t border-[#d2d2d7] dark:border-white/8">
               <a
                 href={mainProject.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visitar Pokémon World Map en producción"
-                className="flex items-center gap-2 px-5 py-2.5 bg-accent-cyan hover:bg-accent-cyan/85 text-slate-950 rounded-xl text-xs font-mono font-bold transition-all shadow-lg shadow-accent-cyan/20 hover:-translate-y-0.5 cursor-pointer"
+                className="flex items-center gap-2 px-6 py-2.5 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-colors duration-150 shadow-sm hover:-translate-y-px cursor-pointer"
               >
-                <ExternalLink size={13} />
+                <ExternalLink size={14} />
                 Ver demo
               </a>
-
               <a
                 href={mainProject.codeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ver código de Pokémon World Map en GitHub"
-                className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-100 hover:text-white border border-white/10 hover:border-white/20 rounded-xl text-xs font-mono font-semibold transition-all hover:-translate-y-0.5 cursor-pointer"
+                aria-label="Ver código en GitHub"
+                className="flex items-center gap-2 px-6 py-2.5 bg-[#1d1d1f] dark:bg-white/8 hover:bg-[#3a3a3c] dark:hover:bg-white/12 text-white border border-transparent dark:border-white/15 hover:border-transparent dark:hover:border-white/25 rounded-xl text-sm font-semibold transition-colors duration-150 hover:-translate-y-px cursor-pointer"
               >
-                <Github size={13} />
+                <Github size={14} />
                 Ver GitHub
               </a>
             </div>
           </div>
 
-          {/* DevOps visualizer */}
-          <div className="lg:col-span-5 bg-slate-950/70 border border-white/7 rounded-xl p-5 space-y-4 font-mono text-xs">
-            <div className="flex items-center gap-2 border-b border-white/6 pb-2.5">
-              <Network size={14} className="text-accent-cyan" />
-              <span className="text-slate-200 font-bold text-[11px] uppercase tracking-wide">Esquema DevOps y Backend</span>
+          {/* DevOps diagram */}
+          <div className="lg:col-span-5 bg-[#f5f5f7] dark:bg-black/50 border border-[#d2d2d7] dark:border-white/8 rounded-xl p-5 space-y-4 font-mono text-xs">
+            <div className="flex items-center gap-2 border-b border-[#d2d2d7] dark:border-white/8 pb-3">
+              <Network size={14} className="text-[#0891b2] dark:text-accent-cyan" />
+              <span className="text-[#1d1d1f] dark:text-white font-bold text-[11px] uppercase tracking-wide">Esquema DevOps</span>
             </div>
 
-            <div className="space-y-3.5">
+            <div className="space-y-4">
               {[
-                { label: 'FRONTEND', value: mainProject.architecture.frontend, color: 'bg-accent-cyan' },
-                { label: 'BACKEND', value: mainProject.architecture.backend, color: 'bg-accent-violet' },
-                { label: 'BASE DE DATOS', value: mainProject.architecture.database, color: 'bg-accent-mint' },
-                { label: 'PROXY / SSL INVERSO', value: mainProject.architecture.proxy, color: 'bg-orange-400' },
-                { label: 'CORREO SMTP & TOKENS', value: mainProject.architecture.email, color: 'bg-blue-400' },
+                { label: 'FRONTEND',       value: mainProject.architecture.frontend,       color: 'bg-[#0891b2] dark:bg-accent-cyan' },
+                { label: 'BACKEND',        value: mainProject.architecture.backend,        color: 'bg-violet-500 dark:bg-accent-violet' },
+                { label: 'BASE DE DATOS',  value: mainProject.architecture.database,       color: 'bg-emerald-500 dark:bg-accent-mint' },
+                { label: 'PROXY / SSL',    value: mainProject.architecture.proxy,          color: 'bg-orange-400' },
+                { label: 'CORREO SMTP',    value: mainProject.architecture.email,          color: 'bg-teal-400' },
               ].map(({ label, value, color }) => (
                 <div key={label} className="space-y-0.5">
-                  <span className={`text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5`}>
+                  <span className="text-[10px] text-[#86868b] dark:text-[#6e6e73] font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <span className={`w-1.5 h-1.5 rounded-full ${color}`}></span>
                     {label}
                   </span>
-                  <p className="text-[11px] text-slate-300 pl-3 leading-snug">{value}</p>
+                  <p className="text-[11px] text-[#1d1d1f] dark:text-[#d1d1d6] pl-3 leading-snug">{value}</p>
                 </div>
               ))}
             </div>
 
-            <div className="bg-slate-900/80 border border-white/6 p-2.5 rounded-lg text-[10px] text-slate-400 mt-2 flex items-start gap-1.5">
-              <Terminal size={12} className="text-accent-cyan flex-shrink-0 mt-0.5" />
-              <span>Administración interna de base de datos mediante phpMyAdmin accesible por túnel SSH.</span>
+            <div className="bg-white dark:bg-white/4 border border-[#d2d2d7] dark:border-white/8 p-2.5 rounded-lg text-[10px] text-[#6e6e73] dark:text-[#6e6e73] flex items-start gap-1.5">
+              <Terminal size={11} className="text-[#0891b2] dark:text-accent-cyan flex-shrink-0 mt-0.5" />
+              <span>Administración de base de datos mediante phpMyAdmin accesible por túnel SSH.</span>
             </div>
           </div>
         </div>

@@ -8,40 +8,10 @@ export default function Experiencia() {
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'code':
-        return <Code className="text-accent-cyan" size={18} />;
-      case 'database':
-        return <Database className="text-accent-mint" size={18} />;
-      case 'server':
-        return <Server className="text-accent-violet" size={18} />;
-      default:
-        return <ClipboardCheck className="text-blue-400" size={18} />;
-    }
-  };
-
-  const getCardAccent = (iconName: string) => {
-    switch (iconName) {
-      case 'code':
-        return 'border-accent-cyan/15 hover:border-accent-cyan/30 bg-accent-cyan/3';
-      case 'database':
-        return 'border-accent-mint/15 hover:border-accent-mint/30 bg-accent-mint/3';
-      case 'server':
-        return 'border-accent-violet/15 hover:border-accent-violet/30 bg-accent-violet/3';
-      default:
-        return 'border-blue-500/15 hover:border-blue-400/30 bg-blue-500/3';
-    }
-  };
-
-  const getIconBg = (iconName: string) => {
-    switch (iconName) {
-      case 'code':
-        return 'bg-accent-cyan/10 border-accent-cyan/20';
-      case 'database':
-        return 'bg-accent-mint/10 border-accent-mint/20';
-      case 'server':
-        return 'bg-accent-violet/10 border-accent-violet/20';
-      default:
-        return 'bg-blue-500/10 border-blue-500/20';
+      case 'code':     return <Code      className="text-[#0891b2] dark:text-accent-cyan" size={18} />;
+      case 'database': return <Database  className="text-[#0891b2] dark:text-accent-cyan" size={18} />;
+      case 'server':   return <Server    className="text-[#0891b2] dark:text-accent-cyan" size={18} />;
+      default:         return <ClipboardCheck className="text-[#0891b2] dark:text-accent-cyan" size={18} />;
     }
   };
 
@@ -52,100 +22,88 @@ export default function Experiencia() {
   return (
     <section id="experience" className="space-y-12 scroll-mt-24">
       <motion.div
-        className="space-y-2 text-left"
-        initial={{ opacity: 0, y: 30 }}
+        className="space-y-2"
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-xs font-mono font-bold tracking-widest text-accent-cyan uppercase">trayectoria</span>
-        <h3 className="text-3xl font-display font-semibold text-white">Experiencia y aportación</h3>
-        <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
+        <span className="text-xs font-mono font-bold tracking-widest text-[#0891b2] dark:text-accent-cyan uppercase">trayectoria</span>
+        <h3 className="text-3xl font-display font-bold text-[#1d1d1f] dark:text-[#f5f5f7]">Experiencia y aportación</h3>
+        <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm md:text-base max-w-2xl">
           Experiencia práctica reciente en desarrollo web, tratamiento de datos y herramientas de trabajo profesional.
         </p>
       </motion.div>
 
       {/* Timeline */}
-      <div className="relative pl-6 sm:pl-8 border-l border-accent-cyan/15 space-y-12 py-2">
+      <div className="relative pl-6 sm:pl-8 border-l-2 border-[#d2d2d7] dark:border-[#3a3a3c] space-y-10 py-2">
         {EXPERIENCE.map((item, idx) => {
-          const isItemExpanded = expanded[idx];
+          const isExpanded = expanded[idx];
           return (
             <motion.div
               key={idx}
               className="relative group"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5 }}
             >
               {/* Timeline dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] w-4 h-4 rounded-full bg-slate-950 border-2 border-accent-cyan flex items-center justify-center top-1.5 z-10 group-hover:scale-125 transition-transform duration-200 shadow-sm shadow-accent-cyan/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse"></span>
+              <div className="absolute -left-[31px] sm:-left-[39px] w-4 h-4 rounded-full bg-white dark:bg-[#111111] border-2 border-[#0891b2] dark:border-accent-cyan top-2 z-10 group-hover:scale-125 transition-transform duration-200 shadow-sm">
+                <span className="absolute inset-0.5 rounded-full bg-[#0891b2] dark:bg-accent-cyan"></span>
               </div>
 
               {/* Card */}
-              <div className="rounded-2xl bg-slate-900/40 hover:bg-slate-900/60 border border-white/8 hover:border-white/15 transition-all duration-300 p-6 md:p-8 space-y-5 shadow-lg shadow-black/20">
+              <div className="rounded-2xl bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] hover:border-[#86868b] dark:hover:border-[#6e6e73] transition-all duration-300 p-6 md:p-8 space-y-5 shadow-sm dark:shadow-none">
 
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-1 rounded-lg bg-accent-cyan/8 text-accent-cyan border border-accent-cyan/20 text-[10px] font-mono font-bold tracking-wide uppercase">
-                        Prácticas Profesionales
-                      </span>
-                    </div>
-                    <h4 className="text-white font-display font-semibold text-xl tracking-tight">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                  <div className="space-y-2">
+                    <span className="inline-block px-2.5 py-1 rounded-lg bg-[#0891b2]/8 dark:bg-accent-cyan/10 border border-[#0891b2]/15 dark:border-accent-cyan/20 text-[10px] font-mono font-bold tracking-wide uppercase text-[#0891b2] dark:text-accent-cyan">
+                      Prácticas Profesionales
+                    </span>
+                    <h4 className="text-[#1d1d1f] dark:text-[#f5f5f7] font-display font-bold text-xl tracking-tight">
                       {item.role}
                     </h4>
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-400 font-mono">
-                      <span className="flex items-center gap-1.5">
-                        <Building size={12} className="text-slate-500" />
-                        {item.company}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <MapPin size={12} className="text-slate-500" />
-                        {item.location}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Calendar size={12} className="text-slate-500" />
-                        {item.period}
-                      </span>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-[#6e6e73] dark:text-[#6e6e73] font-mono">
+                      <span className="flex items-center gap-1.5"><Building size={12} />{item.company}</span>
+                      <span className="flex items-center gap-1.5"><MapPin size={12} />{item.location}</span>
+                      <span className="flex items-center gap-1.5"><Calendar size={12} />{item.period}</span>
                     </div>
                   </div>
 
                   <button
                     onClick={() => toggleExpand(idx)}
-                    className="flex md:hidden items-center justify-center gap-1.5 px-3 py-1.5 border border-white/10 hover:border-accent-cyan/30 bg-white/4 hover:bg-accent-cyan/5 rounded-lg text-xs font-mono text-slate-300 cursor-pointer w-fit self-start transition-colors"
+                    className="flex md:hidden items-center gap-1.5 px-3 py-1.5 border border-[#d2d2d7] dark:border-[#3a3a3c] bg-white dark:bg-[#1c1c1e] hover:bg-[#f5f5f7] dark:hover:bg-[#2c2c2e] rounded-lg text-xs font-mono text-[#1d1d1f] dark:text-[#f5f5f7] cursor-pointer w-fit transition-colors"
                   >
-                    <span>{isItemExpanded ? 'Ocultar info' : 'Ver más detalles'}</span>
-                    {isItemExpanded ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+                    {isExpanded ? <><span>Ocultar</span><ChevronUp size={12} /></> : <><span>Ver más</span><ChevronDown size={12} /></>}
                   </button>
                 </div>
 
-                {isItemExpanded && (
+                {isExpanded && (
                   <div className="space-y-4 animate-fadeIn">
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <p className="text-[#1d1d1f] dark:text-[#d1d1d6] text-sm leading-relaxed">
                       {item.description}
                     </p>
 
-                    <div className="space-y-3 pt-1">
-                      <h5 className="text-[11px] font-mono uppercase tracking-widest text-slate-500 font-bold">Actividades principales:</h5>
-                      <ul className="space-y-2.5">
+                    <div className="space-y-2.5">
+                      <h5 className="text-[10px] font-mono uppercase tracking-widest text-[#86868b] dark:text-[#6e6e73] font-bold">Actividades principales</h5>
+                      <ul className="space-y-2">
                         {item.bullets.map((bullet, bIdx) => (
-                          <li key={bIdx} className="flex items-start gap-2.5 text-xs md:text-sm text-slate-400 leading-normal">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan/50 mt-1.5 flex-shrink-0"></span>
+                          <li key={bIdx} className="flex items-start gap-2.5 text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-normal">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#0891b2] dark:bg-accent-cyan mt-1.5 flex-shrink-0"></span>
                             <span>{bullet}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="space-y-2 pt-4 border-t border-white/6">
-                      <h5 className="text-[10px] font-mono uppercase tracking-widest text-slate-500 font-bold">Herramientas utilizadas:</h5>
+                    <div className="space-y-2 pt-4 border-t border-[#d2d2d7] dark:border-[#3a3a3c]">
+                      <h5 className="text-[10px] font-mono uppercase tracking-widest text-[#86868b] dark:text-[#6e6e73] font-bold">Herramientas utilizadas</h5>
                       <div className="flex flex-wrap gap-1.5">
                         {item.skills.map((skill, sIdx) => (
                           <span
                             key={sIdx}
-                            className="px-2.5 py-1 rounded-lg bg-accent-cyan/6 border border-accent-cyan/15 text-xs text-accent-cyan/90 font-mono"
+                            className="px-2.5 py-1 rounded-lg bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-xs font-mono text-[#1d1d1f] dark:text-[#f5f5f7]"
                           >
                             {skill}
                           </span>
@@ -161,12 +119,12 @@ export default function Experiencia() {
       </div>
 
       {/* What I bring */}
-      <div className="space-y-6">
+      <div className="space-y-6 pt-4">
         <div className="space-y-2">
-          <span className="text-xs font-mono font-bold tracking-widest text-accent-cyan uppercase">qué puedo aportar</span>
-          <h3 className="text-2xl font-display font-semibold text-white">Base práctica para integrarme en un equipo</h3>
-          <p className="text-slate-400 text-xs md:text-sm max-w-2xl">
-            Cuatro áreas donde puedo aportar desde un rol junior, con margen para seguir aprendiendo y asumir más responsabilidad.
+          <span className="text-xs font-mono font-bold tracking-widest text-[#0891b2] dark:text-accent-cyan uppercase">qué puedo aportar</span>
+          <h3 className="text-2xl font-display font-bold text-[#1d1d1f] dark:text-[#f5f5f7]">Base práctica para integrarme en un equipo</h3>
+          <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm max-w-2xl">
+            Cuatro áreas donde puedo aportar desde un rol junior, con margen para seguir aprendiendo.
           </p>
         </div>
 
@@ -174,18 +132,18 @@ export default function Experiencia() {
           {WHAT_I_BRING.map((item) => (
             <div
               key={item.title}
-              className={`p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5 ${getCardAccent(item.icon)}`}
+              className="p-6 rounded-2xl bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] hover:border-[#86868b] dark:hover:border-[#6e6e73] hover:-translate-y-0.5 transition-all duration-200 shadow-sm dark:shadow-none"
             >
-              <div className="flex items-start gap-3.5">
-                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center flex-shrink-0 ${getIconBg(item.icon)}`}>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] flex items-center justify-center flex-shrink-0">
                   {getIcon(item.icon)}
                 </div>
                 <div className="space-y-2 min-w-0">
-                  <h4 className="text-white font-semibold text-sm">{item.title}</h4>
-                  <p className="text-slate-400 text-xs leading-relaxed">{item.description}</p>
+                  <h4 className="text-[#1d1d1f] dark:text-[#f5f5f7] font-semibold text-sm">{item.title}</h4>
+                  <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-xs leading-relaxed">{item.description}</p>
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {item.techs.map((tech) => (
-                      <span key={tech} className="px-2 py-0.5 rounded-lg bg-slate-900/80 border border-white/8 text-[10px] font-mono text-slate-400">
+                      <span key={tech} className="px-2 py-0.5 rounded-lg bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[10px] font-mono text-[#6e6e73] dark:text-[#a1a1a6]">
                         {tech}
                       </span>
                     ))}

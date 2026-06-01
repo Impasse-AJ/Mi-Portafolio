@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, FileText, ChevronRight, Github, Linkedin } from 'lucide-react';
+import { Menu, X, FileText, ChevronRight, Github, Linkedin, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PERSONAL_INFO } from '../data.ts';
 
 interface NavegacionProps {
   onOpenCV: () => void;
+  theme: 'light' | 'dark';
+  onToggleTheme: () => void;
 }
 
-export default function Navegacion({ onOpenCV }: NavegacionProps) {
+export default function Navegacion({ onOpenCV, theme, onToggleTheme }: NavegacionProps) {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +36,6 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -52,50 +53,52 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 print:hidden px-4 py-3 md:py-4 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-50 print:hidden px-4 py-3 md:py-3.5">
       <div
-        className={`max-w-6xl mx-auto rounded-2xl border transition-all duration-300 bg-slate-950/75 backdrop-blur-md px-4 md:px-6 py-2.5 flex items-center justify-between ${
-          scrolled
-            ? 'border-white/10 shadow-lg shadow-black/30'
-            : 'border-white/6'
-        }`}
+        className={`max-w-6xl mx-auto rounded-2xl border px-4 md:px-6 py-2.5 flex items-center justify-between transition-all duration-200
+          bg-white/85 dark:bg-black/85 backdrop-blur-xl
+          border-[#d2d2d7] dark:border-[#2c2c2e]
+          ${scrolled ? 'shadow-sm dark:shadow-none' : ''}
+        `}
       >
         {/* Brand */}
         <div
           onClick={() => handleNavClick('home')}
           className="flex items-center gap-2.5 cursor-pointer group"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan/80 to-blue-600 flex items-center justify-center font-bold text-slate-950 text-sm shadow-md shadow-accent-cyan/20 group-hover:shadow-accent-cyan/35 transition-shadow">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0891b2] to-[#7c3aed] dark:from-accent-cyan dark:to-accent-violet flex items-center justify-center font-bold text-white dark:text-[#1d1d1f] text-sm shadow-sm group-hover:opacity-85 transition-opacity">
             AP
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-white tracking-tight text-sm leading-tight group-hover:text-accent-cyan transition-colors duration-200">
+            <span className="font-display font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight text-sm leading-tight group-hover:text-[#0891b2] dark:group-hover:text-accent-cyan transition-colors duration-150">
               Abraham Pauta
             </span>
-            <span className="text-[10px] text-green-400 font-mono tracking-wider flex items-center gap-1 leading-none mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+            <span className="text-[10px] text-[#6e6e73] dark:text-[#6e6e73] font-mono tracking-wider flex items-center gap-1 leading-none mt-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
               FULL STACK JUNIOR
             </span>
           </div>
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1" aria-label="Navegación principal">
+        <nav className="hidden md:flex items-center gap-0.5" aria-label="Navegación principal">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3 py-1.5 text-xs font-medium rounded-lg transition-colors cursor-pointer ${
-                  isActive ? 'text-accent-cyan font-semibold' : 'text-slate-400 hover:text-slate-100'
+                className={`relative px-3 py-1.5 text-sm rounded-lg transition-colors cursor-pointer font-medium ${
+                  isActive
+                    ? 'text-[#0891b2] dark:text-accent-cyan'
+                    : 'text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7]'
                 }`}
               >
                 {item.label}
                 {isActive && (
                   <motion.div
-                    layoutId="activeGlow"
-                    className="absolute inset-0 bg-accent-cyan/6 border border-accent-cyan/20 rounded-lg -z-10"
+                    layoutId="navActive"
+                    className="absolute inset-0 bg-[#0891b2]/6 dark:bg-accent-cyan/10 rounded-lg -z-10"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -105,15 +108,15 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-2">
-          {/* Social icons — desktop only */}
-          <div className="hidden md:flex items-center gap-1 mr-1">
+        <div className="flex items-center gap-1.5">
+          {/* Social icons — desktop */}
+          <div className="hidden md:flex items-center gap-0.5 mr-1">
             <a
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub de Abraham Pauta"
-              className="p-1.5 text-slate-500 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              className="p-1.5 text-[#6e6e73] dark:text-[#6e6e73] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] transition-colors rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e]"
             >
               <Github size={15} />
             </a>
@@ -122,23 +125,34 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn de Abraham Pauta"
-              className="p-1.5 text-slate-500 hover:text-blue-300 transition-colors rounded-lg hover:bg-white/5"
+              className="p-1.5 text-[#6e6e73] dark:text-[#6e6e73] hover:text-[#0891b2] dark:hover:text-accent-cyan transition-colors rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e]"
             >
               <Linkedin size={15} />
             </a>
           </div>
 
+          {/* Theme toggle */}
+          <button
+            onClick={onToggleTheme}
+            aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
+            className="p-1.5 rounded-lg text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e] transition-colors cursor-pointer"
+          >
+            {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
+          </button>
+
+          {/* CV button */}
           <button
             onClick={onOpenCV}
-            className="hidden sm:flex items-center gap-1.5 px-4 py-2 bg-accent-cyan hover:bg-accent-cyan/85 text-slate-950 rounded-lg text-xs font-mono tracking-wide font-bold transition-all duration-200 shadow-md shadow-accent-cyan/20 cursor-pointer active:scale-95 hover:-translate-y-px"
+            className="hidden sm:flex items-center gap-1.5 px-4 py-2 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white rounded-lg text-xs font-semibold transition-all cursor-pointer shadow-sm active:scale-95"
           >
             <FileText size={13} />
             Ver CV
           </button>
 
+          {/* Mobile toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 text-slate-400 hover:text-slate-100 cursor-pointer rounded-lg hover:bg-white/5 transition-colors"
+            className="md:hidden p-1.5 text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-white cursor-pointer rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e] transition-colors"
             aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -150,11 +164,11 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-20 left-4 right-4 z-50 md:hidden bg-slate-950/96 border border-white/10 backdrop-blur-xl rounded-2xl p-4 shadow-2xl shadow-black/50"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.15 }}
+            className="absolute top-[72px] left-4 right-4 z-50 md:hidden bg-white/95 dark:bg-[#1c1c1e]/95 border border-[#d2d2d7] dark:border-[#3a3a3c] backdrop-blur-xl rounded-2xl p-4 shadow-lg dark:shadow-none"
           >
             <div className="flex flex-col gap-1">
               {navItems.map((item) => {
@@ -163,22 +177,22 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center justify-between w-full p-3 rounded-xl text-sm text-left transition-colors ${
+                    className={`flex items-center justify-between w-full px-3 py-2.5 rounded-xl text-sm text-left transition-colors ${
                       isActive
-                        ? 'bg-accent-cyan/8 text-accent-cyan font-semibold'
-                        : 'text-slate-300 hover:bg-white/4'
+                        ? 'bg-[#0891b2]/6 dark:bg-accent-cyan/8 text-[#0891b2] dark:text-accent-cyan font-semibold'
+                        : 'text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-[#f5f5f7] dark:hover:bg-[#2c2c2e]'
                     }`}
                   >
                     <span>{item.label}</span>
-                    <ChevronRight size={14} className={isActive ? 'text-accent-cyan' : 'text-slate-600'} />
+                    <ChevronRight size={14} className={isActive ? 'text-[#0891b2] dark:text-accent-cyan' : 'text-[#86868b]'} />
                   </button>
                 );
               })}
 
-              <div className="border-t border-white/8 mt-2 pt-3 flex flex-col gap-2">
+              <div className="border-t border-[#d2d2d7] dark:border-[#3a3a3c] mt-2 pt-3 space-y-2">
                 <button
                   onClick={() => { setMobileMenuOpen(false); onOpenCV(); }}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-accent-cyan hover:bg-accent-cyan/90 text-slate-950 rounded-xl text-xs font-mono font-bold transition-all"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-colors duration-150"
                 >
                   <FileText size={14} />
                   Ver / Imprimir CV
@@ -189,7 +203,7 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
                     href={PERSONAL_INFO.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white/4 hover:bg-white/8 border border-white/8 rounded-xl text-xs font-mono font-semibold text-slate-300 transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] rounded-xl text-sm font-medium text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors"
                   >
                     <Github size={14} /> GitHub
                   </a>
@@ -197,11 +211,19 @@ export default function Navegacion({ onOpenCV }: NavegacionProps) {
                     href={PERSONAL_INFO.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-blue-600/15 hover:bg-blue-600/25 border border-blue-500/25 rounded-xl text-xs font-mono font-semibold text-blue-300 transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-[#0891b2]/6 dark:bg-accent-cyan/10 border border-[#0891b2]/20 dark:border-accent-cyan/20 rounded-xl text-sm font-medium text-[#0891b2] dark:text-accent-cyan transition-colors"
                   >
                     <Linkedin size={14} /> LinkedIn
                   </a>
                 </div>
+
+                <button
+                  onClick={onToggleTheme}
+                  aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[#1d1d1f] dark:text-[#f5f5f7] rounded-xl text-sm font-medium transition-all"
+                >
+                  {theme === 'light' ? <><Moon size={14} /> Modo oscuro</> : <><Sun size={14} /> Modo claro</>}
+                </button>
               </div>
             </div>
           </motion.div>
