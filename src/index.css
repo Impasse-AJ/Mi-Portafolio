@@ -56,46 +56,173 @@ html {
 
 /* Print styles for CV modal */
 @media print {
-  body {
-    background-color: white !important;
-    color: #0f172a !important;
-  }
-
-  header, footer, nav, button, section:not(#contact) {
-    display: none !important;
-  }
-
-  .fixed {
-    position: absolute !important;
-    inset: 0 !important;
-    background: white !important;
-    padding: 0 !important;
-  }
-
-  .max-h-\[90vh\] {
-    max-h: none !important;
-  }
-
-  .rounded-2xl {
-    border-radius: 0 !important;
-  }
-
-  .shadow-2xl {
-    box-shadow: none !important;
-  }
-
-  .border {
-    border: none !important;
-  }
-
   @page {
     size: A4 portrait;
-    margin: 1.2cm;
+    margin: 7mm;
   }
 
-  * {
+  html,
+  body,
+  #root {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    background: #ffffff !important;
+  }
+
+  body {
+    margin: 0 !important;
+    overflow: visible !important;
+    color: #1d1d1f !important;
+  }
+
+  body * {
     color-adjust: exact !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+  }
+
+  body:has(.cv-print-page) > #root > header,
+  body:has(.cv-print-page) > #root > main,
+  body:has(.cv-print-page) > #root > footer,
+  body:has(.cv-print-page) #root > div > header,
+  body:has(.cv-print-page) #root > div > nav,
+  body:has(.cv-print-page) #root > div > main,
+  body:has(.cv-print-page) #root > div > footer {
+    display: none !important;
+  }
+
+  .cv-print-hidden {
+    display: none !important;
+  }
+
+  .cv-print-overlay {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    animation: none !important;
+  }
+
+  .cv-print-shell {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .cv-print-page {
+    width: 194mm !important;
+    max-width: none !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    font-size: 9.2pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .cv-print-page header {
+    display: block !important;
+    padding-bottom: 2.6mm !important;
+    margin-bottom: 2.6mm !important;
+  }
+
+  .cv-print-page main {
+    display: block !important;
+    font-size: 9.2pt !important;
+  }
+
+  .cv-print-page h1 {
+    font-size: 17.8pt !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  .cv-print-page h3,
+  .cv-print-title {
+    font-size: 9.7pt !important;
+    line-height: 1.12 !important;
+    padding-bottom: 1mm !important;
+  }
+
+  .cv-print-page p,
+  .cv-print-page li,
+  .cv-print-page span,
+  .cv-print-page strong {
+    font-size: 9.2pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .cv-print-page section,
+  .cv-print-section {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .cv-print-page ul,
+  .cv-print-list {
+    margin-top: 0.6mm !important;
+  }
+
+  .cv-print-page li {
+    margin-bottom: 0.25mm !important;
+  }
+
+  .cv-print-final {
+    align-items: start !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .cv-print-skills-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 5mm !important;
+    row-gap: 0.15mm !important;
+  }
+
+  .cv-print-skills-list li {
+    margin-bottom: 0 !important;
+  }
+
+  .cv-print-contact {
+    gap: 1.2mm 4mm !important;
+  }
+
+  .cv-print-page svg {
+    width: 9pt !important;
+    height: 9pt !important;
+  }
+
+  .cv-print-page .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 2.2mm !important;
+  }
+
+  .cv-print-page .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5mm !important;
+  }
+
+  .cv-print-page .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1mm !important;
+  }
+
+  .cv-print-page .gap-5 {
+    gap: 4mm !important;
+  }
+
+  .cv-print-page .gap-3 {
+    gap: 2.5mm !important;
   }
 }

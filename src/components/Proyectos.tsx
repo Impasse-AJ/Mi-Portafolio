@@ -37,7 +37,7 @@ export default function Proyectos() {
           <div className="absolute top-4 right-4 flex gap-2 z-10">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono font-bold bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/25 text-green-700 dark:text-green-400">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-              EN PRODUCCIÓN
+              FINALIZADO · DESPLEGADO
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono font-bold bg-[#0891b2]/8 dark:bg-accent-cyan/10 border border-[#0891b2]/20 dark:border-accent-cyan/25 text-[#0891b2] dark:text-accent-cyan">
               <Server size={10} />
@@ -47,7 +47,7 @@ export default function Proyectos() {
 
           <div className="absolute bottom-4 left-4 z-10">
             <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-white/80 dark:bg-black/60 border border-[#d2d2d7] dark:border-white/10 text-[10px] font-mono text-[#6e6e73] dark:text-[#a1a1a6] font-medium uppercase tracking-wider">
-              Proyecto Final de DAW · Full Stack
+              Proyecto Final de DAW · Full Stack · Desplegado
             </span>
           </div>
 
@@ -158,7 +158,7 @@ export default function Proyectos() {
               href={mainProject.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visitar Pokémon World Map en producción"
+              aria-label="Visitar Pokémon World Map desplegado"
               className="flex items-center gap-2 px-8 py-3 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-colors duration-150 shadow-sm hover:-translate-y-px cursor-pointer"
             >
               <ExternalLink size={15} />

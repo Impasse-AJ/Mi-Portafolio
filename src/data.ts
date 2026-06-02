@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
   location: 'Madrid, España',
   domain: 'https://abrahampauta.com',
-  bio: 'Desarrollador junior finalizando Desarrollo de Aplicaciones Web. Actualmente realizo prácticas en EXA Formación y tengo un proyecto full stack desplegado en producción.',
+  bio: 'Desarrollador junior finalizando Desarrollo de Aplicaciones Web. Actualmente realizo prácticas en EXA Formación y tengo un proyecto full stack finalizado y desplegado.',
 };
 
 export const WHAT_I_BRING = [
@@ -101,10 +101,10 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'pokemon-world',
     title: 'Pokémon World Map',
-    tagline: 'En producción · Proyecto Final de DAW · Full Stack',
-    description: 'Aplicación web full stack desplegada en producción que combina mapa mundial interactivo, datos reales de países, clima actual y recomendaciones Pokémon según la temperatura.',
+    tagline: 'Proyecto Final de DAW · Full Stack · Desplegado',
+    description: 'Aplicación web full stack finalizada y desplegada que combina mapa mundial interactivo, datos reales de países, clima actual y recomendaciones Pokémon según la temperatura.',
     extendedDescription: 'Incluye frontend, backend, base de datos, autenticación con registro, login, sesiones, confirmación de cuenta por email mediante Brevo SMTP y despliegue real en VPS Linux con Docker Compose, Caddy y Cloudflare.',
-    status: 'In Production',
+    status: 'Completed',
     tags: ['React', 'Vite', 'Java', 'Spring Boot', 'MySQL', 'Docker Compose', 'Caddy', 'Cloudflare', 'VPS Linux', 'Brevo SMTP'],
     liveUrl: 'https://pokemon-world.es',
     codeUrl: 'https://github.com/Impasse-AJ/Pokemon-World',
@@ -133,7 +133,7 @@ export const ACADEMIC_BACKGROUND: AcademicItem[] = [
     degree: 'Bachillerato de Ciencias',
     institution: 'Colegio Natividad de Nuestra Señora',
     location: 'Madrid, España',
-    period: 'Hasta 2023',
+    period: 'Graduado | 2020/2021',
     status: 'Completed',
     description: 'Base académica en materias científicas y tecnológicas.'
   }
