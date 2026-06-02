@@ -27,7 +27,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
         <div className="flex items-center justify-between px-6 py-4 bg-[#f5f5f7] border-b border-[#d2d2d7] print:hidden">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#0066cc]"></span>
-            <span className="text-xs font-mono font-bold text-[#1d1d1f]">CURRÍCULUM VITAE JUNIOR</span>
+            <span className="text-xs font-semibold text-[#1d1d1f]">Currículum vitae junior</span>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -35,7 +35,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               className="px-4 py-2 bg-[#0066cc] hover:bg-[#0077ed] text-white rounded-lg text-xs font-semibold flex items-center gap-2 transition-colors cursor-pointer shadow-sm"
             >
               <Printer size={13} />
-              Imprimir / PDF
+              Guardar como PDF
             </button>
             <button
               onClick={onClose}
@@ -56,7 +56,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               <h1 className="text-3xl font-extrabold text-[#1d1d1f] tracking-tight leading-none">
                 {PERSONAL_INFO.name}
               </h1>
-              <p className="text-[#0066cc] font-mono text-sm uppercase font-bold tracking-wider">
+              <p className="text-[#0066cc] text-sm font-semibold">
                 {PERSONAL_INFO.title}
               </p>
               <p className="text-xs text-[#6e6e73] font-medium max-w-xl">
@@ -64,22 +64,22 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               </p>
             </div>
 
-            <div className="space-y-1.5 text-xs text-[#6e6e73] font-mono text-left md:text-right">
-              <div className="flex items-center md:justify-end gap-2 leading-none">
+            <div className="space-y-2 text-xs text-[#6e6e73] text-left md:min-w-[230px]">
+              <div className="flex items-center gap-2 leading-snug">
+                <Mail size={13} className="text-[#0066cc] flex-shrink-0" />
                 <span>{PERSONAL_INFO.email}</span>
-                <Mail size={12} className="text-[#0066cc]" />
               </div>
-              <div className="flex items-center md:justify-end gap-2 leading-none">
+              <div className="flex items-center gap-2 leading-snug">
+                <Linkedin size={13} className="text-[#0066cc] flex-shrink-0" />
                 <span>linkedin.com/in/abraham-pauta</span>
-                <Linkedin size={12} className="text-[#0066cc]" />
               </div>
-              <div className="flex items-center md:justify-end gap-2 leading-none">
+              <div className="flex items-center gap-2 leading-snug">
+                <Github size={13} className="text-[#0066cc] flex-shrink-0" />
                 <span>github.com/Impasse-AJ</span>
-                <Github size={12} className="text-[#0066cc]" />
               </div>
-              <div className="flex items-center md:justify-end gap-2 leading-none">
+              <div className="flex items-center gap-2 leading-snug">
+                <MapPin size={13} className="text-[#0066cc] flex-shrink-0" />
                 <span>{PERSONAL_INFO.location}</span>
-                <MapPin size={12} className="text-[#0066cc]" />
               </div>
             </div>
           </div>
@@ -91,14 +91,14 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
             <div className="md:col-span-8 space-y-6">
 
               <div className="space-y-4">
-                <h3 className="text-sm font-mono font-bold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5 uppercase tracking-widest">
-                  Experiencia Técnica Reciente
+                <h3 className="text-sm font-semibold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5">
+                  Experiencia técnica reciente
                 </h3>
                 <div className="space-y-3">
                   <div className="space-y-1">
                     <div className="flex justify-between items-center text-xs">
                       <span className="font-bold text-sm text-[#1d1d1f]">Prácticas de Desarrollo Web</span>
-                      <span className="font-mono text-[#6e6e73] font-semibold">2025 - Presente</span>
+                      <span className="text-[#6e6e73] font-semibold">2026 - Actualidad</span>
                     </div>
                     <div className="flex items-center justify-between font-mono text-[11px] font-bold text-[#0066cc] leading-none">
                       <span>EXA Formación</span>
@@ -117,8 +117,8 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-sm font-mono font-bold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5 uppercase tracking-widest">
-                  Proyectos Técnicos Destacados
+                <h3 className="text-sm font-semibold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5">
+                  Proyectos destacados
                 </h3>
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
@@ -143,7 +143,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
             <div className="md:col-span-4 space-y-6">
 
               <div className="space-y-4">
-                <h3 className="text-sm font-mono font-bold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5 uppercase tracking-widest">
+                <h3 className="text-sm font-semibold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5">
                   Formación
                 </h3>
                 <div className="space-y-4">
@@ -161,8 +161,8 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-sm font-mono font-bold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5 uppercase tracking-widest">
-                  Tecnologías & Stack
+                <h3 className="text-sm font-semibold text-[#1d1d1f] border-b border-[#d2d2d7] pb-1.5">
+                  Tecnologías y stack
                 </h3>
                 <div className="space-y-3 font-mono text-[11px] text-[#6e6e73]">
                   {[

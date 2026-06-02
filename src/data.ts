@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
   location: 'Madrid, España',
   domain: 'https://abrahampauta.com',
-  bio: 'Desarrollador junior finalizando Desarrollo de Aplicaciones Web. Actualmente realizo practicas en EXA Formacion y tengo un proyecto full stack desplegado en produccion.',
+  bio: 'Desarrollador junior finalizando Desarrollo de Aplicaciones Web. Actualmente realizo prácticas en EXA Formación y tengo un proyecto full stack desplegado en producción.',
 };
 
 export const WHAT_I_BRING = [
@@ -22,19 +22,19 @@ export const WHAT_I_BRING = [
   {
     title: 'Datos y scraping',
     icon: 'database',
-    description: 'Analisis de fuentes, diseño de estructuras JSON y preparacion de datos con Python.',
+    description: 'Análisis de fuentes, diseño de estructuras JSON y preparación de datos con Python.',
     techs: ['Python', 'Scraping', 'JSON']
   },
   {
     title: 'Despliegue y mantenimiento',
     icon: 'server',
-    description: 'Despliegues propios en VPS Linux con Docker Compose, Caddy y Cloudflare, y revision de aplicaciones con cPanel.',
+    description: 'Despliegues propios en VPS Linux con Docker Compose, Caddy y Cloudflare, y revisión de aplicaciones con cPanel.',
     techs: ['Docker Compose', 'VPS', 'Caddy', 'Cloudflare', 'cPanel']
   },
   {
     title: 'Trabajo organizado',
     icon: 'users',
-    description: 'Seguimiento de tareas, documentacion y comunicacion con Git, GitHub y Microsoft 365.',
+    description: 'Seguimiento de tareas, documentación y comunicación con Git, GitHub y Microsoft 365.',
     techs: ['Git', 'GitHub', 'Planner', 'OneDrive', 'Teams']
   }
 ];
@@ -44,16 +44,16 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: 'Prácticas de Desarrollo Web',
     company: 'EXA Formación',
     location: 'Madrid, España',
-    period: '2025 - Presente',
+    period: '2026 - Actualidad',
     isCurrent: true,
-    description: 'En EXA Formacion participo en tareas de apoyo al desarrollo y tratamiento de datos: analizo fuentes para scraping, diseño estructuras JSON para organizar informacion, utilizo Python para preparar datos, colaboro en interfaces con TypeScript y React, reviso aplicaciones desde cPanel y coordino tareas/documentacion con Microsoft 365.',
+    description: 'En EXA Formación participo en tareas de apoyo al desarrollo y tratamiento de datos: analizo fuentes para scraping, diseño estructuras JSON para organizar información, utilizo Python para preparar datos, colaboro en interfaces con TypeScript y React, reviso aplicaciones desde cPanel y coordino tareas/documentación con Microsoft 365.',
     bullets: [
-      'Analisis de fuentes y datos para scraping.',
+      'Análisis de fuentes y datos para scraping.',
       'Diseño de estructuras JSON reutilizables.',
-      'Automatizacion y preparacion de datos con Python.',
+      'Automatización y preparación de datos con Python.',
       'Apoyo frontend con TypeScript y React.',
-      'Monitorizacion mediante cPanel.',
-      'Organizacion con OneDrive, Planner, Outlook, Excel y Teams.'
+      'Monitorización mediante cPanel.',
+      'Organización con OneDrive, Planner, Outlook, Excel y Teams.'
     ],
     skills: ['Python', 'Scraping', 'JSON', 'TypeScript', 'React', 'cPanel', 'Microsoft 365', 'OneDrive', 'Planner', 'Outlook', 'Excel', 'Teams']
   }
@@ -63,28 +63,28 @@ export const TECH_CATEGORIES: TechCategory[] = [
   {
     id: 'frontend',
     title: 'Frontend',
-    description: 'Interfaces web, componentes reutilizables y maquetacion responsive.',
+    description: 'Interfaces web, componentes reutilizables y maquetación responsive.',
     iconName: 'layout',
     skills: ['React', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind']
   },
   {
     id: 'backend',
     title: 'Backend y APIs',
-    description: 'APIs, logica de servidor y servicios conectados a base de datos.',
+    description: 'APIs, lógica de servidor y servicios conectados a base de datos.',
     iconName: 'database',
     skills: ['Java', 'Spring Boot', 'PHP', 'Symfony', 'APIs REST']
   },
   {
     id: 'scraping',
     title: 'Datos',
-    description: 'Preparacion, organizacion y persistencia de datos.',
+    description: 'Preparación, organización y persistencia de datos.',
     iconName: 'binary',
     skills: ['Python', 'Scraping', 'JSON', 'MySQL']
   },
   {
     id: 'devops',
     title: 'Despliegue',
-    description: 'Publicacion y seguimiento de aplicaciones en servidores propios.',
+    description: 'Publicación y seguimiento de aplicaciones en servidores propios.',
     iconName: 'server',
     skills: ['Docker', 'Docker Compose', 'Linux', 'VPS', 'Caddy', 'Cloudflare', 'cPanel']
   },
@@ -127,7 +127,7 @@ export const ACADEMIC_BACKGROUND: AcademicItem[] = [
     location: 'Madrid, España',
     period: '2024 - 2026',
     status: 'Current',
-    description: 'Formacion profesional en fase final, orientada a programacion, bases de datos, desarrollo frontend y backend, interfaces web, despliegue de aplicaciones y trabajo con herramientas de desarrollo.'
+    description: 'Formación profesional en fase final, orientada a programación, bases de datos, desarrollo frontend y backend, interfaces web, despliegue de aplicaciones y trabajo con herramientas de desarrollo.'
   },
   {
     degree: 'Bachillerato de Ciencias',
@@ -135,6 +135,6 @@ export const ACADEMIC_BACKGROUND: AcademicItem[] = [
     location: 'Madrid, España',
     period: 'Hasta 2023',
     status: 'Completed',
-    description: 'Base academica en materias cientificas y tecnologicas.'
+    description: 'Base académica en materias científicas y tecnológicas.'
   }
 ];
