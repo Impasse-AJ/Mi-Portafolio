@@ -4,7 +4,7 @@ export const PERSONAL_INFO = {
   name: 'Abraham Pauta',
   title: 'Desarrollador Web Full Stack Junior',
   headline: 'Desarrollo aplicaciones web completas, trabajo con datos y scraping, y despliego proyectos reales en VPS con Docker, Caddy y Cloudflare.',
-  email: 'abraham.pauta81@gmail.com',
+  email: 'abraham-paula@hotmail.com',
   github: 'https://github.com/Impasse-AJ',
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
   location: 'Madrid, España',
@@ -107,7 +107,7 @@ export const PROJECTS: ProjectItem[] = [
     status: 'In Production',
     tags: ['React', 'Vite', 'Java', 'Spring Boot', 'MySQL', 'Docker Compose', 'Caddy', 'Cloudflare', 'VPS Linux', 'Brevo SMTP'],
     liveUrl: 'https://pokemon-world.es',
-    codeUrl: 'https://github.com/Impasse-AJ',
+    codeUrl: 'https://github.com/Impasse-AJ/Pokemon-World',
     category: 'Full Stack',
     architecture: {
       frontend: 'React + Vite',
