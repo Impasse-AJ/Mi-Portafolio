@@ -38,12 +38,7 @@ export default function App() {
   const toggleTheme = () => setTheme(t => (t === 'light' ? 'dark' : 'light'));
 
   return (
-    <div className="min-h-screen bg-[#f5f5f7] dark:bg-black text-[#1d1d1f] dark:text-[#f5f5f7] flex flex-col font-sans antialiased selection:bg-[#0891b2]/15 dark:selection:bg-accent-cyan/20 print:bg-white print:text-slate-800">
-
-      {/* Ambient top glow — subtle pastel, both modes */}
-      <div className="fixed top-0 inset-x-0 h-[420px] pointer-events-none z-0 overflow-hidden print:hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(160deg,rgba(39,245,238,0.04)_0%,rgba(196,181,253,0.03)_40%,transparent_65%)] dark:bg-[linear-gradient(160deg,rgba(39,245,238,0.06)_0%,rgba(196,181,253,0.04)_40%,transparent_65%)]" />
-      </div>
+    <div className="min-h-screen bg-[#f5f5f7] dark:bg-[#111111] text-[#1d1d1f] dark:text-[#f5f5f7] flex flex-col font-sans antialiased selection:bg-[#0891b2]/15 dark:selection:bg-accent-cyan/20 print:bg-white print:text-slate-800">
 
       <Navegacion
         onOpenCV={() => setIsCVOpen(true)}
@@ -53,43 +48,41 @@ export default function App() {
 
       <main className="flex-1 w-full relative z-10 print:p-0 print:m-0">
 
-        {/* Hero */}
-        <div className="pt-20">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-20">
-            <Inicio onOpenCV={() => setIsCVOpen(true)} />
-          </div>
+        {/* Hero — page bg */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 pt-32 pb-20">
+          <Inicio onOpenCV={() => setIsCVOpen(true)} />
         </div>
 
-        {/* Experience — white / dark surface */}
-        <div className="bg-white dark:bg-[#111111]">
+        {/* Experiencia — sección alternante */}
+        <div className="bg-white dark:bg-[#171717]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
             <Experiencia />
           </div>
         </div>
 
-        {/* Project */}
-        <div className="bg-white dark:bg-black">
+        {/* Proyectos — page bg */}
+        <div>
           <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
             <Proyectos />
           </div>
         </div>
 
-        {/* Technologies — page bg */}
-        <div>
+        {/* Tecnologias — sección alternante */}
+        <div className="bg-white dark:bg-[#171717]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
             <Tecnologias />
           </div>
         </div>
 
-        {/* Formation — white / dark surface */}
-        <div className="bg-white dark:bg-[#111111]">
+        {/* Formacion — page bg */}
+        <div>
           <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
             <Formacion />
           </div>
         </div>
 
-        {/* Contact — page bg */}
-        <div>
+        {/* Contacto — sección alternante */}
+        <div className="bg-white dark:bg-[#171717]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
             <Contacto onOpenCV={() => setIsCVOpen(true)} />
           </div>

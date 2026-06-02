@@ -18,23 +18,12 @@ export default function Formacion() {
           return (
             <div
               key={idx}
-              className={`p-6 md:p-8 rounded-2xl border transition-all duration-200 hover:-translate-y-0.5 flex flex-col md:flex-row md:items-start justify-between gap-6 shadow-sm dark:shadow-none ${
-                isDAW
-                  ? 'bg-[#0891b2]/4 dark:bg-accent-cyan/6 border-[#0891b2]/15 dark:border-accent-cyan/20 hover:border-[#0891b2]/25 dark:hover:border-accent-cyan/35'
-                  : 'bg-[#f5f5f7] dark:bg-[#2c2c2e] border-[#d2d2d7] dark:border-[#3a3a3c] hover:border-[#86868b] dark:hover:border-[#6e6e73]'
-              }`}
+              className="p-6 md:p-8 rounded-2xl border transition-all duration-200 hover:-translate-y-0.5 flex flex-col md:flex-row md:items-start justify-between gap-6 shadow-sm dark:shadow-none bg-[#0891b2]/4 dark:bg-accent-cyan/6 border-[#0891b2]/15 dark:border-accent-cyan/20 hover:border-[#0891b2]/25 dark:hover:border-accent-cyan/35"
             >
               <div className="space-y-3 md:max-w-3xl">
                 <div className="flex items-start gap-3">
-                  <div className={`p-2 rounded-xl border flex-shrink-0 ${
-                    isDAW
-                      ? 'bg-[#0891b2]/8 dark:bg-accent-cyan/10 border-[#0891b2]/15 dark:border-accent-cyan/20'
-                      : 'bg-white dark:bg-[#1c1c1e] border-[#d2d2d7] dark:border-[#3a3a3c]'
-                  }`}>
-                    <GraduationCap
-                      size={18}
-                      className={isDAW ? 'text-[#0891b2] dark:text-accent-cyan' : 'text-[#6e6e73] dark:text-[#a1a1a6]'}
-                    />
+                  <div className="p-2 rounded-xl border flex-shrink-0 bg-[#0891b2]/8 dark:bg-accent-cyan/10 border-[#0891b2]/15 dark:border-accent-cyan/20">
+                    <GraduationCap size={18} className="text-[#0891b2] dark:text-accent-cyan" />
                   </div>
                   <h4 className="text-[#1d1d1f] dark:text-[#f5f5f7] font-display font-bold text-lg leading-snug">
                     {item.degree}

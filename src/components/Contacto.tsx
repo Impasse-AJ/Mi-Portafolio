@@ -91,16 +91,16 @@ export default function Contacto({ onOpenCV }: ContactoProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil de GitHub de Abraham Pauta"
-              className="group p-5 rounded-2xl bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] hover:border-[#1d1d1f]/25 dark:hover:border-white/20 hover:bg-[#1d1d1f]/4 dark:hover:bg-white/4 transition-all duration-200 flex flex-col items-center gap-3 cursor-pointer hover:-translate-y-0.5"
+              className="group p-5 rounded-2xl bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] hover:border-[#0891b2]/30 dark:hover:border-accent-cyan/30 hover:bg-[#0891b2]/4 dark:hover:bg-accent-cyan/5 transition-all duration-200 flex flex-col items-center gap-3 cursor-pointer hover:-translate-y-0.5"
             >
-              <div className="p-3 rounded-xl bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors">
+              <div className="p-3 rounded-xl bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] group-hover:border-[#0891b2]/25 dark:group-hover:border-accent-cyan/25 text-[#0891b2] dark:text-accent-cyan transition-colors">
                 <Github size={20} />
               </div>
               <div className="space-y-0.5 text-center">
                 <span className="block font-semibold text-sm text-[#1d1d1f] dark:text-[#f5f5f7]">GitHub</span>
                 <p className="text-[10px] text-[#86868b] font-mono">Impasse-AJ</p>
               </div>
-              <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider font-mono text-[#6e6e73] dark:text-[#a1a1a6]">
+              <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider font-mono text-[#0891b2] dark:text-accent-cyan">
                 Explorar <ExternalLink size={9} />
               </span>
             </a>
