@@ -60,7 +60,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
                 {PERSONAL_INFO.title}
               </p>
               <p className="text-xs text-[#6e6e73] font-medium max-w-xl">
-                Desarrollador web full stack junior formado en DAW, con prácticas en EXA Formación y un proyecto full stack desplegado en producción.
+                Desarrollador web full stack junior finalizando DAW, con prácticas en EXA Formación y un proyecto full stack desplegado en producción.
               </p>
             </div>
 
@@ -150,7 +150,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
                   <div className="space-y-1">
                     <p className="text-xs font-bold text-[#1d1d1f] leading-snug">Grado Superior en Desarrollo de Aplicaciones Web (DAW)</p>
                     <p className="text-[10px] font-semibold text-[#0066cc] font-mono">IES Clara del Rey</p>
-                    <p className="text-[10px] text-[#86868b] font-mono">2023 - 2025 | Completado</p>
+                    <p className="text-[10px] text-[#86868b] font-mono">2024 - 2026 | Finalizando</p>
                   </div>
                   <div className="space-y-1">
                     <p className="text-xs font-bold text-[#1d1d1f] leading-snug">Bachillerato de Ciencias</p>

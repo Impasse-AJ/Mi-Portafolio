@@ -15,6 +15,7 @@ export default function Formacion() {
       <div className="space-y-4">
         {ACADEMIC_BACKGROUND.map((item, idx) => {
           const isDAW = item.degree.includes('DAW');
+          const statusLabel = item.status === 'Current' ? 'FINALIZANDO' : 'COMPLETADO';
           return (
             <div
               key={idx}
@@ -65,7 +66,7 @@ export default function Formacion() {
               <div className="self-start">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-green-50 dark:bg-green-500/8 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400">
                   <CheckCircle size={10} />
-                  COMPLETADO
+                  {statusLabel}
                 </span>
               </div>
             </div>

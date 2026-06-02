@@ -143,7 +143,7 @@ export default function Navegacion({ onOpenCV, theme, onToggleTheme }: Navegacio
           {/* CV button */}
           <button
             onClick={onOpenCV}
-            className="hidden sm:flex items-center gap-1.5 px-4 py-2 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white rounded-lg text-xs font-semibold transition-all cursor-pointer shadow-sm active:scale-95"
+            className="hidden sm:flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-[#f5f5f7] dark:bg-[#f5f5f7] dark:hover:bg-white text-[#1d1d1f] border border-[#d2d2d7] dark:border-transparent rounded-lg text-xs font-semibold transition-all cursor-pointer shadow-sm active:scale-95"
           >
             <FileText size={13} />
             Ver CV
@@ -192,7 +192,7 @@ export default function Navegacion({ onOpenCV, theme, onToggleTheme }: Navegacio
               <div className="border-t border-[#d2d2d7] dark:border-[#3a3a3c] mt-2 pt-3 space-y-2">
                 <button
                   onClick={() => { setMobileMenuOpen(false); onOpenCV(); }}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-colors duration-150"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-white hover:bg-[#f5f5f7] dark:bg-[#f5f5f7] dark:hover:bg-white text-[#1d1d1f] border border-[#d2d2d7] dark:border-transparent rounded-xl text-sm font-semibold transition-colors duration-150"
                 >
                   <FileText size={14} />
                   Ver / Imprimir CV

@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
   location: 'Madrid, España',
   domain: 'https://abrahampauta.com',
-  bio: 'Desarrollador junior formado en Desarrollo de Aplicaciones Web. Actualmente realizo practicas en EXA Formacion y tengo un proyecto full stack desplegado en produccion.',
+  bio: 'Desarrollador junior finalizando Desarrollo de Aplicaciones Web. Actualmente realizo practicas en EXA Formacion y tengo un proyecto full stack desplegado en produccion.',
 };
 
 export const WHAT_I_BRING = [
@@ -125,9 +125,9 @@ export const ACADEMIC_BACKGROUND: AcademicItem[] = [
     degree: 'Grado Superior en Desarrollo de Aplicaciones Web (DAW)',
     institution: 'IES Clara del Rey',
     location: 'Madrid, España',
-    period: '2023 - 2025',
-    status: 'Completed',
-    description: 'Formacion profesional orientada a programacion, bases de datos, desarrollo frontend y backend, interfaces web, despliegue de aplicaciones y trabajo con herramientas de desarrollo.'
+    period: '2024 - 2026',
+    status: 'Current',
+    description: 'Formacion profesional en fase final, orientada a programacion, bases de datos, desarrollo frontend y backend, interfaces web, despliegue de aplicaciones y trabajo con herramientas de desarrollo.'
   },
   {
     degree: 'Bachillerato de Ciencias',
