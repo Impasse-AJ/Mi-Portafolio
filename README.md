@@ -34,32 +34,94 @@ npm run lint
 npm run build
 ```
 
-## Despliegue con Docker
+## Despliegue en VPS
 
-El contenedor sirve el build estatico con Nginx en el puerto interno `80`. El `docker-compose.yml` publica solo en localhost:
+Arquitectura de despliegue:
 
 ```text
-127.0.0.1:8080 -> container:80
+Cloudflare -> Caddy -> Docker -> Nginx -> build estatica React/Vite
 ```
 
-Construir y arrancar:
+Cloudflare gestiona DNS/proxy, Caddy recibe el trafico HTTPS y lo reenvia al servicio local publicado por Docker. Dentro del contenedor, Nginx sirve la build estatica generada por React/Vite.
+
+El contenedor no debe exponerse directamente a internet. El puerto de Docker debe publicarse solo en `127.0.0.1`, y Caddy debe actuar como reverse proxy hacia ese puerto local.
+
+### Actualizar despliegue
+
+Entrar en la ruta del proyecto en la VPS:
+
+```bash
+cd /ruta/del/proyecto
+```
+
+Actualizar desde GitHub:
+
+```bash
+git pull
+```
+
+Reconstruir y levantar el contenedor:
 
 ```bash
 docker compose up -d --build
 ```
 
-Ejemplo de Caddyfile en la VPS:
+Comprobar estado:
+
+```bash
+docker compose ps
+```
+
+Ver logs del contenedor:
+
+```bash
+docker logs abraham-portfolio
+```
+
+Comprobar respuesta local:
+
+```bash
+curl -I http://127.0.0.1:3000
+```
+
+Comprobar dominios:
+
+```bash
+curl -I https://abrahampauta.com
+curl -I https://www.abrahampauta.com
+```
+
+### Caddy
+
+Bloque Caddy generico:
 
 ```caddyfile
-abrahampauta.com {
-  reverse_proxy 127.0.0.1:8080
-  encode zstd gzip
+abrahampauta.com, www.abrahampauta.com {
+    reverse_proxy 127.0.0.1:3000
 }
 ```
 
-## Produccion
+### Backups de configuracion
+
+Hacer backup del `Caddyfile`:
+
+```bash
+cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.backup
+```
+
+Guardar una copia de la configuracion efectiva de Docker Compose:
+
+```bash
+docker compose config > docker-compose.config.backup.yml
+```
+
+## Seguridad
 
 - No subir secretos ni `.env` al repositorio.
-- No se necesita `GEMINI_API_KEY`.
+- No subir claves, credenciales ni tokens.
+- No documentar la IP publica de la VPS.
+- No exponer el contenedor directamente a internet.
+- Publicar el puerto del contenedor solo en `127.0.0.1`.
 - Cloudflare puede gestionar DNS/proxy delante de Caddy.
 - Caddy puede encargarse del certificado TLS si el proxy de Cloudflare lo permite.
+- No se necesita `GEMINI_API_KEY`.
