@@ -2,15 +2,15 @@
 
 Portfolio profesional de Abraham Pauta, Desarrollador Web Full Stack Junior.
 
-Sitio estatico construido con React, TypeScript, Vite, Tailwind CSS, lucide-react y motion/react. No usa backend, Gemini, APIs externas ni variables de entorno para funcionar.
+Sitio estático construido con React, TypeScript, Vite, Tailwind CSS, lucide-react y motion/react. No usa backend, Gemini, APIs externas ni variables de entorno para funcionar.
 
 ## Contenido
 
 - Perfil profesional junior realista.
-- Experiencia en practicas en EXA Formacion.
-- Stack tecnico organizado por areas.
+- Experiencia en prácticas en EXA Formación.
+- Stack técnico organizado por áreas.
 - Proyecto destacado: Pokémon World Map.
-- Contacto sin telefono publico.
+- Contacto sin teléfono público.
 - Modal de CV imprimible desde el navegador.
 - Metadatos SEO y Open Graph para `https://abrahampauta.com`.
 
@@ -27,7 +27,7 @@ Servidor local por defecto:
 http://localhost:3000
 ```
 
-## Validacion
+## Validación
 
 ```bash
 npm run lint
@@ -39,10 +39,10 @@ npm run build
 Arquitectura de despliegue:
 
 ```text
-Cloudflare -> Caddy -> Docker -> Nginx -> build estatica React/Vite
+Cloudflare → Caddy → Docker → Nginx → build estática React/Vite
 ```
 
-Cloudflare gestiona DNS/proxy, Caddy recibe el trafico HTTPS y lo reenvia al servicio local publicado por Docker. Dentro del contenedor, Nginx sirve la build estatica generada por React/Vite.
+Cloudflare gestiona DNS/proxy, Caddy recibe el tráfico HTTPS y lo reenvía al servicio local publicado por Docker. Caddy actúa como reverse proxy público y Nginx se ejecuta dentro del contenedor únicamente para servir los archivos estáticos generados por Vite.
 
 El contenedor no debe exponerse directamente a internet. El puerto de Docker debe publicarse solo en `127.0.0.1`, y Caddy debe actuar como reverse proxy hacia ese puerto local.
 
@@ -51,7 +51,7 @@ El contenedor no debe exponerse directamente a internet. El puerto de Docker deb
 Entrar en la ruta del proyecto en la VPS:
 
 ```bash
-cd /ruta/del/proyecto
+cd /srv/apps/Mi-Portafolio
 ```
 
 Actualizar desde GitHub:
@@ -75,7 +75,7 @@ docker compose ps
 Ver logs del contenedor:
 
 ```bash
-docker logs abraham-portfolio
+docker logs --tail=50 abraham-portfolio
 ```
 
 Comprobar respuesta local:
@@ -93,7 +93,7 @@ curl -I https://www.abrahampauta.com
 
 ### Caddy
 
-Bloque Caddy generico:
+Bloque Caddy genérico:
 
 ```caddyfile
 abrahampauta.com, www.abrahampauta.com {
@@ -101,27 +101,28 @@ abrahampauta.com, www.abrahampauta.com {
 }
 ```
 
-### Backups de configuracion
+### Backups de configuración
 
 Hacer backup del `Caddyfile`:
 
 ```bash
-cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.backup
+cp /etc/caddy/Caddyfile /srv/backups/Caddyfile-portfolio-$(date +%F-%H%M)
 ```
 
-Guardar una copia de la configuracion efectiva de Docker Compose:
+Guardar una copia de la configuración efectiva de Docker Compose:
 
 ```bash
-docker compose config > docker-compose.config.backup.yml
+cd /srv/apps/Mi-Portafolio
+docker compose config > /srv/backups/portfolio-compose-$(date +%F-%H%M).yml
 ```
 
 ## Seguridad
 
 - No subir secretos ni `.env` al repositorio.
 - No subir claves, credenciales ni tokens.
-- No documentar la IP publica de la VPS.
+- No documentar la IP pública de la VPS.
 - No exponer el contenedor directamente a internet.
 - Publicar el puerto del contenedor solo en `127.0.0.1`.
-- Cloudflare puede gestionar DNS/proxy delante de Caddy.
-- Caddy puede encargarse del certificado TLS si el proxy de Cloudflare lo permite.
+- Cloudflare gestiona DNS/proxy delante de Caddy.
+- Caddy gestiona el reverse proxy hacia el contenedor local.
 - No se necesita `GEMINI_API_KEY`.
