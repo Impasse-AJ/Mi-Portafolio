@@ -52,112 +52,115 @@ export default function Navegacion({ onOpenCV, theme, onToggleTheme }: Navegacio
     }
   };
 
+  const pillBase = `bg-white/85 dark:bg-black/85 backdrop-blur-xl border border-[#d2d2d7] dark:border-[#2c2c2e] transition-all duration-200${scrolled ? ' shadow-sm' : ''}`;
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 print:hidden px-4 py-3 md:py-3.5">
-      <div
-        className={`max-w-6xl mx-auto rounded-2xl border px-4 md:px-6 py-2.5 flex items-center justify-between transition-all duration-200
-          bg-white/85 dark:bg-black/85 backdrop-blur-xl
-          border-[#d2d2d7] dark:border-[#2c2c2e]
-          ${scrolled ? 'shadow-sm dark:shadow-none' : ''}
-        `}
-      >
-        {/* Brand */}
-        <div
-          onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2.5 cursor-pointer group"
-        >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0891b2] to-[#7c3aed] dark:from-accent-cyan dark:to-accent-violet flex items-center justify-center font-bold text-white dark:text-[#1d1d1f] text-sm shadow-sm group-hover:opacity-85 transition-opacity">
-            AP
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight text-sm leading-tight group-hover:text-[#0891b2] dark:group-hover:text-accent-cyan transition-colors duration-150">
-              Abraham Pauta
-            </span>
-            <span className="text-[10px] text-[#6e6e73] dark:text-[#6e6e73] font-mono tracking-wider flex items-center gap-1 leading-none mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-              FULL STACK JUNIOR
-            </span>
-          </div>
-        </div>
+      <div className="max-w-6xl mx-auto flex items-center gap-2.5">
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-0.5" aria-label="Navegación principal">
-          {navItems.map((item) => {
-            const isActive = activeSection === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`relative px-3 py-1.5 text-sm rounded-lg transition-colors cursor-pointer font-medium ${
-                  isActive
-                    ? 'text-[#0891b2] dark:text-accent-cyan'
-                    : 'text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7]'
-                }`}
+        {/* Nav pill */}
+        <div className={`flex-1 rounded-2xl px-4 md:px-6 py-2.5 flex items-center justify-between ${pillBase}`}>
+
+          {/* Brand */}
+          <div
+            onClick={() => handleNavClick('home')}
+            className="flex items-center gap-2.5 cursor-pointer group"
+          >
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0891b2] to-[#7c3aed] dark:from-accent-cyan dark:to-accent-violet flex items-center justify-center font-bold text-white dark:text-[#1d1d1f] text-sm shadow-sm group-hover:opacity-85 transition-opacity">
+              AP
+            </div>
+            <div className="flex flex-col">
+              <span className="font-display font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight text-sm leading-tight group-hover:text-[#0891b2] dark:group-hover:text-accent-cyan transition-colors duration-150">
+                Abraham Pauta
+              </span>
+              <span className="text-[10px] text-[#6e6e73] dark:text-[#6e6e73] font-mono tracking-wider flex items-center gap-1 leading-none mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                FULL STACK JUNIOR
+              </span>
+            </div>
+          </div>
+
+          {/* Desktop nav — centrado */}
+          <nav className="hidden md:flex items-center gap-0.5 absolute left-1/2 -translate-x-1/2" aria-label="Navegación principal">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`relative px-3 py-1.5 text-sm rounded-lg transition-colors cursor-pointer font-medium ${
+                    isActive
+                      ? 'text-[#0891b2] dark:text-accent-cyan'
+                      : 'text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7]'
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="navActive"
+                      className="absolute inset-0 bg-[#0891b2]/6 dark:bg-accent-cyan/10 rounded-lg -z-10"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Actions */}
+          <div className="flex items-center gap-1.5">
+            {/* Social icons — desktop */}
+            <div className="hidden md:flex items-center gap-0.5 mr-1">
+              <a
+                href={PERSONAL_INFO.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub de Abraham Pauta"
+                className="p-1.5 text-[#6e6e73] dark:text-[#6e6e73] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] transition-colors rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e]"
               >
-                {item.label}
-                {isActive && (
-                  <motion.div
-                    layoutId="navActive"
-                    className="absolute inset-0 bg-[#0891b2]/6 dark:bg-accent-cyan/10 rounded-lg -z-10"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </button>
-            );
-          })}
-        </nav>
+                <Github size={15} />
+              </a>
+              <a
+                href={PERSONAL_INFO.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn de Abraham Pauta"
+                className="p-1.5 text-[#6e6e73] dark:text-[#6e6e73] hover:text-[#0891b2] dark:hover:text-accent-cyan transition-colors rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e]"
+              >
+                <Linkedin size={15} />
+              </a>
+            </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-1.5">
-          {/* Social icons — desktop */}
-          <div className="hidden md:flex items-center gap-0.5 mr-1">
-            <a
-              href={PERSONAL_INFO.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub de Abraham Pauta"
-              className="p-1.5 text-[#6e6e73] dark:text-[#6e6e73] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] transition-colors rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e]"
+            {/* CV button */}
+            <button
+              onClick={onOpenCV}
+              className="hidden sm:flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-[#f5f5f7] dark:bg-[#f5f5f7] dark:hover:bg-white text-[#1d1d1f] border border-[#d2d2d7] dark:border-transparent rounded-lg text-xs font-semibold transition-all cursor-pointer shadow-sm active:scale-95"
             >
-              <Github size={15} />
-            </a>
-            <a
-              href={PERSONAL_INFO.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn de Abraham Pauta"
-              className="p-1.5 text-[#6e6e73] dark:text-[#6e6e73] hover:text-[#0891b2] dark:hover:text-accent-cyan transition-colors rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e]"
+              <FileText size={13} />
+              Ver CV
+            </button>
+
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-1.5 text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-white cursor-pointer rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e] transition-colors"
+              aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
-              <Linkedin size={15} />
-            </a>
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
 
-          {/* Theme toggle */}
-          <button
-            onClick={onToggleTheme}
-            aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
-            className="p-1.5 rounded-lg text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e] transition-colors cursor-pointer"
-          >
-            {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
-          </button>
-
-          {/* CV button */}
-          <button
-            onClick={onOpenCV}
-            className="hidden sm:flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-[#f5f5f7] dark:bg-[#f5f5f7] dark:hover:bg-white text-[#1d1d1f] border border-[#d2d2d7] dark:border-transparent rounded-lg text-xs font-semibold transition-all cursor-pointer shadow-sm active:scale-95"
-          >
-            <FileText size={13} />
-            Ver CV
-          </button>
-
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-white cursor-pointer rounded-lg hover:bg-[#f5f5f7] dark:hover:bg-[#1c1c1e] transition-colors"
-            aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-          >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
+
+        {/* Círculo flotante del tema — fuera del pill, mismo cristal */}
+        <button
+          onClick={onToggleTheme}
+          aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
+          className={`flex-none w-9 h-9 rounded-full flex items-center justify-center text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] cursor-pointer transition-all duration-200 ${pillBase}`}
+        >
+          {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
+        </button>
+
       </div>
 
       {/* Mobile drawer */}
@@ -216,14 +219,6 @@ export default function Navegacion({ onOpenCV, theme, onToggleTheme }: Navegacio
                     <Linkedin size={14} /> LinkedIn
                   </a>
                 </div>
-
-                <button
-                  onClick={onToggleTheme}
-                  aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[#1d1d1f] dark:text-[#f5f5f7] rounded-xl text-sm font-medium transition-all"
-                >
-                  {theme === 'light' ? <><Moon size={14} /> Modo oscuro</> : <><Sun size={14} /> Modo claro</>}
-                </button>
               </div>
             </div>
           </motion.div>
