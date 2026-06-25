@@ -42,25 +42,24 @@ export default function Proyectos() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              {/* Mini banner */}
-              <div className="h-20 bg-[#f5f5f7] dark:bg-[#111111] relative border-b border-[#d2d2d7] dark:border-white/8 flex items-center justify-center p-3 overflow-hidden">
+              {/* Mini banner — solo URL, sin badge */}
+              <div className="h-16 bg-[#f5f5f7] dark:bg-[#111111] relative border-b border-[#d2d2d7] dark:border-white/8 flex items-center justify-center px-4 overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(8,145,178,0.06)_0%,transparent_65%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(39,245,238,0.07)_0%,transparent_65%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.04)_1px,transparent_0)] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.04)_1px,transparent_0)] bg-[size:20px_20px]" />
-
-                <div className="absolute top-2.5 right-2.5 z-10">
-                  <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[9px] font-mono font-bold bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/25 text-green-700 dark:text-green-400">
-                    <span className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></span>
-                    IN PRODUCTION
-                  </span>
-                </div>
-
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#0891b2] via-[#7c3aed] to-[#1d1d1f] dark:from-accent-cyan dark:via-accent-violet dark:to-white text-sm font-mono font-bold tracking-tight select-none z-10 text-center px-8">
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#0891b2] via-[#7c3aed] to-[#1d1d1f] dark:from-accent-cyan dark:via-accent-violet dark:to-white text-sm font-mono font-bold tracking-tight select-none z-10 text-center">
                   {project.liveUrl?.replace('https://', '')}
                 </div>
               </div>
 
               {/* Body */}
               <div className="p-5 bg-white dark:bg-[#111111] flex flex-col flex-1 gap-3">
+                {/* Badge de estado */}
+                <div>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-mono font-bold bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/25 text-green-700 dark:text-green-400">
+                    <span className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></span>
+                    EN PRODUCCIÓN
+                  </span>
+                </div>
                 <div>
                   <h4 className="text-[#1d1d1f] dark:text-[#f5f5f7] font-bold text-sm leading-snug">{project.title}</h4>
                   <p className="text-[#0891b2] dark:text-accent-cyan text-[10px] font-mono mt-0.5 leading-snug">{project.tagline}</p>

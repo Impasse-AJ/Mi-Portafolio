@@ -1,0 +1,37 @@
+import type { IconType } from 'react-icons';
+import {
+  SiReact, SiTypescript, SiJavascript, SiVite, SiTailwindcss, SiBootstrap, SiReactrouter,
+  SiOpenjdk, SiSpring, SiSpringboot, SiSpringsecurity, SiPhp, SiSymfony, SiJsonwebtokens,
+  SiPython, SiMysql, SiMariadb,
+  SiDocker, SiNginx, SiCloudflare, SiLinux, SiTraefikproxy,
+  SiGit, SiGithub, SiAndroidstudio,
+} from 'react-icons/si';
+
+export const TECH_ICONS: Record<string, IconType> = {
+  'React':            SiReact,
+  'TypeScript':       SiTypescript,
+  'JavaScript':       SiJavascript,
+  'Vite':             SiVite,
+  'React Router':     SiReactrouter,
+  'Tailwind':         SiTailwindcss,
+  'Bootstrap':        SiBootstrap,
+  'Java':             SiOpenjdk,
+  'Spring Boot':      SiSpringboot,
+  'Spring Security':  SiSpringsecurity,
+  'Spring Data JPA':  SiSpring,
+  'JWT':              SiJsonwebtokens,
+  'PHP':              SiPhp,
+  'Symfony':          SiSymfony,
+  'Python':           SiPython,
+  'MySQL':            SiMysql,
+  'MariaDB':          SiMariadb,
+  'Docker':           SiDocker,
+  'Docker Compose':   SiDocker,
+  'Traefik':          SiTraefikproxy,
+  'Nginx':            SiNginx,
+  'Cloudflare':       SiCloudflare,
+  'VPS Linux':        SiLinux,
+  'Git':              SiGit,
+  'GitHub':           SiGithub,
+  'Android Studio':   SiAndroidstudio,
+};

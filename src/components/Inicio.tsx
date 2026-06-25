@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SiReact, SiSpring, SiPython, SiDocker } from 'react-icons/si';
 import {
   Github,
   Linkedin,
@@ -92,12 +93,13 @@ export default function Inicio({ onOpenCV }: InicioProps) {
           {/* Quick stack pills with category colors */}
           <div className="flex flex-wrap gap-2 text-xs font-mono">
             {[
-              { label: 'React · TS', light: 'bg-sky-50 border-sky-200 text-sky-700', dark: 'dark:bg-[#0891b2]/10 dark:border-[#0891b2]/25 dark:text-[#27F5EE]' },
-              { label: 'Spring Boot', light: 'bg-violet-50 border-violet-200 text-violet-700', dark: 'dark:bg-accent-violet/8 dark:border-accent-violet/20 dark:text-accent-violet' },
-              { label: 'Python', light: 'bg-emerald-50 border-emerald-200 text-emerald-700', dark: 'dark:bg-accent-mint/8 dark:border-accent-mint/20 dark:text-accent-mint' },
-              { label: 'Docker · VPS', light: 'bg-orange-50 border-orange-200 text-orange-700', dark: 'dark:bg-orange-500/8 dark:border-orange-400/20 dark:text-orange-300' },
-            ].map(({ label, light, dark }) => (
-              <span key={label} className={`px-3 py-1.5 rounded-full border font-medium ${light} ${dark}`}>
+              { label: 'React · TS',   Icon: SiReact,  light: 'bg-sky-50 border-sky-200 text-sky-700',         dark: 'dark:bg-[#0891b2]/10 dark:border-[#0891b2]/25 dark:text-[#27F5EE]' },
+              { label: 'Spring Boot',  Icon: SiSpring, light: 'bg-violet-50 border-violet-200 text-violet-700', dark: 'dark:bg-accent-violet/8 dark:border-accent-violet/20 dark:text-accent-violet' },
+              { label: 'Python',       Icon: SiPython, light: 'bg-emerald-50 border-emerald-200 text-emerald-700', dark: 'dark:bg-accent-mint/8 dark:border-accent-mint/20 dark:text-accent-mint' },
+              { label: 'Docker · VPS', Icon: SiDocker, light: 'bg-orange-50 border-orange-200 text-orange-700',  dark: 'dark:bg-orange-500/8 dark:border-orange-400/20 dark:text-orange-300' },
+            ].map(({ label, Icon, light, dark }) => (
+              <span key={label} className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border font-medium ${light} ${dark}`}>
+                <Icon size={12} className="flex-shrink-0" />
                 {label}
               </span>
             ))}

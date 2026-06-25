@@ -1,5 +1,6 @@
 import { Calendar, MapPin, Building, ChevronDown, ChevronUp, Code, Database, Server, ClipboardCheck } from 'lucide-react';
 import { EXPERIENCE, WHAT_I_BRING } from '../data.ts';
+import { TECH_ICONS } from '../techIcons.ts';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
@@ -100,14 +101,18 @@ export default function Experiencia() {
                     <div className="space-y-2 pt-4 border-t border-[#d2d2d7] dark:border-[#3a3a3c]">
                       <h5 className="text-[10px] font-mono uppercase tracking-widest text-[#86868b] dark:text-[#6e6e73] font-bold">Herramientas utilizadas</h5>
                       <div className="flex flex-wrap gap-1.5">
-                        {item.skills.map((skill, sIdx) => (
-                          <span
-                            key={sIdx}
-                            className="px-2.5 py-1 rounded-lg bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-xs font-mono text-[#1d1d1f] dark:text-[#f5f5f7]"
-                          >
-                            {skill}
-                          </span>
-                        ))}
+                        {item.skills.map((skill, sIdx) => {
+                          const Icon = TECH_ICONS[skill];
+                          return (
+                            <span
+                              key={sIdx}
+                              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-xs font-mono text-[#1d1d1f] dark:text-[#f5f5f7]"
+                            >
+                              {Icon && <Icon size={11} className="flex-shrink-0 opacity-70" />}
+                              {skill}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
@@ -142,11 +147,15 @@ export default function Experiencia() {
                   <h4 className="text-[#1d1d1f] dark:text-[#f5f5f7] font-semibold text-sm">{item.title}</h4>
                   <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-xs leading-relaxed">{item.description}</p>
                   <div className="flex flex-wrap gap-1.5 pt-1">
-                    {item.techs.map((tech) => (
-                      <span key={tech} className="px-2 py-0.5 rounded-lg bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[10px] font-mono text-[#6e6e73] dark:text-[#a1a1a6]">
-                        {tech}
-                      </span>
-                    ))}
+                    {item.techs.map((tech) => {
+                      const Icon = TECH_ICONS[tech];
+                      return (
+                        <span key={tech} className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-white dark:bg-[#1c1c1e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[10px] font-mono text-[#6e6e73] dark:text-[#a1a1a6]">
+                          {Icon && <Icon size={10} className="flex-shrink-0 opacity-70" />}
+                          {tech}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

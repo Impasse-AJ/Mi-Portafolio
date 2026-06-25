@@ -1,8 +1,9 @@
 import { Layout, Database, Binary, Server, Settings } from 'lucide-react';
 import { TECH_CATEGORIES } from '../data.ts';
+import { TECH_ICONS } from '../techIcons.ts';
 
 export default function Tecnologias() {
-  const getIcon = (iconName: string) => {
+  const getCategoryIcon = (iconName: string) => {
     const size = 18;
     switch (iconName) {
       case 'layout':   return <Layout   className="text-[#0891b2] dark:text-accent-cyan"   size={size} />;
@@ -34,7 +35,7 @@ export default function Tecnologias() {
             <div className="space-y-3.5">
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-xl bg-[#f5f5f7] dark:bg-white/5 border border-[#d2d2d7] dark:border-[#3a3a3c] flex items-center justify-center">
-                  {getIcon(category.iconName)}
+                  {getCategoryIcon(category.iconName)}
                 </div>
                 <h4 className="text-[#1d1d1f] dark:text-[#f5f5f7] font-semibold text-sm leading-tight">{category.title}</h4>
               </div>
@@ -44,14 +45,18 @@ export default function Tecnologias() {
               </p>
 
               <div className="flex flex-wrap gap-1.5 pt-1 border-t border-[#d2d2d7] dark:border-[#3a3a3c]">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 rounded-lg font-mono text-[10px] bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[#1d1d1f] dark:text-[#d1d1d6]"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                {category.skills.map((skill) => {
+                  const Icon = TECH_ICONS[skill];
+                  return (
+                    <span
+                      key={skill}
+                      className="inline-flex items-center gap-1 px-2 py-1 rounded-lg font-mono text-[10px] bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] text-[#1d1d1f] dark:text-[#d1d1d6]"
+                    >
+                      {Icon && <Icon size={10} className="flex-shrink-0 opacity-75" />}
+                      {skill}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </div>
