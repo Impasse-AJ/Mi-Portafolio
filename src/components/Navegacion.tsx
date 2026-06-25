@@ -66,9 +66,11 @@ export default function Navegacion({ onOpenCV, theme, onToggleTheme }: Navegacio
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-2.5 cursor-pointer group"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0891b2] to-[#7c3aed] dark:from-accent-cyan dark:to-accent-violet flex items-center justify-center font-bold text-white dark:text-[#1d1d1f] text-sm shadow-sm group-hover:opacity-85 transition-opacity">
-              AP
-            </div>
+            <img
+              src="/abraham-pauta.jpeg"
+              alt="Foto de Abraham Pauta"
+              className="w-8 h-8 rounded-lg object-cover object-[50%_30%] shadow-sm ring-1 ring-black/5 dark:ring-white/10 group-hover:opacity-85 transition-opacity"
+            />
             <div className="flex flex-col">
               <span className="font-display font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight text-sm leading-tight group-hover:text-[#0891b2] dark:group-hover:text-accent-cyan transition-colors duration-150">
                 Abraham Pauta
