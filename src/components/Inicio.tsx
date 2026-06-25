@@ -86,7 +86,7 @@ export default function Inicio({ onOpenCV }: InicioProps) {
           </p>
 
           <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm max-w-xl leading-relaxed">
-            Actualmente realizo prácticas en EXA Formación y mantengo Pokémon World Map, una aplicación full stack finalizada y desplegada.
+            He completado mis prácticas en EXA Formación, donde desarrollé tres plataformas full stack desplegadas en producción, y tengo un proyecto propio finalizado y desplegado.
           </p>
 
           {/* Quick stack pills with category colors */}
