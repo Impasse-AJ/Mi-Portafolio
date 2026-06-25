@@ -102,10 +102,10 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               <SectionTitle>Perfil profesional</SectionTitle>
               <div className="space-y-1.5 text-[#6e6e73]">
                 <p>
-                  Desarrollador Web Full Stack Junior, finalizando el Grado Superior en Desarrollo de Aplicaciones Web. Actualmente realizo prácticas en EXA Formación, donde participo en análisis de datos para scraping, diseño de estructuras JSON, uso de Python, apoyo en aplicaciones con TypeScript y React, monitorización mediante cPanel y trabajo con herramientas Microsoft 365 en entorno empresarial.
+                  Técnico Superior en Desarrollo de Aplicaciones Web y desarrollador full stack junior. Durante mis prácticas en EXA Formación (marzo–junio 2026) diseñé y desarrollé desde cero tres plataformas web full stack para la explotación de datos públicos (subastas del BOE, subvenciones BDNS y licitaciones), cubriendo todo el ciclo técnico: scraping/ETL con Python, backend Java/Spring Boot, bases de datos MariaDB, frontend React/TypeScript y despliegue en VPS con Docker, Traefik y Nginx.
                 </p>
                 <p>
-                  Cuento con experiencia desarrollando y desplegando proyectos reales, incluyendo una aplicación full stack en producción con React, Spring Boot, MySQL, Docker, Caddy, Cloudflare y VPS Linux. Me considero una persona constante, responsable, con capacidad para resolver problemas, adaptarme a nuevos retos y trabajar tanto de forma autónoma como en equipo.
+                  Además, cuento con un proyecto full stack propio finalizado y desplegado en producción (React, Spring Boot, MySQL, Docker, Caddy, Cloudflare y VPS Linux). Me considero una persona constante, responsable, con capacidad para resolver problemas y adaptarme a nuevos retos.
                 </p>
               </div>
             </section>
@@ -115,19 +115,19 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               <div className="space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
                   <div>
-                    <p className="font-bold text-[#1d1d1f]">Prácticas de Desarrollo Web | EXA Formación</p>
+                    <p className="font-bold text-[#1d1d1f]">Desarrollador Full Stack Junior en prácticas | EXA Formación</p>
                     <p className="text-[#0066cc] font-semibold">Madrid, España</p>
                   </div>
-                  <p className="text-[#6e6e73] font-semibold">2026 - Actualidad</p>
+                  <p className="text-[#6e6e73] font-semibold">Marzo 2026 – Junio 2026</p>
                 </div>
                 <BulletList
                   items={[
-                    'Análisis de fuentes y datos para procesos de scraping.',
-                    'Diseño de estructuras JSON reutilizables para organizar información.',
-                    'Preparación y tratamiento de datos con Python.',
-                    'Apoyo en aplicaciones web con TypeScript y React.',
-                    'Monitorización de aplicaciones mediante cPanel.',
-                    'Organización de tareas, documentación y comunicación con Microsoft 365 en entorno empresarial.',
+                    'Diseñé y desarrollé plataformas full stack para subastas, subvenciones y licitaciones públicas.',
+                    'Implementé scraping/ETL con Python (Playwright, BeautifulSoup) y consumo de APIs públicas.',
+                    'Modelé bases de datos relacionales MySQL/MariaDB para datos públicos complejos.',
+                    'Desarrollé APIs REST con Java/Spring Boot (auth, búsqueda, filtros, detalle, dashboard, exportación).',
+                    'Construí interfaces React/TypeScript con filtros, paginación, detalle y paneles de usuario.',
+                    'Desplegué con Docker Compose, Traefik, Nginx, VPS Linux, túneles SSH y variables de entorno.',
                   ]}
                 />
               </div>
@@ -135,42 +135,50 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
 
             <section className="cv-print-section space-y-2">
               <SectionTitle>Proyectos destacados</SectionTitle>
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
-                  <div>
-                    <p className="font-bold text-[#1d1d1f]">Pokémon World Map | Proyecto Final de DAW</p>
-                    <p className="text-[#6e6e73]">Web: pokemon-world.es</p>
-                    <p className="text-[#6e6e73]">Código: github.com/Impasse-AJ/Pokemon-World</p>
+              <div className="space-y-3">
+                <div>
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                    <div>
+                      <p className="font-bold text-[#1d1d1f]">Plataformas EXA Formación | Prácticas Full Stack</p>
+                      <p className="text-[#6e6e73]">subastas.exaformacion.com · subvenciones.exaformacion.com · licitaciones.exaformacion.com</p>
+                    </div>
+                    <span className="font-semibold text-green-700 whitespace-nowrap">En producción</span>
                   </div>
-                  <span className="font-semibold text-green-700">Finalizado · Desplegado</span>
+                  <BulletList
+                    items={[
+                      'Exaformación Subastas – BOE: scraping Python/Playwright/BeautifulSoup, normalización HTML→MariaDB, API Spring Boot, frontend React.',
+                      'Exaformación Subvenciones – BDNS: ETL incremental con Python, buscador FULLTEXT, perfiles de usuario, recomendación y JWT.',
+                      'Exaformación Licitaciones – +1M registros: ingesta JSON/CSV/ATOM, filtros dinámicos JPA, exportación CSV, dashboard React.',
+                    ]}
+                  />
                 </div>
-                <p className="text-[#6e6e73]">Estado: Finalizado y desplegado</p>
-                <p className="text-[#6e6e73]">
-                  Aplicación web full stack finalizada y desplegada que combina un mapa mundial interactivo, datos reales de países, clima actual y recomendaciones Pokémon según la temperatura.
-                </p>
-                <BulletList
-                  items={[
-                    'Frontend desarrollado con React + Vite.',
-                    'Backend desarrollado con Java + Spring Boot.',
-                    'Base de datos MySQL.',
-                    'Sistema de registro, login, sesiones y confirmación de cuenta por email.',
-                    'Despliegue en VPS Linux mediante Docker Compose.',
-                    'Reverse proxy, HTTPS y gestión DNS mediante Caddy y Cloudflare.',
-                    'Envío de emails de activación mediante Brevo SMTP.',
-                    'Administración interna de base de datos mediante phpMyAdmin y túnel SSH.',
-                  ]}
-                />
+                <div>
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                    <div>
+                      <p className="font-bold text-[#1d1d1f]">Pokémon World Map | Proyecto Final de DAW</p>
+                      <p className="text-[#6e6e73]">pokemon-world.es · github.com/Impasse-AJ/Pokemon-World</p>
+                    </div>
+                    <span className="font-semibold text-green-700 whitespace-nowrap">Finalizado · Desplegado</span>
+                  </div>
+                  <BulletList
+                    items={[
+                      'Aplicación web full stack: React + Vite (frontend), Java + Spring Boot (backend), MySQL.',
+                      'Autenticación completa: registro, login, sesiones y confirmación de cuenta por email (Brevo SMTP).',
+                      'Despliegue en VPS Linux con Docker Compose, Caddy y Cloudflare.',
+                    ]}
+                  />
+                </div>
               </div>
             </section>
 
             <section className="cv-print-section space-y-2">
               <SectionTitle>Tecnologías</SectionTitle>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[#6e6e73]">
-                <p><strong className="text-[#1d1d1f]">Frontend:</strong> React, TypeScript, JavaScript, HTML, CSS, Vite, Tailwind.</p>
-                <p><strong className="text-[#1d1d1f]">Backend:</strong> Java, Spring Boot, PHP, Symfony, APIs REST.</p>
-                <p><strong className="text-[#1d1d1f]">Datos y bases de datos:</strong> Python, scraping, JSON, MySQL.</p>
-                <p><strong className="text-[#1d1d1f]">Despliegue y sistemas:</strong> Docker, Docker Compose, Linux, VPS, Caddy, Cloudflare, cPanel.</p>
-                <p><strong className="text-[#1d1d1f]">Herramientas:</strong> Git, GitHub, Microsoft 365, Android Studio, Odoo básico.</p>
+                <p><strong className="text-[#1d1d1f]">Frontend:</strong> React, TypeScript, JavaScript, Vite, React Router, Tailwind, Bootstrap.</p>
+                <p><strong className="text-[#1d1d1f]">Backend:</strong> Java, Spring Boot, Spring Security, Spring Data JPA, JWT, PHP, Symfony, APIs REST.</p>
+                <p><strong className="text-[#1d1d1f]">Datos y bases de datos:</strong> Python, Playwright, BeautifulSoup, ETL, MySQL, MariaDB, SQL FULLTEXT, JSON, CSV.</p>
+                <p><strong className="text-[#1d1d1f]">Despliegue y sistemas:</strong> Docker, Docker Compose, Traefik, Nginx, Caddy, Cloudflare, VPS Linux, SSH Tunnel.</p>
+                <p><strong className="text-[#1d1d1f]">Herramientas:</strong> Git, GitHub, Microsoft 365, OneDrive, Teams, Android Studio.</p>
               </div>
             </section>
 

@@ -2,60 +2,67 @@ import { ExperienceItem, ProjectItem, TechCategory, AcademicItem } from './types
 
 export const PERSONAL_INFO = {
   name: 'Abraham Pauta',
-  title: 'Desarrollador Web Full Stack Junior',
-  headline: 'Desarrollo aplicaciones web completas, trabajo con datos y scraping, y despliego proyectos reales en VPS con Docker, Caddy y Cloudflare.',
+  title: 'Técnico Superior en Desarrollo de Aplicaciones Web | Desarrollador Full Stack Junior',
+  headline: 'He diseñado y desarrollado desde cero tres plataformas web full stack durante mis prácticas en EXA Formación, cubriendo scraping/ETL, backend, frontend, autenticación y despliegue en VPS.',
   email: 'abraham-paula@hotmail.com',
   github: 'https://github.com/Impasse-AJ',
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
   location: 'Madrid, España',
   domain: 'https://abrahampauta.com',
-  bio: 'Desarrollador junior finalizando Desarrollo de Aplicaciones Web. Actualmente realizo prácticas en EXA Formación y tengo un proyecto full stack finalizado y desplegado.',
+  bio: 'Técnico Superior en Desarrollo de Aplicaciones Web y desarrollador full stack junior. Durante mis prácticas en EXA Formación diseñé y desarrollé desde cero tres plataformas web de explotación de datos públicos (subastas del BOE, subvenciones BDNS y licitaciones), trabajando todo el ciclo: scraping/ETL, backend, base de datos, frontend, autenticación y despliegue en VPS. También tengo un proyecto full stack propio desplegado.',
 };
 
 export const WHAT_I_BRING = [
   {
+    title: 'Plataformas de datos públicos',
+    icon: 'database',
+    description: 'Diseñé y desarrollé tres plataformas full stack de extremo a extremo en EXA Formación: scraping/ETL, backend API, frontend, autenticación y despliegue en producción.',
+    techs: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Python', 'MariaDB', 'Docker', 'Traefik']
+  },
+  {
     title: 'Desarrollo web full stack',
     icon: 'code',
-    description: 'Apoyo en interfaces React/TypeScript y servicios backend con Java, Spring Boot, PHP o Symfony.',
-    techs: ['React', 'TypeScript', 'Spring Boot', 'Symfony']
+    description: 'Interfaces con React/TypeScript/Vite y servicios backend con Java/Spring Boot, con APIs REST, autenticación, filtros, paginación y exportación.',
+    techs: ['React', 'TypeScript', 'Vite', 'Spring Boot', 'Spring Security', 'JWT']
   },
   {
-    title: 'Datos y scraping',
-    icon: 'database',
-    description: 'Análisis de fuentes, diseño de estructuras JSON y preparación de datos con Python.',
-    techs: ['Python', 'Scraping', 'JSON']
-  },
-  {
-    title: 'Despliegue y mantenimiento',
+    title: 'Scraping, ETL y datos',
     icon: 'server',
-    description: 'Despliegues propios en VPS Linux con Docker Compose, Caddy y Cloudflare, y revisión de aplicaciones con cPanel.',
-    techs: ['Docker Compose', 'VPS', 'Caddy', 'Cloudflare', 'cPanel']
+    description: 'Extracción con Python, Playwright y BeautifulSoup. Consumo de APIs públicas (BOE, BDNS) y normalización e ingesta incremental en MySQL/MariaDB.',
+    techs: ['Python', 'Playwright', 'BeautifulSoup', 'ETL', 'MySQL', 'MariaDB']
   },
   {
-    title: 'Trabajo organizado',
+    title: 'Despliegue y entornos',
     icon: 'users',
-    description: 'Seguimiento de tareas, documentación y comunicación con Git, GitHub y Microsoft 365.',
-    techs: ['Git', 'GitHub', 'Planner', 'OneDrive', 'Teams']
+    description: 'Docker Compose, Traefik y Nginx para proyectos de empresa; Caddy y Cloudflare para proyectos propios. Túneles SSH y despliegue validado en VPS Linux.',
+    techs: ['Docker Compose', 'Traefik', 'Nginx', 'Caddy', 'VPS Linux', 'SSH Tunnel']
   }
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    role: 'Prácticas de Desarrollo Web',
+    role: 'Desarrollador Full Stack Junior en prácticas',
     company: 'EXA Formación',
     location: 'Madrid, España',
-    period: '2026 - Actualidad',
-    isCurrent: true,
-    description: 'En EXA Formación participo en tareas de apoyo al desarrollo y tratamiento de datos: analizo fuentes para scraping, diseño estructuras JSON para organizar información, utilizo Python para preparar datos, colaboro en interfaces con TypeScript y React, reviso aplicaciones desde cPanel y coordino tareas/documentación con Microsoft 365.',
+    period: 'Marzo 2026 – Junio 2026',
+    isCurrent: false,
+    description: 'Diseñé y desarrollé plataformas web reales para la explotación de datos públicos, combinando scraping/ETL, backend Java/Spring Boot, frontend React/TypeScript, bases de datos MySQL/MariaDB y despliegue en VPS. Productos MVP/beta funcionales, desplegados y en evolución.',
     bullets: [
-      'Análisis de fuentes y datos para scraping.',
-      'Diseño de estructuras JSON reutilizables.',
-      'Automatización y preparación de datos con Python.',
-      'Apoyo frontend con TypeScript y React.',
-      'Monitorización mediante cPanel.',
-      'Organización con OneDrive, Planner, Outlook, Excel y Teams.'
+      'Diseñé y desarrollé desde cero plataformas web full stack para datos públicos.',
+      'Definí la arquitectura: frontend, backend, scripts de datos, base de datos y despliegue.',
+      'Desarrollé backend con Java 21 y Spring Boot (entidades, repositorios, servicios, DTOs, controladores).',
+      'Desarrollé frontend con React, TypeScript y Vite (listados, filtros, paginación, detalle, paneles).',
+      'Diseñé APIs REST para búsqueda, filtros, detalle, autenticación y exportación.',
+      'Diseñé y normalicé bases de datos relacionales MySQL/MariaDB.',
+      'Implementé scraping e ingesta de datos públicos con Python (Playwright, BeautifulSoup, APIs públicas, JSON/CSV, ETL).',
+      'Implementé registro, login, activación por correo y, según proyecto, JWT.',
+      'Preparé Dockerfiles, Docker Compose local/VPS y configuración Traefik.',
+      'Centralicé configuración con .env/.env.example y validé túneles SSH a MariaDB remota.',
+      'Desplegué y validé las aplicaciones en VPS Linux.',
     ],
-    skills: ['Python', 'Scraping', 'JSON', 'TypeScript', 'React', 'cPanel', 'Microsoft 365', 'OneDrive', 'Planner', 'Outlook', 'Excel', 'Teams']
+    skills: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Vite', 'Python', 'Playwright',
+      'BeautifulSoup', 'MySQL', 'MariaDB', 'SQL', 'Docker', 'Docker Compose', 'Traefik',
+      'Nginx', 'Git', 'VPS Linux', 'SSH Tunnel', 'APIs públicas', 'JSON', 'CSV']
   }
 ];
 
@@ -65,39 +72,96 @@ export const TECH_CATEGORIES: TechCategory[] = [
     title: 'Frontend',
     description: 'Interfaces web, componentes reutilizables y maquetación responsive.',
     iconName: 'layout',
-    skills: ['React', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind']
+    skills: ['React', 'TypeScript', 'JavaScript', 'Vite', 'React Router', 'Tailwind', 'Bootstrap']
   },
   {
     id: 'backend',
     title: 'Backend y APIs',
-    description: 'APIs, lógica de servidor y servicios conectados a base de datos.',
+    description: 'APIs REST, lógica de servidor, autenticación y servicios.',
     iconName: 'database',
-    skills: ['Java', 'Spring Boot', 'PHP', 'Symfony', 'APIs REST']
+    skills: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'JWT', 'PHP', 'Symfony']
   },
   {
-    id: 'scraping',
+    id: 'datos',
     title: 'Datos',
-    description: 'Preparación, organización y persistencia de datos.',
+    description: 'Extracción, transformación y persistencia de datos públicos y estructurados.',
     iconName: 'binary',
-    skills: ['Python', 'Scraping', 'JSON', 'MySQL']
+    skills: ['Python', 'Playwright', 'BeautifulSoup', 'ETL', 'MySQL', 'MariaDB', 'SQL', 'JSON', 'CSV']
   },
   {
     id: 'devops',
-    title: 'Despliegue',
-    description: 'Publicación y seguimiento de aplicaciones en servidores propios.',
+    title: 'DevOps',
+    description: 'Despliegue, proxy, VPS y entornos reproducibles con variables de entorno.',
     iconName: 'server',
-    skills: ['Docker', 'Docker Compose', 'Linux', 'VPS', 'Caddy', 'Cloudflare', 'cPanel']
+    skills: ['Docker', 'Docker Compose', 'Traefik', 'Nginx', 'Caddy', 'Cloudflare', 'VPS Linux', 'SSH']
   },
   {
     id: 'tools',
     title: 'Herramientas',
     description: 'Control de versiones, productividad y herramientas profesionales.',
     iconName: 'settings',
-    skills: ['Git', 'GitHub', 'Microsoft 365', 'Android Studio', 'Odoo básico']
+    skills: ['Git', 'GitHub', 'Microsoft 365', 'cPanel', 'OneDrive', 'Teams', 'Android Studio']
   }
 ];
 
 export const PROJECTS: ProjectItem[] = [
+  {
+    id: 'exa-subastas',
+    title: 'Exaformación Subastas',
+    tagline: 'Plataforma de subastas públicas del BOE · MVP full stack desplegado',
+    description: 'Plataforma para extraer, normalizar, consultar y explotar subastas públicas (principalmente inmobiliarias del BOE), con autenticación, filtros, listado y detalle de expedientes.',
+    extendedDescription: 'Diseñé y desarrollé la arquitectura completa: scraping del BOE por provincias con Python/Playwright/BeautifulSoup; normalización HTML→JSON→MariaDB; modelo relacional de subastas, bienes, lotes y autoridades; backend Spring Boot; frontend React/TypeScript con filtros y paginación; registro/login/activación por email; despliegue Docker/VPS con Traefik.',
+    status: 'In Production',
+    tags: ['Java 21', 'Spring Boot', 'React', 'TypeScript', 'Vite', 'Tailwind', 'Python', 'Playwright', 'BeautifulSoup', 'MariaDB', 'Docker', 'Traefik'],
+    liveUrl: 'https://subastas.exaformacion.com',
+    category: 'Full Stack',
+    architecture: {
+      frontend: 'React 19 + TypeScript + Vite 6 + Tailwind 4',
+      backend: 'Java 21 + Spring Boot 3.5',
+      database: 'MariaDB',
+      infrastructure: 'Docker Compose + VPS Linux',
+      proxy: 'Traefik + Nginx',
+      email: 'Spring Mail'
+    }
+  },
+  {
+    id: 'exa-subvenciones',
+    title: 'Exaformación Subvenciones',
+    tagline: 'Plataforma de subvenciones BDNS · ETL + recomendación · MVP desplegado',
+    description: 'Plataforma para explotar, buscar y seguir convocatorias públicas de subvenciones (BDNS / InfoSubvenciones), con perfil de usuario, buscador FULLTEXT, detalle de expedientes y feed recomendado.',
+    extendedDescription: 'Diseñé y desarrollé la plataforma desde cero: ETL Python contra la API oficial BDNS con actualización incremental; normalización de convocatorias, documentos, anuncios, sectores, regiones y beneficiarios; backend Spring Boot con JWT y Spring Security; onboarding de perfil; buscador SQL FULLTEXT; feed recomendado; frontend React; despliegue Docker/VPS/Traefik.',
+    status: 'In Production',
+    tags: ['Java 21', 'Spring Boot', 'JWT', 'React', 'Vite', 'React Router', 'Bootstrap', 'Python', 'ETL', 'MariaDB', 'FULLTEXT', 'Docker', 'Traefik'],
+    liveUrl: 'https://subvenciones.exaformacion.com',
+    category: 'Full Stack',
+    architecture: {
+      frontend: 'React 19 + Vite + React Router 7 + Bootstrap 5',
+      backend: 'Java 21 + Spring Boot 3.5 (JWT, Spring Security)',
+      database: 'MariaDB 10.11 (FULLTEXT)',
+      infrastructure: 'Docker Compose + VPS Linux',
+      proxy: 'Traefik + Nginx',
+      email: 'Resend'
+    }
+  },
+  {
+    id: 'exa-licitaciones',
+    title: 'Exaformación Licitaciones',
+    tagline: 'Plataforma de licitaciones · +1M de registros · MVP desplegado',
+    description: 'Plataforma para consultar, analizar y explotar licitaciones públicas y contratos menores, con dashboard, catálogo, filtros avanzados, detalle, exportación CSV, favoritos y organismos.',
+    extendedDescription: 'Diseñé y desarrollé la plataforma desde cero: modelo canónico de anuncios e ingesta de datasets públicos grandes (JSON/CSV/ATOM) a MariaDB; backend Spring Boot con consultas dinámicas (JpaSpecificationExecutor) y exportación CSV filtrada; frontend React/TypeScript con dashboard, catálogo, detalle y favoritos; despliegue Docker/VPS con Traefik.',
+    status: 'In Production',
+    tags: ['Java 21', 'Spring Boot', 'Spring Data JPA', 'React', 'TypeScript', 'Vite', 'Tailwind', 'MariaDB', 'Docker', 'Traefik', 'CSV', 'ATOM'],
+    liveUrl: 'https://licitaciones.exaformacion.com',
+    category: 'Full Stack',
+    architecture: {
+      frontend: 'React 19 + TypeScript + Vite 6 + Tailwind 4',
+      backend: 'Java 21 + Spring Boot 4 (Spring Security, JPA)',
+      database: 'MariaDB (+1M registros)',
+      infrastructure: 'Docker Compose + VPS Linux',
+      proxy: 'Traefik + Nginx',
+      email: 'Spring Mail'
+    }
+  },
   {
     id: 'pokemon-world',
     title: 'Pokémon World Map',
