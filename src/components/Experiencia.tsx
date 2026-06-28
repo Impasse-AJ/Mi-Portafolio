@@ -1,11 +1,47 @@
 import { Calendar, MapPin, Building, ChevronDown, ChevronUp, Code, Database, Server, ClipboardCheck } from 'lucide-react';
 import { EXPERIENCE, WHAT_I_BRING } from '../data.ts';
 import { TECH_ICONS } from '../techIcons.ts';
-import { useState } from 'react';
-import { motion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 
 export default function Experiencia() {
   const [expanded, setExpanded] = useState<Record<number, boolean>>({ 0: true });
+  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const [timelineHeight, setTimelineHeight] = useState(0);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start center', 'end center'],
+  });
+  const smoothScrollProgress = useSpring(scrollYProgress, {
+    stiffness: 60,
+    damping: 28,
+    mass: 0.55,
+  });
+  const timelineDotCenterY = useTransform(smoothScrollProgress, (progress) => {
+    const travel = Math.max(timelineHeight - 16, 0);
+    return 8 + progress * travel;
+  });
+  const timelineDotY = useTransform(timelineDotCenterY, (centerY) => centerY - 8);
+
+  useEffect(() => {
+    const timeline = timelineRef.current;
+    if (!timeline) return;
+
+    const updateHeight = () => {
+      setTimelineHeight(timeline.offsetHeight);
+    };
+
+    updateHeight();
+
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(timeline);
+    window.addEventListener('resize', updateHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, []);
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -37,7 +73,21 @@ export default function Experiencia() {
       </motion.div>
 
       {/* Timeline */}
-      <div className="relative pl-6 sm:pl-8 border-l-2 border-[#d2d2d7] dark:border-[#3a3a3c] space-y-10 py-2">
+      <div ref={timelineRef} className="relative pl-6 sm:pl-8 space-y-10 py-2">
+        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#d2d2d7] dark:bg-[#3a3a3c]" aria-hidden="true" />
+        <motion.div
+          className="absolute left-0 top-0 w-[2px] bg-[#0891b2] dark:bg-accent-cyan"
+          style={{ height: timelineDotCenterY }}
+          aria-hidden="true"
+        />
+        <motion.div
+          className="absolute -left-[7px] top-0 z-20 w-4 h-4 rounded-full bg-white dark:bg-[#111111] border-2 border-[#0891b2] dark:border-accent-cyan shadow-sm pointer-events-none"
+          style={{ y: timelineDotY }}
+          aria-hidden="true"
+        >
+          <span className="absolute inset-0.5 rounded-full bg-[#0891b2] dark:bg-accent-cyan" />
+        </motion.div>
+
         {EXPERIENCE.map((item, idx) => {
           const isExpanded = expanded[idx];
           return (
@@ -49,11 +99,6 @@ export default function Experiencia() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
             >
-              {/* Timeline dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] w-4 h-4 rounded-full bg-white dark:bg-[#111111] border-2 border-[#0891b2] dark:border-accent-cyan top-2 z-10 group-hover:scale-125 transition-transform duration-200 shadow-sm">
-                <span className="absolute inset-0.5 rounded-full bg-[#0891b2] dark:bg-accent-cyan"></span>
-              </div>
-
               {/* Card */}
               <div className="rounded-2xl bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-[#3a3a3c] hover:border-[#86868b] dark:hover:border-[#6e6e73] transition-all duration-300 p-6 md:p-8 space-y-5 shadow-sm dark:shadow-none">
 
