@@ -190,8 +190,8 @@ export const ACADEMIC_BACKGROUND: AcademicItem[] = [
     institution: 'IES Clara del Rey',
     location: 'Madrid, España',
     period: '2024 - 2026',
-    status: 'Current',
-    description: 'Formación profesional en fase final, orientada a programación, bases de datos, desarrollo frontend y backend, interfaces web, despliegue de aplicaciones y trabajo con herramientas de desarrollo.'
+    status: 'Completed',
+    description: 'Formación profesional completada, orientada a programación, bases de datos, desarrollo frontend y backend, interfaces web, despliegue de aplicaciones y trabajo con herramientas de desarrollo.'
   },
   {
     degree: 'Bachillerato de Ciencias',

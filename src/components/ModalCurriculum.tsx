@@ -188,7 +188,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
                 <div>
                   <p className="font-bold text-[#1d1d1f]">Grado Superior en Desarrollo de Aplicaciones Web</p>
                   <p>IES Clara del Rey | Madrid, España</p>
-                  <p>2024 - 2026 | Finalizando</p>
+                  <p>2024 - 2026 | Completado</p>
                 </div>
                 <div>
                   <p className="font-bold text-[#1d1d1f]">ESO y Bachillerato de Ciencias</p>
