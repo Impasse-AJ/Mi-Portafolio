@@ -156,9 +156,9 @@ export default function Navegacion({ onOpenCV, theme, onToggleTheme }: Navegacio
         <button
           onClick={onToggleTheme}
           aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
-          className={`flex-none w-9 h-9 rounded-full flex items-center justify-center text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] cursor-pointer transition-all duration-200 ${pillBase}`}
+          className={`flex-none w-10 h-10 rounded-full flex items-center justify-center text-[#6e6e73] dark:text-[#a1a1a6] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] cursor-pointer transition-all duration-200 ${pillBase}`}
         >
-          {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
+          {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
         </button>
 
       </div>
