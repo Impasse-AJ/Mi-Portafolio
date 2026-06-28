@@ -50,7 +50,7 @@ export default function App() {
 
         {/* Hero — page bg */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 pt-32 pb-20">
-          <Inicio onOpenCV={() => setIsCVOpen(true)} />
+          <Inicio />
         </div>
 
         {/* Experiencia — sección alternante */}

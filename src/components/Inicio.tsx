@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { SiReact, SiSpring, SiPython, SiDocker } from 'react-icons/si';
 import {
-  Github,
-  Linkedin,
   Mail,
   ArrowRight,
-  FileText,
   Server,
   Terminal,
   ShieldCheck,
@@ -15,11 +12,7 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data.ts';
 
-interface InicioProps {
-  onOpenCV: () => void;
-}
-
-export default function Inicio({ onOpenCV }: InicioProps) {
+export default function Inicio() {
   const [activeTab, setActiveTab] = useState<'architecture' | 'terminal'>('architecture');
   const [probeStatus, setProbeStatus] = useState<'idle' | 'running' | 'success'>('idle');
   const [probeLogs, setProbeLogs] = useState<string[]>([]);
@@ -109,59 +102,19 @@ export default function Inicio({ onOpenCV }: InicioProps) {
           <div className="flex flex-wrap gap-3 pt-1">
             <button
               onClick={() => handleNavClick('projects')}
-              className="flex items-center gap-2 px-6 py-3 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-colors duration-150 shadow-sm shadow-[#0891b2]/20 dark:shadow-accent-cyan/20 hover:-translate-y-px cursor-pointer"
+              className="group flex items-center gap-2 px-6 py-3 bg-[#0891b2] dark:bg-accent-cyan hover:bg-[#0e7490] dark:hover:bg-accent-cyan/85 text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-all duration-200 shadow-sm shadow-[#0891b2]/20 dark:shadow-accent-cyan/20 hover:-translate-y-px cursor-pointer"
             >
               Ver proyecto
-              <ArrowRight size={15} />
-            </button>
-
-            <button
-              onClick={onOpenCV}
-              className="flex items-center gap-2 px-5 py-3 bg-[#1d1d1f] dark:bg-[#f5f5f7] hover:bg-[#3a3a3c] dark:hover:bg-white text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-colors duration-150 shadow-sm hover:-translate-y-px cursor-pointer"
-            >
-              <FileText size={15} />
-              Ver CV
+              <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </button>
 
             <button
               onClick={() => handleNavClick('contact')}
-              className="flex items-center gap-2 px-5 py-3 border border-[#d2d2d7] dark:border-[#3a3a3c] text-[#1d1d1f] dark:text-[#f5f5f7] hover:bg-[#f5f5f7] dark:hover:bg-white/5 rounded-xl text-sm font-semibold transition-colors duration-150 cursor-pointer"
+              className="flex items-center gap-2 px-5 py-3 border border-[#d2d2d7] dark:border-[#3a3a3c] bg-white/70 dark:bg-white/[0.03] text-[#1d1d1f] dark:text-[#f5f5f7] hover:border-[#0891b2]/35 dark:hover:border-accent-cyan/35 hover:bg-[#f5f5f7] dark:hover:bg-white/[0.06] rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer hover:-translate-y-px"
             >
               <Mail size={15} />
               Contactar
             </button>
-          </div>
-
-          {/* Social links — with personality */}
-          <div className="flex flex-wrap gap-2.5">
-            <a
-              href={PERSONAL_INFO.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub de Abraham Pauta"
-              className="flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-[#1d1d1f] dark:bg-[#f5f5f7] hover:bg-[#3a3a3c] dark:hover:bg-white text-white dark:text-[#1d1d1f] rounded-xl text-sm font-semibold transition-colors duration-150 hover:-translate-y-px shadow-sm"
-            >
-              <Github size={15} />
-              GitHub
-            </a>
-            <a
-              href={PERSONAL_INFO.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn de Abraham Pauta"
-              className="flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-[#0066cc]/8 dark:bg-[#2997ff]/10 hover:bg-[#0066cc]/15 dark:hover:bg-[#2997ff]/18 border border-[#0066cc]/20 dark:border-[#2997ff]/25 text-[#0055aa] dark:text-[#2997ff] rounded-xl text-sm font-semibold transition-colors duration-150 hover:-translate-y-px"
-            >
-              <Linkedin size={15} />
-              LinkedIn
-            </a>
-            <a
-              href={`mailto:${PERSONAL_INFO.email}`}
-              aria-label="Enviar email a Abraham Pauta"
-              className="flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-[#0891b2]/6 dark:bg-accent-cyan/8 hover:bg-[#0891b2]/12 dark:hover:bg-accent-cyan/15 border border-[#0891b2]/20 dark:border-accent-cyan/25 text-[#0891b2] dark:text-accent-cyan rounded-xl text-sm font-semibold transition-colors duration-150 hover:-translate-y-px"
-            >
-              <Mail size={15} />
-              Email
-            </a>
           </div>
         </div>
 
