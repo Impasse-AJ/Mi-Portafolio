@@ -108,12 +108,11 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'exa-subastas',
     title: 'Exaformación Subastas',
-    tagline: 'Plataforma de subastas públicas del BOE · MVP full stack desplegado',
+    tagline: 'Caso técnico interno · Subastas públicas del BOE · Full stack',
     description: 'Plataforma para extraer, normalizar, consultar y explotar subastas públicas (principalmente inmobiliarias del BOE), con autenticación, filtros, listado y detalle de expedientes.',
     extendedDescription: 'Diseñé y desarrollé la arquitectura completa: scraping del BOE por provincias con Python/Playwright/BeautifulSoup; normalización HTML→JSON→MariaDB; modelo relacional de subastas, bienes, lotes y autoridades; backend Spring Boot; frontend React/TypeScript con filtros y paginación; registro/login/activación por email; despliegue Docker/VPS con Traefik.',
-    status: 'In Production',
+    status: 'Completed',
     tags: ['Java 21', 'Spring Boot', 'React', 'TypeScript', 'Vite', 'Tailwind', 'Python', 'Playwright', 'BeautifulSoup', 'MariaDB', 'Docker', 'Traefik'],
-    liveUrl: 'https://subastas.exaformacion.com',
     category: 'Full Stack',
     architecture: {
       frontend: 'React 19 + TypeScript + Vite 6 + Tailwind 4',
@@ -127,12 +126,11 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'exa-subvenciones',
     title: 'Exaformación Subvenciones',
-    tagline: 'Plataforma de subvenciones BDNS · ETL + recomendación · MVP desplegado',
+    tagline: 'Caso técnico interno · Subvenciones BDNS · ETL + recomendación',
     description: 'Plataforma para explotar, buscar y seguir convocatorias públicas de subvenciones (BDNS / InfoSubvenciones), con perfil de usuario, buscador FULLTEXT, detalle de expedientes y feed recomendado.',
     extendedDescription: 'Diseñé y desarrollé la plataforma desde cero: ETL Python contra la API oficial BDNS con actualización incremental; normalización de convocatorias, documentos, anuncios, sectores, regiones y beneficiarios; backend Spring Boot con JWT y Spring Security; onboarding de perfil; buscador SQL FULLTEXT; feed recomendado; frontend React; despliegue Docker/VPS/Traefik.',
-    status: 'In Production',
+    status: 'Completed',
     tags: ['Java 21', 'Spring Boot', 'JWT', 'React', 'Vite', 'React Router', 'Bootstrap', 'Python', 'ETL', 'MariaDB', 'FULLTEXT', 'Docker', 'Traefik'],
-    liveUrl: 'https://subvenciones.exaformacion.com',
     category: 'Full Stack',
     architecture: {
       frontend: 'React 19 + Vite + React Router 7 + Bootstrap 5',
@@ -146,12 +144,11 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'exa-licitaciones',
     title: 'Exaformación Licitaciones',
-    tagline: 'Plataforma de licitaciones · +1M de registros · MVP desplegado',
+    tagline: 'Caso técnico interno · Licitaciones públicas · Dashboard y CSV',
     description: 'Plataforma para consultar, analizar y explotar licitaciones públicas y contratos menores, con dashboard, catálogo, filtros avanzados, detalle, exportación CSV, favoritos y organismos.',
     extendedDescription: 'Diseñé y desarrollé la plataforma desde cero: modelo canónico de anuncios e ingesta de datasets públicos grandes (JSON/CSV/ATOM) a MariaDB; backend Spring Boot con consultas dinámicas (JpaSpecificationExecutor) y exportación CSV filtrada; frontend React/TypeScript con dashboard, catálogo, detalle y favoritos; despliegue Docker/VPS con Traefik.',
-    status: 'In Production',
+    status: 'Completed',
     tags: ['Java 21', 'Spring Boot', 'Spring Data JPA', 'React', 'TypeScript', 'Vite', 'Tailwind', 'MariaDB', 'Docker', 'Traefik', 'CSV', 'ATOM'],
-    liveUrl: 'https://licitaciones.exaformacion.com',
     category: 'Full Stack',
     architecture: {
       frontend: 'React 19 + TypeScript + Vite 6 + Tailwind 4',

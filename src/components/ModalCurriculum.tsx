@@ -140,9 +140,9 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
                     <div>
                       <p className="font-bold text-[#1d1d1f]">Plataformas EXA Formación | Prácticas Full Stack</p>
-                      <p className="text-[#6e6e73]">subastas.exaformacion.com · subvenciones.exaformacion.com · licitaciones.exaformacion.com</p>
+                      <p className="text-[#6e6e73]">Herramientas internas con autenticación · datos públicos · Docker/VPS/Traefik</p>
                     </div>
-                    <span className="font-semibold text-green-700 whitespace-nowrap">En producción</span>
+                    <span className="font-semibold text-green-700 whitespace-nowrap">Acceso privado · Desplegadas</span>
                   </div>
                   <BulletList
                     items={[
