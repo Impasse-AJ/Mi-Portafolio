@@ -2,8 +2,8 @@ import { ExperienceItem, ProjectItem, TechCategory, AcademicItem } from './types
 
 export const PERSONAL_INFO = {
   name: 'Abraham Pauta',
-  title: 'Técnico Superior en Desarrollo de Aplicaciones Web | Desarrollador Full Stack Junior',
-  headline: 'He diseñado y desarrollado desde cero tres plataformas web full stack durante mis prácticas en EXA Formación, cubriendo scraping/ETL, backend, frontend, autenticación y despliegue en VPS.',
+  title: 'Técnico Superior en Desarrollo de Aplicaciones Web',
+  headline: 'Soy un desarrollador web junior apasionado por las nuevas tecnologías, con actitud positiva, disciplina y ganas de iniciar mi carrera profesional aportando valor en un equipo técnico.',
   email: 'abraham-paula@hotmail.com',
   github: 'https://github.com/Impasse-AJ',
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
@@ -41,7 +41,7 @@ export const WHAT_I_BRING = [
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    role: 'Desarrollador Full Stack Junior en prácticas',
+    role: 'Desarrollador Full Stack Junior',
     company: 'EXA Formación',
     location: 'Madrid, España',
     period: 'Marzo 2026 – Junio 2026',

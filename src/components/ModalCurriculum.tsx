@@ -115,7 +115,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               <div className="space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
                   <div>
-                    <p className="font-bold text-[#1d1d1f]">Desarrollador Full Stack Junior en prácticas | EXA Formación</p>
+                    <p className="font-bold text-[#1d1d1f]">Desarrollador Full Stack Junior | EXA Formación</p>
                     <p className="text-[#0066cc] font-semibold">Madrid, España</p>
                   </div>
                   <p className="text-[#6e6e73] font-semibold">Marzo 2026 – Junio 2026</p>

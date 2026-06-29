@@ -71,7 +71,9 @@ export default function Inicio() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-[#6e6e73] dark:text-[#a1a1a6] font-medium pt-1">
-              {PERSONAL_INFO.title}
+              <span className="relative inline-block font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-[#0891b2]/45 after:via-[#7c3aed]/35 after:to-transparent dark:after:from-accent-cyan/55 dark:after:via-accent-violet/35">
+                {PERSONAL_INFO.title}
+              </span>
             </p>
           </div>
 
@@ -80,7 +82,7 @@ export default function Inicio() {
           </p>
 
           <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm max-w-xl leading-relaxed">
-            He completado mis prácticas en EXA Formación, donde desarrollé tres plataformas full stack desplegadas en producción, y tengo un proyecto propio finalizado y desplegado.
+            Me considero una persona constante, responsable y con capacidad para resolver problemas y adaptarme a nuevos retos. Disfruto tanto del trabajo en equipo como del trabajo autónomo, y busco una oportunidad para seguir creciendo en desarrollo de software.
           </p>
 
           {/* Quick stack pills with category colors */}
