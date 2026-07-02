@@ -63,7 +63,7 @@ export default function Proyectos() {
         <span className="text-xs font-mono font-bold tracking-widest text-[#0891b2] dark:text-accent-cyan uppercase">proyectos</span>
         <h3 className="text-3xl font-display font-bold text-[#1d1d1f] dark:text-[#f5f5f7]">Proyectos destacados</h3>
         <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm md:text-base max-w-2xl">
-          Plataformas desarrolladas de extremo a extremo durante mis prácticas en EXA Formación, más mi proyecto final de DAW desplegado en VPS propia.
+          Plataformas desarrolladas de extremo a extremo durante mis prácticas en ExA Formación, más mi proyecto final de DAW desplegado en VPS propia.
         </p>
       </motion.div>
 
@@ -71,7 +71,7 @@ export default function Proyectos() {
       <div className="space-y-6">
         <div className="flex items-center gap-3">
           <span className="text-xs font-mono font-bold tracking-widest text-[#6e6e73] dark:text-[#a1a1a6] uppercase whitespace-nowrap">
-            casos técnicos profesionales · EXA Formación
+            casos técnicos profesionales · ExA Formación
           </span>
           <div className="h-px flex-1 bg-[#d2d2d7] dark:bg-white/10"></div>
         </div>

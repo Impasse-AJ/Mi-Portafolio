@@ -9,14 +9,14 @@ export const PERSONAL_INFO = {
   linkedin: 'https://www.linkedin.com/in/abraham-pauta',
   location: 'Madrid, España',
   domain: 'https://abrahampauta.com',
-  bio: 'Técnico Superior en Desarrollo de Aplicaciones Web y desarrollador full stack junior. Durante mis prácticas en EXA Formación diseñé y desarrollé desde cero tres plataformas web de explotación de datos públicos (subastas del BOE, subvenciones BDNS y licitaciones), trabajando todo el ciclo: scraping/ETL, backend, base de datos, frontend, autenticación y despliegue en VPS. También tengo un proyecto full stack propio desplegado.',
+  bio: 'Técnico Superior en Desarrollo de Aplicaciones Web y desarrollador full stack junior. Durante mis prácticas en ExA Formación diseñé y desarrollé desde cero tres plataformas web de explotación de datos públicos (subastas del BOE, subvenciones BDNS y licitaciones), trabajando todo el ciclo: scraping/ETL, backend, base de datos, frontend, autenticación y despliegue en VPS. También tengo un proyecto full stack propio desplegado.',
 };
 
 export const WHAT_I_BRING = [
   {
     title: 'Plataformas de datos públicos',
     icon: 'database',
-    description: 'Diseñé y desarrollé tres plataformas full stack de extremo a extremo en EXA Formación: scraping/ETL, backend API, frontend, autenticación y despliegue en producción.',
+    description: 'Diseñé y desarrollé tres plataformas full stack de extremo a extremo en ExA Formación: scraping/ETL, backend API, frontend, autenticación y despliegue en producción.',
     techs: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Python', 'MariaDB', 'Docker', 'Traefik']
   },
   {
@@ -42,7 +42,7 @@ export const WHAT_I_BRING = [
 export const EXPERIENCE: ExperienceItem[] = [
   {
     role: 'Desarrollador Full Stack Junior',
-    company: 'EXA Formación',
+    company: 'ExA Formación',
     location: 'Madrid, España',
     period: 'Marzo 2026 – Junio 2026',
     isCurrent: false,
@@ -107,7 +107,7 @@ export const TECH_CATEGORIES: TechCategory[] = [
 export const PROJECTS: ProjectItem[] = [
   {
     id: 'exa-subastas',
-    title: 'Exaformación Subastas',
+    title: 'ExA Formación Subastas',
     tagline: 'Caso técnico interno · Subastas públicas del BOE · Full stack',
     description: 'Plataforma para extraer, normalizar, consultar y explotar subastas públicas (principalmente inmobiliarias del BOE), con autenticación, filtros, listado y detalle de expedientes.',
     extendedDescription: 'Diseñé y desarrollé la arquitectura completa: scraping del BOE por provincias con Python/Playwright/BeautifulSoup; normalización HTML→JSON→MariaDB; modelo relacional de subastas, bienes, lotes y autoridades; backend Spring Boot; frontend React/TypeScript con filtros y paginación; registro/login/activación por email; despliegue Docker/VPS con Traefik.',
@@ -125,7 +125,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: 'exa-subvenciones',
-    title: 'Exaformación Subvenciones',
+    title: 'ExA Formación Subvenciones',
     tagline: 'Caso técnico interno · Subvenciones BDNS · ETL + recomendación',
     description: 'Plataforma para explotar, buscar y seguir convocatorias públicas de subvenciones (BDNS / InfoSubvenciones), con perfil de usuario, buscador FULLTEXT, detalle de expedientes y feed recomendado.',
     extendedDescription: 'Diseñé y desarrollé la plataforma desde cero: ETL Python contra la API oficial BDNS con actualización incremental; normalización de convocatorias, documentos, anuncios, sectores, regiones y beneficiarios; backend Spring Boot con JWT y Spring Security; onboarding de perfil; buscador SQL FULLTEXT; feed recomendado; frontend React; despliegue Docker/VPS/Traefik.',
@@ -143,7 +143,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: 'exa-licitaciones',
-    title: 'Exaformación Licitaciones',
+    title: 'ExA Formación Licitaciones',
     tagline: 'Caso técnico interno · Licitaciones públicas · Dashboard y CSV',
     description: 'Plataforma para consultar, analizar y explotar licitaciones públicas y contratos menores, con dashboard, catálogo, filtros avanzados, detalle, exportación CSV, favoritos y organismos.',
     extendedDescription: 'Diseñé y desarrollé la plataforma desde cero: modelo canónico de anuncios e ingesta de datasets públicos grandes (JSON/CSV/ATOM) a MariaDB; backend Spring Boot con consultas dinámicas (JpaSpecificationExecutor) y exportación CSV filtrada; frontend React/TypeScript con dashboard, catálogo, detalle y favoritos; despliegue Docker/VPS con Traefik.',

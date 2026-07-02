@@ -7,7 +7,7 @@ Sitio estático construido con React, TypeScript, Vite, Tailwind CSS, lucide-rea
 ## Contenido
 
 - Perfil profesional junior realista.
-- Experiencia en prácticas en EXA Formación.
+- Experiencia en prácticas en ExA Formación.
 - Stack técnico organizado por áreas.
 - Proyecto destacado: Pokémon World Map.
 - Contacto sin teléfono público.

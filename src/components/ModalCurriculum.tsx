@@ -102,7 +102,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               <SectionTitle>Perfil profesional</SectionTitle>
               <div className="space-y-1.5 text-[#6e6e73]">
                 <p>
-                  Técnico Superior en Desarrollo de Aplicaciones Web y desarrollador full stack junior. Durante mis prácticas en EXA Formación (marzo–junio 2026) diseñé y desarrollé desde cero tres plataformas web full stack para la explotación de datos públicos (subastas del BOE, subvenciones BDNS y licitaciones), cubriendo todo el ciclo técnico: scraping/ETL con Python, backend Java/Spring Boot, bases de datos MariaDB, frontend React/TypeScript y despliegue en VPS con Docker, Traefik y Nginx.
+                  Técnico Superior en Desarrollo de Aplicaciones Web y desarrollador full stack junior. Durante mis prácticas en ExA Formación (marzo–junio 2026) diseñé y desarrollé desde cero tres plataformas web full stack para la explotación de datos públicos (subastas del BOE, subvenciones BDNS y licitaciones), cubriendo todo el ciclo técnico: scraping/ETL con Python, backend Java/Spring Boot, bases de datos MariaDB, frontend React/TypeScript y despliegue en VPS con Docker, Traefik y Nginx.
                 </p>
                 <p>
                   Además, cuento con un proyecto full stack propio finalizado y desplegado en producción (React, Spring Boot, MySQL, Docker, Caddy, Cloudflare y VPS Linux). Me considero una persona constante, responsable, con capacidad para resolver problemas y adaptarme a nuevos retos.
@@ -115,7 +115,7 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
               <div className="space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
                   <div>
-                    <p className="font-bold text-[#1d1d1f]">Desarrollador Full Stack Junior | EXA Formación</p>
+                    <p className="font-bold text-[#1d1d1f]">Desarrollador Full Stack Junior | ExA Formación</p>
                     <p className="text-[#0066cc] font-semibold">Madrid, España</p>
                   </div>
                   <p className="text-[#6e6e73] font-semibold">Marzo 2026 – Junio 2026</p>
@@ -139,16 +139,16 @@ export default function ModalCurriculum({ isOpen, onClose }: ModalCurriculumProp
                 <div>
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
                     <div>
-                      <p className="font-bold text-[#1d1d1f]">Plataformas EXA Formación | Prácticas Full Stack</p>
+                      <p className="font-bold text-[#1d1d1f]">Plataformas ExA Formación | Prácticas Full Stack</p>
                       <p className="text-[#6e6e73]">Herramientas internas con autenticación · datos públicos · Docker/VPS/Traefik</p>
                     </div>
                     <span className="font-semibold text-green-700 whitespace-nowrap">Acceso privado · Desplegadas</span>
                   </div>
                   <BulletList
                     items={[
-                      'Exaformación Subastas – BOE: scraping Python/Playwright/BeautifulSoup, normalización HTML→MariaDB, API Spring Boot, frontend React.',
-                      'Exaformación Subvenciones – BDNS: ETL incremental con Python, buscador FULLTEXT, perfiles de usuario, recomendación y JWT.',
-                      'Exaformación Licitaciones – +1M registros: ingesta JSON/CSV/ATOM, filtros dinámicos JPA, exportación CSV, dashboard React.',
+                      'ExA Formación Subastas – BOE: scraping Python/Playwright/BeautifulSoup, normalización HTML→MariaDB, API Spring Boot, frontend React.',
+                      'ExA Formación Subvenciones – BDNS: ETL incremental con Python, buscador FULLTEXT, perfiles de usuario, recomendación y JWT.',
+                      'ExA Formación Licitaciones – +1M registros: ingesta JSON/CSV/ATOM, filtros dinámicos JPA, exportación CSV, dashboard React.',
                     ]}
                   />
                 </div>
